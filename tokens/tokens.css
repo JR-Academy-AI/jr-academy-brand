@@ -1,37 +1,44 @@
 /* =====================================================
-   JR Academy / 匠人学院 — Design Tokens (Master Brand)
+   JR Academy / 匠人学院 — Design Tokens (Master Brand · v4)
    Tagline: 学 AI 来匠人 / STUDY AI AT JR ACADEMY
    Sub: 一起成为 AI 时代的匠人
    Mascot: 牛小匠 · 红 JR 连帽衫 + 墨镜
-   Grid: 4pt · Font: Plus Jakarta Sans + 思源黑体
-   Source of truth: tokens.json
+   Grid: 4pt · 中文 思源黑体 · 英文 Inter
+   Source of truth: tokens.json + assets/spec-sheet-v4.png
    ===================================================== */
 
 :root {
-  /* —— Brand · Primary （主色：黑！）—— */
-  --jr-black:    #111111;  /* 深黑 — 主 CTA / Logo / Brand 主标识 */
+  /* —— Brand · Primary （主黑 v4：更深 #0D0F12）—— */
+  --jr-black:    #0D0F12;  /* 主色 Dark — 主 CTA / Logo / 主标识 */
 
-  /* —— Brand · Accent （6 档辅色 / 强调色）—— */
-  --jr-red:      #EF4444;  /* 红 — Danger / 警告 / 强调（不再是主色） */
-  --jr-purple:   #6366F1;  /* 紫 — AI / 学习进度 / 高级 */
-  --jr-yellow:   #FBBF24;  /* 黄 — 警告 / 成就 / 提醒 */
-  --jr-green:    #10B981;  /* 绿 — Success / 完成 */
-  --jr-blue:     #3B82F6;  /* 蓝 — Info / 链接（v3 新加） */
+  /* —— Brand · Accent (4 档 · v4 去掉了 Blue)—— */
+  --jr-red:      #FF4D4F;  /* 强调色 Red — Danger / 强调 */
+  --jr-purple:   #7B61FF;  /* 紫色 Purple — AI / 学习进度 */
+  --jr-yellow:   #FFC84D;  /* 黄色 Yellow — 警告 / 成就 */
+  --jr-green:    #22C55E;  /* 绿色 Green — Success / 完成 */
 
   /* —— Legacy alias（让旧代码不炸）—— */
   --jr-coral:    var(--jr-red);
-  --jr-coral-deep: #DC2626;
+  --jr-coral-deep: #E63946;
   --jr-ink:      var(--jr-black);
   --jr-mint:     var(--jr-green);
+  --jr-blue:     var(--jr-purple);   /* 蓝色 v4 去掉，旧代码 fallback 到紫 */
 
-  /* —— Neutral （7 档 + 白）—— */
-  --jr-ink-1:    #1F2937;  /* 一级标题 / 深灰黑 */
-  --jr-ink-2:    #4B5563;  /* 次正文 */
-  --jr-slate:    #6B7280;  /* 中灰 */
-  --jr-mist:     #9CA3AF;  /* 浅灰 — placeholder / disabled */
-  --jr-fog:      #E5E7EB;  /* 边框 / divider */
-  --jr-canvas:   #F5F7FA;  /* 页面 bg（v3 改：浅冷蓝灰 取代米白） */
-  --jr-canvas-2: #F5F7FA;  /* alias */
+  /* —— Neutral (v4 · 5 档命名)—— */
+  --jr-neutral-900: #1F2937;  /* 中性 900 — 主文字 */
+  --jr-neutral-600: #6B7280;  /* 中性 600 — 次正文 */
+  --jr-neutral-300: #D1D5DB;  /* 中性 300 — 边框 */
+  --jr-neutral-100: #F3F4F6;  /* 中性 100 — 浅灰 bg */
+  --jr-neutral-50:  #FAFAFA;  /* 中性 50  — 页面 bg */
+
+  /* —— Legacy alias（保留旧 var name） —— */
+  --jr-ink-1:    var(--jr-neutral-900);
+  --jr-ink-2:    var(--jr-neutral-600);
+  --jr-slate:    var(--jr-neutral-600);
+  --jr-mist:     var(--jr-neutral-300);
+  --jr-fog:      var(--jr-neutral-300);
+  --jr-canvas:   var(--jr-neutral-50);
+  --jr-canvas-2: var(--jr-neutral-100);
   --jr-white:    #FFFFFF;
 
   /* —— Wash （浅色背景，chip / alert）—— */
@@ -91,19 +98,18 @@
   --jr-glow-red:      0 8px 20px rgba(239,68,68,0.28);
   --jr-glow-purple:   0 8px 20px rgba(99,102,241,0.30);
 
-  /* —— Typography（v3：HarmonyOS + PingFang）—— */
-  --jr-font-sans: 'HarmonyOS Sans SC', 'PingFang SC', 'Source Han Sans SC',
-                  '思源黑体', 'Microsoft YaHei',
-                  'Plus Jakarta Sans', 'Inter',
+  /* —— Typography（v4：思源黑体 + Inter）—— */
+  --jr-font-sans: 'Inter', 'Source Han Sans SC', '思源黑体',
+                  'PingFang SC', 'Microsoft YaHei',
                   system-ui, -apple-system, sans-serif;
   --jr-font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
 
-  --jr-fs-h1:      36px;   /* 大标题 — H1 36px Bold */
-  --jr-fs-h2:      24px;   /* 页面标题 — H2 24px Bold */
-  --jr-fs-h3:      20px;   /* 区块标题 — H3 20px Semibold */
-  --jr-fs-body-1:  16px;
-  --jr-fs-body-2:  14px;
-  --jr-fs-caption: 12px;
+  --jr-fs-h1:      32px;   /* 标题 1 — H1 32px Bold（v4：36→32） */
+  --jr-fs-h2:      24px;   /* 标题 2 — H2 24px Bold */
+  --jr-fs-h3:      18px;   /* 标题 3 — H3 18px Semibold（v4：20→18） */
+  --jr-fs-body-1:  14px;   /* 正文 — v4 默认（16→14） */
+  --jr-fs-body-2:  14px;   /* alias */
+  --jr-fs-caption: 12px;   /* 辅助 */
   --jr-fs-btn-lg:  16px;
   --jr-fs-btn-md:  14px;
   --jr-fs-btn-text:14px;
