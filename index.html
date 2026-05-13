@@ -1163,11 +1163,11 @@
         <div class="type-sample">Aa</div>
         <p class="font-name">字体：HarmonyOS / PingFang SC</p>
         <div class="type-list">
-          <div class="type-row"><strong>H1</strong><span>大标题 / 36px / Bold</span></div>
-          <div class="type-row"><strong>H2</strong><span>页面标题 / 24px / Bold</span></div>
-          <div class="type-row"><strong>H3</strong><span>区块标题 / 20px / Semibold</span></div>
-          <div class="type-row"><strong>Body-1</strong><span>正文 / 16px / Regular</span></div>
-          <div class="type-row"><strong>Body-2</strong><span>次要文字 / 14px / Regular</span></div>
+          <div class="type-row"><strong>H1</strong><span>标题 1 / 32px / Bold</span></div>
+          <div class="type-row"><strong>H2</strong><span>标题 2 / 24px / Bold</span></div>
+          <div class="type-row"><strong>H3</strong><span>标题 3 / 18px / Semibold</span></div>
+          <div class="type-row"><strong>Body</strong><span>正文 / 14px / Regular</span></div>
+          <div class="type-row"><strong>Caption</strong><span>辅助 / 12px / Regular</span></div>
           <div class="type-row"><strong>Caption</strong><span>辅助文字 / 12px / Regular</span></div>
         </div>
       </section>
@@ -1732,11 +1732,10 @@
             <tr><td>紫</td><td><span class="code-pill">#7B61FF</span></td><td>AI、学习进度、高级感、图表强调。</td></tr>
             <tr><td>黄</td><td><span class="code-pill">#FFC84D</span></td><td>成就、警告、提醒、成长激励。</td></tr>
             <tr><td>绿</td><td><span class="code-pill">#22C55E</span></td><td>成功、完成、正向反馈。</td></tr>
-            <tr><td>蓝</td><td><span class="code-pill">#3B82F6</span></td><td>信息、链接；不要和 Job Hunter 主色混淆。</td></tr>
-            <tr><td>中性色</td><td><span class="code-pill">#1F2937 → #FFFFFF</span></td><td>标题、正文、弱提示、边框、背景、卡片。</td></tr>
+            <tr><td>中性色 (5 档)</td><td><span class="code-pill">#1F2937 / #6B7280 / #D1D5DB / #F3F4F6 / #FAFAFA</span></td><td>主文字 / 次正文 / 边框 / 浅 bg / 页面 bg。</td></tr>
           </tbody>
         </table>
-        <div class="book-note">用色决策树：主 CTA 用黑或品牌红；学习进度 / AI 信息用紫；完成用绿；警告和成就用黄；中性 UI 用 7 档灰阶。</div>
+        <div class="book-note">v4 用色决策树：主 CTA 用主黑；危险 / 错误用红；学习进度 / AI / Info 用紫（v4 去掉蓝色）；完成 / 成功用绿；警告 / 成就用黄。</div>
       </section>
 
       <section class="book-section">
@@ -1749,11 +1748,11 @@
           <article class="book-card">
             <h3>字号规范</h3>
             <ul>
-              <li>H1：36px / Bold，用于 Hero 和大标题。</li>
+              <li>H1：32px / Bold，用于大标题（v4 升级 from 36）。</li>
               <li>H2：24px / Bold，用于页面标题。</li>
-              <li>H3：20px / Semibold，用于区块标题。</li>
-              <li>Body-1：16px / Regular，用于正文。</li>
-              <li>Body-2：14px / Regular，用于说明文字。</li>
+              <li>H3：18px / Semibold，用于区块标题（v4 升级 from 20）。</li>
+              <li>Body：14px / Regular，用于正文（v4 改：16→14）。</li>
+              <li>Caption：12px / Regular，用于辅助 / metadata。</li>
               <li>Caption：12px / Regular，用于辅助信息。</li>
             </ul>
           </article>
