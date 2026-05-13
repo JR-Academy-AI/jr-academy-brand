@@ -1,0 +1,133 @@
+/* =====================================================
+   JR Academy / 匠人学院 — Design Tokens (Master Brand)
+   Tagline: 学 AI 来匠人 / STUDY AI AT JR ACADEMY
+   Sub: 一起成为 AI 时代的匠人
+   Mascot: 牛小匠 · 红 JR 连帽衫 + 墨镜
+   Grid: 4pt · Font: Plus Jakarta Sans + 思源黑体
+   Source of truth: tokens.json
+   ===================================================== */
+
+:root {
+  /* —— Brand · Primary （主色：黑！）—— */
+  --jr-black:    #111111;  /* 深黑 — 主 CTA / Logo / Brand 主标识 */
+
+  /* —— Brand · Accent （6 档辅色 / 强调色）—— */
+  --jr-red:      #EF4444;  /* 红 — Danger / 警告 / 强调（不再是主色） */
+  --jr-purple:   #6366F1;  /* 紫 — AI / 学习进度 / 高级 */
+  --jr-yellow:   #FBBF24;  /* 黄 — 警告 / 成就 / 提醒 */
+  --jr-green:    #10B981;  /* 绿 — Success / 完成 */
+  --jr-blue:     #3B82F6;  /* 蓝 — Info / 链接（v3 新加） */
+
+  /* —— Legacy alias（让旧代码不炸）—— */
+  --jr-coral:    var(--jr-red);
+  --jr-coral-deep: #DC2626;
+  --jr-ink:      var(--jr-black);
+  --jr-mint:     var(--jr-green);
+
+  /* —— Neutral （7 档 + 白）—— */
+  --jr-ink-1:    #1F2937;  /* 一级标题 / 深灰黑 */
+  --jr-ink-2:    #4B5563;  /* 次正文 */
+  --jr-slate:    #6B7280;  /* 中灰 */
+  --jr-mist:     #9CA3AF;  /* 浅灰 — placeholder / disabled */
+  --jr-fog:      #E5E7EB;  /* 边框 / divider */
+  --jr-canvas:   #F5F7FA;  /* 页面 bg（v3 改：浅冷蓝灰 取代米白） */
+  --jr-canvas-2: #F5F7FA;  /* alias */
+  --jr-white:    #FFFFFF;
+
+  /* —— Wash （浅色背景，chip / alert）—— */
+  --jr-wash-red:    #FEE2E2;
+  --jr-wash-purple: #E0E7FF;
+  --jr-wash-yellow: #FEF3C7;
+  --jr-wash-green:  #D1FAE5;
+  --jr-wash-blue:   #DBEAFE;
+  --jr-wash-gray:   #F3F4F6;
+  --jr-wash-coral:  var(--jr-wash-red);  /* legacy alias */
+  --jr-wash-mint:   var(--jr-wash-green); /* legacy alias */
+
+  /* —— Semantic —— */
+  --jr-success: var(--jr-green);
+  --jr-warning: var(--jr-yellow);
+  --jr-danger:  var(--jr-red);
+  --jr-info:    var(--jr-blue);
+
+  /* —— Radius (9 档) —— */
+  --jr-radius-0:    0;
+  --jr-radius-xs:   4px;
+  --jr-radius-sm:   8px;     /* Button 默认 */
+  --jr-radius-md:   12px;    /* 大按钮 / 大输入框 */
+  --jr-radius-lg:   16px;    /* Card 默认 */
+  --jr-radius-xl:   20px;
+  --jr-radius-2xl:  24px;    /* Hero / Modal */
+  --jr-radius-3xl:  32px;
+  --jr-radius-4xl:  40px;
+  --jr-radius-full: 9999px;
+
+  /* —— Spacing (4pt · 13 档) —— */
+  --jr-space-1:  4px;
+  --jr-space-2:  8px;
+  --jr-space-3:  12px;
+  --jr-space-4:  16px;
+  --jr-space-6:  24px;
+  --jr-space-8:  32px;
+  --jr-space-10: 40px;
+  --jr-space-12: 48px;
+  --jr-space-14: 56px;
+  --jr-space-16: 64px;
+  --jr-space-20: 80px;
+  --jr-space-24: 96px;
+  --jr-space-32: 128px;
+
+  /* —— Layout 容器宽度 —— */
+  --jr-w-mobile:  375px;
+  --jr-w-tablet:  768px;
+  --jr-w-desktop: 1200px;
+  --jr-w-wide:    1440px;
+
+  /* —— Shadow —— */
+  --jr-shadow-sm:     0 1px 2px rgba(17,17,17,0.04);
+  --jr-shadow-md:     0 4px 12px rgba(17,17,17,0.08);
+  --jr-shadow-lg:     0 12px 28px rgba(17,17,17,0.12);
+  --jr-glow-black:    0 8px 20px rgba(17,17,17,0.32);
+  --jr-glow-red:      0 8px 20px rgba(239,68,68,0.28);
+  --jr-glow-purple:   0 8px 20px rgba(99,102,241,0.30);
+
+  /* —— Typography（v3：HarmonyOS + PingFang）—— */
+  --jr-font-sans: 'HarmonyOS Sans SC', 'PingFang SC', 'Source Han Sans SC',
+                  '思源黑体', 'Microsoft YaHei',
+                  'Plus Jakarta Sans', 'Inter',
+                  system-ui, -apple-system, sans-serif;
+  --jr-font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  --jr-fs-h1:      36px;   /* 大标题 — H1 36px Bold */
+  --jr-fs-h2:      24px;   /* 页面标题 — H2 24px Bold */
+  --jr-fs-h3:      20px;   /* 区块标题 — H3 20px Semibold */
+  --jr-fs-body-1:  16px;
+  --jr-fs-body-2:  14px;
+  --jr-fs-caption: 12px;
+  --jr-fs-btn-lg:  16px;
+  --jr-fs-btn-md:  14px;
+  --jr-fs-btn-text:14px;
+
+  --jr-fw-regular:  400;
+  --jr-fw-medium:   500;
+  --jr-fw-semibold: 600;
+  --jr-fw-bold:     700;
+
+  --jr-lh-heading: 1.3;
+  --jr-lh-body:    1.6;
+
+  /* —— Motion —— */
+  --jr-dur-fast: 120ms;
+  --jr-dur-base: 200ms;
+  --jr-dur-slow: 320ms;
+  --jr-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --jr-ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* —— Type presets —— */
+.jr-h1    { font: var(--jr-fw-bold)     var(--jr-fs-h1)/var(--jr-lh-heading) var(--jr-font-sans); color: var(--jr-ink); }
+.jr-h2    { font: var(--jr-fw-bold)     var(--jr-fs-h2)/var(--jr-lh-heading) var(--jr-font-sans); color: var(--jr-ink); }
+.jr-h3    { font: var(--jr-fw-semibold) var(--jr-fs-h3)/var(--jr-lh-heading) var(--jr-font-sans); color: var(--jr-ink); }
+.jr-body-1{ font: var(--jr-fw-regular)  var(--jr-fs-body-1)/var(--jr-lh-body) var(--jr-font-sans); color: var(--jr-ink-2); }
+.jr-body-2{ font: var(--jr-fw-regular)  var(--jr-fs-body-2)/var(--jr-lh-body) var(--jr-font-sans); color: var(--jr-slate); }
+.jr-caption{font: var(--jr-fw-medium)   var(--jr-fs-caption)/var(--jr-lh-body) var(--jr-font-sans); color: var(--jr-slate); }
