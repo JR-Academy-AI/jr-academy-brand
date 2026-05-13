@@ -207,6 +207,46 @@
       font-size: 14px;
       font-weight: 500;
     }
+    .hero-desc {
+      margin: 14px 0 18px;
+      font-size: 14px;
+      color: #4B5563;
+      line-height: 1.6;
+      max-width: 420px;
+    }
+    .hero-pills {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 10px 14px;
+      margin-top: 4px;
+      max-width: 440px;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 14px 6px 6px;
+      background: #fff;
+      border: 1px solid #F3F4F6;
+      border-radius: 9999px;
+      box-shadow: 0 2px 6px rgba(13,15,18,0.04);
+    }
+    .hero-pill .ic {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .hero-pill .ic.y { background: #FFF6DA; }
+    .hero-pill .ic.p { background: #EFEBFF; }
+    .hero-pill .ic.g { background: #DCFCE7; }
+    .hero-pill .ic.r { background: #FEE2E2; }
+    .hero-pill .meta { line-height: 1.15; }
+    .hero-pill .meta strong { font-size: 12px; font-weight: 700; color: #0D0F12; display: block; }
+    .hero-pill .meta span { font-size: 10px; color: #6B7280; }
     .hero-mascot {
       position: absolute;
       right: 20px;
@@ -1139,8 +1179,13 @@
         </div>
         <div class="hero-word">UI KIT</div>
         <img class="hero-tagline" src="assets/logo/tagline-xueai-laijiangren.png" alt="学 AI 来匠人"/>
-        <p class="hero-sub">让学习更高效，让成长更确定</p>
-        <img class="hero-underline" src="assets/decorations/yellow-brush-underline.png" alt=""/>
+        <p class="hero-desc">系统化 AI 学习与职业成长平台，<br/>陪你从入门到精通，用 AI 改变未来。</p>
+        <div class="hero-pills">
+          <span class="hero-pill"><span class="ic y">📘</span><span class="meta"><strong>体系化课程</strong><span>系统学习路径</span></span></span>
+          <span class="hero-pill"><span class="ic p">⚡</span><span class="meta"><strong>AI 实战项目</strong><span>学以致用</span></span></span>
+          <span class="hero-pill"><span class="ic g">📈</span><span class="meta"><strong>职业赋能</strong><span>能力进阶</span></span></span>
+          <span class="hero-pill"><span class="ic r">🤝</span><span class="meta"><strong>陪伴式成长</strong><span>社群与教练</span></span></span>
+        </div>
         <img class="hero-mascot" src="assets/mascot/official/01-hero-fullbody.png" alt="牛小匠" />
         <span class="spark one">✦</span>
         <span class="spark two">✧</span>
