@@ -1,4 +1,4 @@
-# JR Academy / 匠人学院 — Master Brand Book
+# JR Academy / 匠人学院 — Master Design System
 
 > **学 AI 来匠人 · STUDY AI AT JR ACADEMY**
 > 一起成为 AI 时代的匠人 · Be an AI Craftsman.
@@ -9,7 +9,7 @@
 >
 > 🌐 **在线手册**: <https://jr-academy-ai.github.io/jr-academy-brand/>
 >
-> 总品牌 UI 规范 / 品牌手册，不是产品代码。双击 `index.html` 就能看，或直接访问上面的在线版本。
+> 总品牌 UI 规范 / 设计系统，不是产品代码。双击 `index.html` 就能看，或直接访问上面的在线版本。
 > JR Academy 是母品牌，UniMate AI / Cert Master / Job Hunter 是子品牌。
 
 ---
@@ -18,7 +18,7 @@
 
 ```
 jr-academy-brand/
-├── index.html              ← 品牌手册（10 sections，双击打开就能看）
+├── index.html              ← 设计系统（10 sections，双击打开就能看）
 ├── DESIGN.md               ← 完整设计规范（13 节）
 ├── _source_design.md       ← 原始设计研究稿（存档）
 ├── tokens/

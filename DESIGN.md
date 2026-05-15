@@ -4,7 +4,7 @@
 > JR Academy 是母品牌，UniMate AI / Cert Master / Job Hunter 都是它的子产品 — 子产品的设计系统在各自仓库，本文件只定义**总品牌**（官网 / Dashboard / AI 职业诊断 / 社区）的视觉标准。
 >
 > 配套文件：
-> - `index.html` — 视觉品牌手册
+> - `index.html` — 视觉设计系统
 > - `tokens/tokens.json` — W3C Design Tokens 源数据
 > - `tokens/tokens.css` — `--jr-*` CSS 变量
 > - `README.md` — 仓库使用说明
@@ -677,7 +677,7 @@ PR diff 出现以下立即打回：
 
 ```
 jr-academy-brand/
-├── index.html                ← 视觉品牌手册
+├── index.html                ← 视觉设计系统
 ├── DESIGN.md                 ← 本文件（完整规范）
 ├── README.md                 ← 仓库使用说明
 ├── _source_design.md         ← 原始设计稿存档
@@ -849,7 +849,7 @@ hero 灵动感
 | `cert-mobile`（Expo + RN） | 用 `react-native-svg` 重写，path 不变 |
 | 静态营销页 / Canva 海报 | 直接 copy SVG 文件到 Canva |
 
-**手册 SVG path = source of truth**。任何端二次创作必须先回 brand book 加新元素或修改 path。
+**手册 SVG path = source of truth**。任何端二次创作必须先回 design system 加新元素或修改 path。
 
 ### 当前在用案例
 
@@ -859,7 +859,7 @@ hero 灵动感
 
 ### 人物插画 · Career Impact 系列（16 张）
 
-跟装饰元素配套使用的**情感型插画**。原产于 `jr-academy-web-zh/CareerImpactDiagnostic`，2026-05-13 收编到 brand book 作为 source of truth：
+跟装饰元素配套使用的**情感型插画**。原产于 `jr-academy-web-zh/CareerImpactDiagnostic`，2026-05-13 收编到 design system 作为 source of truth：
 
 | 分组 | 数量 | 位置 | 用途 |
 |------|------|------|------|
@@ -935,11 +935,11 @@ hero 灵动感
 ```
 ~/Documents/jr-academy-design/{ChatGPT,Image_xxx,uuid}.png
   ↓ Claude / 设计师识别
-brand book/assets/mascot/_inbox/   ← 临时
+design system/assets/mascot/_inbox/   ← 临时
   ↓ 命名 + 分类
-brand book/assets/mascot/{chibi,unimate,jobhunter,outfits-extra}/
+design system/assets/mascot/{chibi,unimate,jobhunter,outfits-extra}/
   ↓ 业务侧 3+ 次使用 + 设计师 review
-brand book/assets/mascot/{official,emojis,busts,lifestyle,working,outfits,variants,app-icons}/  ← §10 主资产库
+design system/assets/mascot/{official,emojis,busts,lifestyle,working,outfits,variants,app-icons}/  ← §10 主资产库
 ```
 
 完整展示见 `index.html` panel 20 + book-section 12.A-H。
@@ -975,6 +975,6 @@ _v1.3 · 2026-05-13 · JR Academy 总品牌_
 
 _Changelog_
 - v1.3 (2026-05-13): 新增 §15 Chibi 资产批次 · 40 张 ChatGPT 设计变体收编（37 识别 + 3 inbox），含 chibi/unimate/jobhunter/outfits-extra/vi-boards 5 大分组 + promote 规则
-- v1.2 (2026-05-13): §14 补充人物插画 Career Impact 系列（16 张：4 scene + 3 quiz + 9 roles）收编到 `assets/illustrations/career-impact/`，brand book 成为 source of truth
+- v1.2 (2026-05-13): §14 补充人物插画 Career Impact 系列（16 张：4 scene + 3 quiz + 9 roles）收编到 `assets/illustrations/career-impact/`，design system 成为 source of truth
 - v1.1 (2026-05-13): 新增 §14 装饰元素章节（14 个 SVG/CSS 标准件 + 用色规则 + 跨项目落地映射）
 - v1.0 (2026-05-13): 初版（§1-13 品牌定位 → 隔离规则）
