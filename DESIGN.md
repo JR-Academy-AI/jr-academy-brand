@@ -399,15 +399,20 @@ JR Academy (匠人学院 · 总品牌)
 - **英文**：JR ACADEMY
 - **口号**：学 AI 来匠人 / STUDY AI AT JR ACADEMY
 
-### 7.2 Logo 5 件套（待补）
+### 7.2 Logo 件套
 
-| 名称 | 文件 (TODO) | 用途 |
-|------|------------|------|
-| Horizontal | `assets/logo/horizontal.png` | 官网 header / 邮件签名 |
-| Compact | `assets/logo/compact.png` | 海报 / PPT 封面 |
-| Box Mark | `assets/logo/box-mark.png` | 仅 JR Box 部分，用作 favicon / 装饰 |
-| Avatar | `assets/logo/avatar.png` | 头像 / favicon |
-| App Icon | `assets/logo/app-icon.png` | 通用 App 图标 |
+> 2026-05-15 更新到 v2 — JR Box（盒子 + 摇柄 mark）+ 完整中文 lockup（黑.svg / 反白 (2).png）。
+
+| 名称 | 文件 | 用途 |
+|------|------|------|
+| JR Box · 主 mark ⭐ v2 | `assets/logo/jr-box.svg` / `.png` | favicon / Avatar / 装饰 / loading |
+| 完整中文 Logo ⭐ v2 | `assets/logo/logo-zh-full.svg` / `.png` | 官网 header / 邮件签名 / PPT 封面 |
+| 反白版（深色 bg）⭐ v2 | `assets/logo/logo-zh-white.png` | Dark mode / 深色 hero / 视频片头 |
+| Rounded 圆角变体 | `assets/logo/logo-rounded.svg` | 头像 / 圆角容器内 |
+| English Logo | `assets/logo/logo-en.svg` / `logo-en-white.svg` | 英文站 / 国际化 banner |
+| App Icon · 红底 / 白底 | `assets/logo/app-icon-red.png` / `app-icon-white.png` | 通用 App 图标 |
+| 牛小匠 Avatar | `assets/logo/avatar-mascot-96.png` / `niuxiaojiang-logo.png` | 头像位 / chat avatar |
+| 品牌口号 Tagline | `assets/logo/tagline-xueai-laijiangren.png` | Hero / 营销 banner |
 
 ### 7.3 Logo 红线
 
