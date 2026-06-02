@@ -1,6 +1,6 @@
 # JR Academy / 匠人学院 — Master Design System
 
-> **v4.2 Brand Board · 2026-05-24** — 24 panel 完整设计系统 + 牛小匠资产库 + Voice & Tone + Brand Family
+> **v4.3 Brand Board · 2026-06-02** — 13 模块 UI 规范 + 全量图片资产库（132 个资产卡片）
 >
 > **学 AI 来匠人 · STUDY AI AT JR ACADEMY**
 > 一起成为 AI 时代的匠人 · Be an AI Craftsman.
@@ -39,18 +39,19 @@ Brand / Colors / Typography / Buttons / Inputs / Chips / Icons / Navigation / Ca
 
 ```
 jr-academy-brand/
-├── index.html              ← Brand Board（13 个模块，AI 写 UI 的视觉准绳）
+├── index.html              ← Brand Board（13 个 UI 模块 + 资产摘要）
+├── assets.html             ← 完整图片资产库（按 assets/ 全量生成 132 个资产卡片）
 ├── DESIGN.md               ← 完整设计规范 + AI Implementation Rules
 ├── _source_design.md       ← 原始设计研究稿（存档）
 ├── tokens/
 │   ├── tokens.json         ← Design tokens 源数据（W3C 格式）
 │   └── tokens.css          ← CSS Variables（--jr-*），任何项目 import 即可用
 └── assets/
-    ├── logo/               ← Logo 5 件套（TODO — logo 还在设计中）
-    ├── mascot/             ← 牛小匠 11 视图 + 8 动作（TODO）
-    ├── illustrations/      ← 4 大场景插画（探索方向 / 提升能力 / 链接机会 / 成长未来）
-    ├── banners/            ← Hero banner / 推广 banner
-    └── _inbox/             ← 待分类
+    ├── logo/               ← 当前 Logo + 历史备份
+    ├── mascot/             ← 牛小匠官方图、头像、表情、Chibi、动作、子品牌形象
+    ├── illustrations/      ← Career Impact / VI Boards 插画
+    ├── decorations/        ← 手绘星星、箭头、划线装饰
+    └── spec-sheet-*.png    ← 历史 / 当前规格总览图
 ```
 
 ---
@@ -145,8 +146,13 @@ Front · Side · Back · Sitting · Laptop · Tablet · Wave · Like · Thinking
 - [x] Brand Board 13 panel finalize（暖白底 + 红编号胶囊 + 黑色 CTA + 8px 圆角）
 - [x] emoji → lucide SVG 全替换（6 处）
 - [x] 牛小匠头像风格统一（hero 用 official 全身，其他场景按语义选 chibi/heads）
-- [x] 资产库 panel 合并 37→24（mascot/chibi/sub-brand/illustration 分组聚焦）
 - [x] `--jr-icon-*` token namespace + DESIGN.md §0.5 Icon System
+
+**v4.3 已完成（2026-06-02）**：
+- [x] 上半部分重排为新版 13 模块品牌板
+- [x] 主 Logo 换为设计师正式 Logo 文件，cube 旧版保留在资产库
+- [x] 下半部分按 `assets/` 当前文件全量展示 132 个资产卡片（含 spec sheet、backup、_inbox、吉祥物、Chibi、子品牌 mascot、插画）
+- [x] 新增 `assets.html` 独立完整资产页，像 Cert Master 的设计稿参考页一样单独承载所有图片
 
 **v4.3+ roadmap**：
 - [ ] Dashboard 示例 panel（学习中心 / Admin 后台 / 数据可视化标准布局）

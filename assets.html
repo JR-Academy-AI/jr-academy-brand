@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JR Academy / 匠人学院完整图片资产库</title>
+  <meta name="description" content="JR Academy 当前 assets 目录完整图片资产库，包含 logo、装饰、牛小匠、Chibi、子品牌 mascot 与插画。" />
+  <link rel="stylesheet" href="tokens/tokens.css" />
+  <style>
+    :root{--dark:#0D0F12;--red:#FF4D4F;--red-aa:#D92D20;--purple:#7B61FF;--yellow:#FFC84D;--green:#22C55E;--paper:#FFFCF6;--panel:#FFFDF8;--line:#F3D8B5;--n900:#1F2937;--n600:#6B7280;--n300:#D1D5DB;--n100:#F3F4F6;--shadow:0 10px 28px rgba(13,15,18,.06)}
+    *{box-sizing:border-box} html,body{margin:0} body{font-family:var(--jr-font-sans);background:radial-gradient(circle at 24px 24px,rgba(255,200,77,.12) 0 1px,transparent 1px),linear-gradient(180deg,var(--paper),#fff8ea);background-size:42px 42px,auto;color:var(--dark);-webkit-font-smoothing:antialiased} a{color:inherit;text-decoration:none} .page{width:min(1280px,calc(100vw - 32px));margin:0 auto;padding:0 0 56px}
+    .sticky{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:12px 0;background:rgba(255,252,246,.92);backdrop-filter:blur(12px)} .sticky img{width:128px} .sticky strong{font-size:14px} .links{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap} .links a{min-height:34px;display:inline-flex;align-items:center;padding:0 13px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:12px;font-weight:900} .links .primary{background:var(--dark);border-color:var(--dark);color:#fff}
+    .hero{position:relative;overflow:hidden;margin:8px 0 14px;padding:28px;border:1px solid var(--line);border-radius:16px;background:rgba(255,253,248,.95);box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 220px;gap:24px;align-items:center} .hero h1{margin:0 0 10px;font-size:38px;line-height:1.1} .hero p{margin:0;color:var(--n600);font-size:15px;line-height:1.7;font-weight:700} .hero .stats{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap} .stat{display:grid;gap:3px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:#fff} .stat b{font-size:22px} .stat span{color:var(--n600);font-size:11px;font-weight:900} .hero .mascot{width:220px;max-height:250px;object-fit:contain;filter:drop-shadow(0 18px 18px rgba(13,15,18,.16))}
+    .toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:14px 0} .toc a{display:flex;align-items:center;gap:8px;min-height:38px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:12px;font-weight:900} .toc span{display:inline-grid;place-items:center;min-width:24px;height:22px;border-radius:999px;background:var(--red-aa);color:#fff;font-size:11px}
+    .asset-section{margin-top:12px;padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,253,248,.95);box-shadow:var(--shadow)} .asset-section header{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px} .asset-section h2{display:inline;margin:0 0 5px 8px;font-size:18px} .asset-section p{margin:6px 0 0;color:var(--n600);font-size:12px;line-height:1.5} .asset-section header b{margin-left:auto;display:grid;place-items:center;min-width:34px;height:28px;border-radius:999px;background:var(--n100);color:var(--n600);font-size:12px} .num{display:inline-grid;place-items:center;min-width:34px;height:28px;border-radius:9px;background:var(--red-aa);color:#fff;font-weight:900}
+    .asset-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:12px} .asset-card{margin:0;display:grid;grid-template-rows:132px auto;gap:8px;min-height:200px;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff;text-align:center;overflow:hidden} .asset-frame{position:relative;display:grid;place-items:center;overflow:hidden;border-radius:8px;background:#FFFDF8} .asset-frame::before{content:"";position:absolute;inset:18% 14%;border-radius:50%;background:radial-gradient(circle at 50% 60%,rgba(255,200,77,.34),rgba(255,200,77,.10) 48%,transparent 72%);filter:blur(5px)} .asset-frame.dark{background:var(--dark)} .asset-frame.dark::before{background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%)} .asset-frame img{position:relative;z-index:1;max-width:92%;max-height:92%;object-fit:contain} figcaption strong{display:block;margin-bottom:5px;font-size:12px;line-height:1.25} code{display:inline-block;max-width:100%;padding:2px 6px;border-radius:4px;background:var(--n100);color:var(--n600);font-family:var(--jr-font-mono);font-size:10px;line-height:1.25;word-break:break-all}
+    @media(max-width:720px){.page{width:min(100vw - 20px,560px)}.sticky{align-items:flex-start;flex-direction:column}.links{margin-left:0}.hero{grid-template-columns:1fr;padding:20px}.hero h1{font-size:30px}.hero .mascot{width:170px;margin:auto}.asset-grid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}}
+  </style>
+</head>
+<body><main class="page">
+  <nav class="sticky"><img src="assets/logo/logo-official-black.svg" alt="JR Academy"><strong>完整图片资产库</strong><div class="links"><a href="index.html">13 模块规范</a><a class="primary" href="assets.html">132 个图片资产</a></div></nav>
+  <section class="hero"><div><h1>JR Academy 完整图片 / 吉祥物资产库</h1><p>这个页面按当前 `jr-academy-brand/assets/` 实际文件生成。所有 Logo、装饰、牛小匠、Chibi、子品牌 mascot、_inbox、Career Impact 插画和 VI Boards 都在这里。</p><div class="stats"><span class="stat"><b>132</b><span>图片文件</span></span><span class="stat"><b>22</b><span>资产分组</span></span><span class="stat"><b>0</b><span>漏引用</span></span></div></div><img class="mascot" src="assets/mascot/official/01-hero-fullbody.png" alt="牛小匠"></section>
+  <nav class="toc"><a href="#spec"><span>2</span>Spec Sheets / 规格总览</a>
+<a href="#logo-current"><span>17</span>Logo Family / 当前 Logo</a>
+<a href="#logo-backup"><span>3</span>Logo Backup / 历史备份</a>
+<a href="#decorations"><span>8</span>Decorations / 手绘装饰</a>
+<a href="#official"><span>8</span>牛小匠 Official / 官方主形象</a>
+<a href="#heads"><span>4</span>牛小匠 Heads / 头像状态</a>
+<a href="#emojis"><span>6</span>牛小匠 Emojis / 表情</a>
+<a href="#busts"><span>6</span>牛小匠 Busts / 半身表情</a>
+<a href="#working"><span>6</span>牛小匠 Working / 工作学习动作</a>
+<a href="#lifestyle"><span>6</span>牛小匠 Lifestyle / 生活场景</a>
+<a href="#outfits"><span>5</span>牛小匠 Outfits / 服装造型</a>
+<a href="#outfits-extra"><span>2</span>牛小匠 Extra Outfits / 扩展造型</a>
+<a href="#variants"><span>5</span>牛小匠 Variants / 风格变体</a>
+<a href="#chibi-icons"><span>2</span>Chibi App Icons / Chibi 图标</a>
+<a href="#chibi-expressions"><span>4</span>Chibi Expressions / Chibi 表情</a>
+<a href="#chibi-lifestyle"><span>10</span>Chibi Lifestyle / Chibi 生活场景</a>
+<a href="#chibi-working"><span>11</span>Chibi Working / Chibi 工作学习</a>
+<a href="#unimate"><span>4</span>Sub-brand UniMate / 大学课代表</a>
+<a href="#jobhunter"><span>2</span>Sub-brand Job Hunter / 求职匠</a>
+<a href="#inbox"><span>3</span>Inbox / 待整理素材</a>
+<a href="#career-impact"><span>16</span>Career Impact / 职业影响力插画</a>
+<a href="#vi-boards"><span>2</span>VI Boards / 设计板</a></nav>
+  <section class="asset-section" id="spec">
+    <header><div><span class="num">01</span><h2>Spec Sheets / 规格总览</h2><p>新旧规格总览图，方便回看设计演进。</p></div><b>2</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/spec-sheet-v2.png" alt="Spec Sheet V2" loading="lazy"></div>
+      <figcaption><strong>Spec Sheet V2</strong><code>spec-sheet-v2.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/spec-sheet-v4.png" alt="Spec Sheet V4" loading="lazy"></div>
+      <figcaption><strong>Spec Sheet V4</strong><code>spec-sheet-v4.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="logo-current">
+    <header><div><span class="num">02</span><h2>Logo Family / 当前 Logo</h2><p>当前可用的 JR Academy logo、app icon、tagline 与牛小匠 logo。</p></div><b>17</b></header>
+    <div class="asset-grid">
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/logo-official-black.svg" alt="JR Academy Official Chinese Lockup" loading="lazy"></div>
+      <figcaption><strong>Official Designer Lockup</strong><code>logo/logo-official-black.svg</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame dark"><img src="assets/logo/logo-official-icon.svg" alt="JR Academy Official Icon Mark" loading="lazy"></div>
+      <figcaption><strong>Official Designer Icon</strong><code>logo/logo-official-icon.svg</code></figcaption>
+    </figure><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/app-icon-red.png" alt="App Icon Red" loading="lazy"></div>
+      <figcaption><strong>App Icon Red</strong><code>logo/app-icon-red.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame dark"><img src="assets/logo/app-icon-white.png" alt="App Icon White" loading="lazy"></div>
+      <figcaption><strong>App Icon White</strong><code>logo/app-icon-white.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/avatar-mascot-96.png" alt="Avatar Mascot 96" loading="lazy"></div>
+      <figcaption><strong>Avatar Mascot 96</strong><code>logo/avatar-mascot-96.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/jr-box.png" alt="JR Box" loading="lazy"></div>
+      <figcaption><strong>JR Box</strong><code>logo/jr-box.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/jr-box.svg" alt="JR Box" loading="lazy"></div>
+      <figcaption><strong>JR Box</strong><code>logo/jr-box.svg</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame dark"><img src="assets/logo/logo-en-white.svg" alt="Logo En White" loading="lazy"></div>
+      <figcaption><strong>Logo En White</strong><code>logo/logo-en-white.svg</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/logo-en.svg" alt="Logo En" loading="lazy"></div>
+      <figcaption><strong>Logo En</strong><code>logo/logo-en.svg</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/logo-rounded.svg" alt="Logo Rounded" loading="lazy"></div>
+      <figcaption><strong>Logo Rounded</strong><code>logo/logo-rounded.svg</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/logo-transparent.svg" alt="Logo Transparent" loading="lazy"></div>
+      <figcaption><strong>Logo Transparent</strong><code>logo/logo-transparent.svg</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/logo-zh-full.png" alt="Logo Zh Full" loading="lazy"></div>
+      <figcaption><strong>Logo Zh Full</strong><code>logo/logo-zh-full.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/logo-zh-full.svg" alt="Legacy Chinese Lockup" loading="lazy"></div>
+      <figcaption><strong>Legacy Chinese Lockup</strong><code>logo/logo-zh-full.svg</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame dark"><img src="assets/logo/logo-zh-white.png" alt="Logo Zh White" loading="lazy"></div>
+      <figcaption><strong>Logo Zh White</strong><code>logo/logo-zh-white.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame dark"><img src="assets/logo/logo-zh-white.svg" alt="Logo Zh White" loading="lazy"></div>
+      <figcaption><strong>Logo Zh White</strong><code>logo/logo-zh-white.svg</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/niuxiaojiang-logo.png" alt="Niuxiaojiang Logo" loading="lazy"></div>
+      <figcaption><strong>Niuxiaojiang Logo</strong><code>logo/niuxiaojiang-logo.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/tagline-xueai-laijiangren.png" alt="学 AI 来匠人单独标语素材" loading="lazy"></div>
+      <figcaption><strong>学 AI 来匠人 / 单独标语素材</strong><code>logo/tagline-xueai-laijiangren.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="logo-backup">
+    <header><div><span class="num">03</span><h2>Logo Backup / 历史备份</h2><p>旧版 logo 备份，不删除，保留对照。</p></div><b>3</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/_backup-pre-2026-05-15/jr-box.svg" alt="JR Box" loading="lazy"></div>
+      <figcaption><strong>JR Box</strong><code>logo/_backup-pre-2026-05-15/jr-box.svg</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/logo/_backup-pre-2026-05-15/logo-zh-full.svg" alt="Logo Zh Full" loading="lazy"></div>
+      <figcaption><strong>Logo Zh Full</strong><code>logo/_backup-pre-2026-05-15/logo-zh-full.svg</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame dark"><img src="assets/logo/_backup-pre-2026-05-15/logo-zh-white.svg" alt="Logo Zh White" loading="lazy"></div>
+      <figcaption><strong>Logo Zh White</strong><code>logo/_backup-pre-2026-05-15/logo-zh-white.svg</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="decorations">
+    <header><div><span class="num">04</span><h2>Decorations / 手绘装饰</h2><p>星星、箭头、强调线等品牌装饰元素。</p></div><b>8</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/decorations/arrow-loop-black.png" alt="Arrow Loop Black" loading="lazy"></div>
+      <figcaption><strong>Arrow Loop Black</strong><code>decorations/arrow-loop-black.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/decorations/arrow-loop-purple.png" alt="Arrow Loop Purple" loading="lazy"></div>
+      <figcaption><strong>Arrow Loop Purple</strong><code>decorations/arrow-loop-purple.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/decorations/arrow-wavy-black.png" alt="Arrow Wavy Black" loading="lazy"></div>
+      <figcaption><strong>Arrow Wavy Black</strong><code>decorations/arrow-wavy-black.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/decorations/emphasis-burst-black.png" alt="Emphasis Burst Black" loading="lazy"></div>
+      <figcaption><strong>Emphasis Burst Black</strong><code>decorations/emphasis-burst-black.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/decorations/sparkle-4pt-black.png" alt="Sparkle 4pt Black" loading="lazy"></div>
+      <figcaption><strong>Sparkle 4pt Black</strong><code>decorations/sparkle-4pt-black.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/decorations/sparkle-4pt-yellow.png" alt="Sparkle 4pt Yellow" loading="lazy"></div>
+      <figcaption><strong>Sparkle 4pt Yellow</strong><code>decorations/sparkle-4pt-yellow.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/decorations/underline-double-yellow.png" alt="Underline Double Yellow" loading="lazy"></div>
+      <figcaption><strong>Underline Double Yellow</strong><code>decorations/underline-double-yellow.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/decorations/yellow-brush-underline.png" alt="Yellow Brush Underline" loading="lazy"></div>
+      <figcaption><strong>Yellow Brush Underline</strong><code>decorations/yellow-brush-underline.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="official">
+    <header><div><span class="num">05</span><h2>牛小匠 Official / 官方主形象</h2><p>主视觉和产品 hero 场景优先使用这一组。</p></div><b>8</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/official/01-hero-fullbody.png" alt="01 Hero Fullbody" loading="lazy"></div>
+      <figcaption><strong>01 Hero Fullbody</strong><code>mascot/official/01-hero-fullbody.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/official/02-laptop-jr-mug.png" alt="02 Laptop JR Mug" loading="lazy"></div>
+      <figcaption><strong>02 Laptop JR Mug</strong><code>mascot/official/02-laptop-jr-mug.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/official/03-laptop-code-bubble.png" alt="03 Laptop Code Bubble" loading="lazy"></div>
+      <figcaption><strong>03 Laptop Code Bubble</strong><code>mascot/official/03-laptop-code-bubble.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/official/04-thinking.png" alt="04 Thinking" loading="lazy"></div>
+      <figcaption><strong>04 Thinking</strong><code>mascot/official/04-thinking.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/official/05-teaching-data.png" alt="05 Teaching Data" loading="lazy"></div>
+      <figcaption><strong>05 Teaching Data</strong><code>mascot/official/05-teaching-data.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/official/06-celebration.png" alt="06 Celebration" loading="lazy"></div>
+      <figcaption><strong>06 Celebration</strong><code>mascot/official/06-celebration.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/official/07-laptop-closeup.png" alt="07 Laptop Closeup" loading="lazy"></div>
+      <figcaption><strong>07 Laptop Closeup</strong><code>mascot/official/07-laptop-closeup.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/official/08-cheering-victory.png" alt="08 Cheering Victory" loading="lazy"></div>
+      <figcaption><strong>08 Cheering Victory</strong><code>mascot/official/08-cheering-victory.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="heads">
+    <header><div><span class="num">06</span><h2>牛小匠 Heads / 头像状态</h2><p>空状态、卡片角标、提示区域使用。</p></div><b>4</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/heads/01-default.png" alt="01 Default" loading="lazy"></div>
+      <figcaption><strong>01 Default</strong><code>mascot/heads/01-default.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/heads/02-surprised.png" alt="02 Surprised" loading="lazy"></div>
+      <figcaption><strong>02 Surprised</strong><code>mascot/heads/02-surprised.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/heads/03-magnifying.png" alt="03 Magnifying" loading="lazy"></div>
+      <figcaption><strong>03 Magnifying</strong><code>mascot/heads/03-magnifying.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/heads/04-clipboard.png" alt="04 Clipboard" loading="lazy"></div>
+      <figcaption><strong>04 Clipboard</strong><code>mascot/heads/04-clipboard.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="emojis">
+    <header><div><span class="num">07</span><h2>牛小匠 Emojis / 表情</h2><p>聊天、反馈和轻量互动使用。</p></div><b>6</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/emojis/emoji-01-happy-tongue.png" alt="Emoji 01 Happy Tongue" loading="lazy"></div>
+      <figcaption><strong>Emoji 01 Happy Tongue</strong><code>mascot/emojis/emoji-01-happy-tongue.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/emojis/emoji-02-shy-smile.png" alt="Emoji 02 Shy Smile" loading="lazy"></div>
+      <figcaption><strong>Emoji 02 Shy Smile</strong><code>mascot/emojis/emoji-02-shy-smile.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/emojis/emoji-03-thumbs-up.png" alt="Emoji 03 Thumbs Up" loading="lazy"></div>
+      <figcaption><strong>Emoji 03 Thumbs Up</strong><code>mascot/emojis/emoji-03-thumbs-up.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/emojis/emoji-04-thinking.png" alt="Emoji 04 Thinking" loading="lazy"></div>
+      <figcaption><strong>Emoji 04 Thinking</strong><code>mascot/emojis/emoji-04-thinking.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/emojis/emoji-05-surprised-question.png" alt="Emoji 05 Surprised Question" loading="lazy"></div>
+      <figcaption><strong>Emoji 05 Surprised Question</strong><code>mascot/emojis/emoji-05-surprised-question.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/emojis/emoji-06-wow-shout.png" alt="Emoji 06 Wow Shout" loading="lazy"></div>
+      <figcaption><strong>Emoji 06 Wow Shout</strong><code>mascot/emojis/emoji-06-wow-shout.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="busts">
+    <header><div><span class="num">08</span><h2>牛小匠 Busts / 半身表情</h2><p>更强情绪表达的半身资产。</p></div><b>6</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/busts/bust-01-cheer-victory.png" alt="Bust 01 Cheer Victory" loading="lazy"></div>
+      <figcaption><strong>Bust 01 Cheer Victory</strong><code>mascot/busts/bust-01-cheer-victory.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/busts/bust-02-praying.png" alt="Bust 02 Praying" loading="lazy"></div>
+      <figcaption><strong>Bust 02 Praying</strong><code>mascot/busts/bust-02-praying.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/busts/bust-03-loving-heart.png" alt="Bust 03 Loving Heart" loading="lazy"></div>
+      <figcaption><strong>Bust 03 Loving Heart</strong><code>mascot/busts/bust-03-loving-heart.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/busts/bust-04-crying.png" alt="Bust 04 Crying" loading="lazy"></div>
+      <figcaption><strong>Bust 04 Crying</strong><code>mascot/busts/bust-04-crying.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/busts/bust-05-angry.png" alt="Bust 05 Angry" loading="lazy"></div>
+      <figcaption><strong>Bust 05 Angry</strong><code>mascot/busts/bust-05-angry.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/busts/bust-06-embarrassed.png" alt="Bust 06 Embarrassed" loading="lazy"></div>
+      <figcaption><strong>Bust 06 Embarrassed</strong><code>mascot/busts/bust-06-embarrassed.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="working">
+    <header><div><span class="num">09</span><h2>牛小匠 Working / 工作学习动作</h2><p>学习、写代码、讲解、做笔记等场景。</p></div><b>6</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/working/working-01-laptop-desk.png" alt="Working 01 Laptop Desk" loading="lazy"></div>
+      <figcaption><strong>Working 01 Laptop Desk</strong><code>mascot/working/working-01-laptop-desk.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/working/working-02-note-taking.png" alt="Working 02 Note Taking" loading="lazy"></div>
+      <figcaption><strong>Working 02 Note Taking</strong><code>mascot/working/working-02-note-taking.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/working/working-03-coding.png" alt="Working 03 Coding" loading="lazy"></div>
+      <figcaption><strong>Working 03 Coding</strong><code>mascot/working/working-03-coding.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/working/working-04-tablet-drawing.png" alt="Working 04 Tablet Drawing" loading="lazy"></div>
+      <figcaption><strong>Working 04 Tablet Drawing</strong><code>mascot/working/working-04-tablet-drawing.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/working/working-05-teaching-charts.png" alt="Working 05 Teaching Charts" loading="lazy"></div>
+      <figcaption><strong>Working 05 Teaching Charts</strong><code>mascot/working/working-05-teaching-charts.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/working/working-06-headphones-gaming.png" alt="Working 06 Headphones Gaming" loading="lazy"></div>
+      <figcaption><strong>Working 06 Headphones Gaming</strong><code>mascot/working/working-06-headphones-gaming.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="lifestyle">
+    <header><div><span class="num">10</span><h2>牛小匠 Lifestyle / 生活场景</h2><p>轻松、陪伴、休息、庆祝等生活化场景。</p></div><b>6</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/lifestyle/lifestyle-01-eating-noodles.png" alt="Lifestyle 01 Eating Noodles" loading="lazy"></div>
+      <figcaption><strong>Lifestyle 01 Eating Noodles</strong><code>mascot/lifestyle/lifestyle-01-eating-noodles.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/lifestyle/lifestyle-02-lazy-beanbag.png" alt="Lifestyle 02 Lazy Beanbag" loading="lazy"></div>
+      <figcaption><strong>Lifestyle 02 Lazy Beanbag</strong><code>mascot/lifestyle/lifestyle-02-lazy-beanbag.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/lifestyle/lifestyle-03-laptop-sitting.png" alt="Lifestyle 03 Laptop Sitting" loading="lazy"></div>
+      <figcaption><strong>Lifestyle 03 Laptop Sitting</strong><code>mascot/lifestyle/lifestyle-03-laptop-sitting.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/lifestyle/lifestyle-04-candy-pink.png" alt="Lifestyle 04 Candy Pink" loading="lazy"></div>
+      <figcaption><strong>Lifestyle 04 Candy Pink</strong><code>mascot/lifestyle/lifestyle-04-candy-pink.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/lifestyle/lifestyle-05-sleeping.png" alt="Lifestyle 05 Sleeping" loading="lazy"></div>
+      <figcaption><strong>Lifestyle 05 Sleeping</strong><code>mascot/lifestyle/lifestyle-05-sleeping.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/lifestyle/lifestyle-06-cheering-pompom.png" alt="Lifestyle 06 Cheering Pompom" loading="lazy"></div>
+      <figcaption><strong>Lifestyle 06 Cheering Pompom</strong><code>mascot/lifestyle/lifestyle-06-cheering-pompom.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="outfits">
+    <header><div><span class="num">11</span><h2>牛小匠 Outfits / 服装造型</h2><p>基础、节日、艺术等不同 outfit。</p></div><b>5</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/outfits/outfit-01-naked-basic.png" alt="Outfit 01 Naked Basic" loading="lazy"></div>
+      <figcaption><strong>Outfit 01 Naked Basic</strong><code>mascot/outfits/outfit-01-naked-basic.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/outfits/outfit-02-mandarin-collar.png" alt="Outfit 02 Mandarin Collar" loading="lazy"></div>
+      <figcaption><strong>Outfit 02 Mandarin Collar</strong><code>mascot/outfits/outfit-02-mandarin-collar.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/outfits/outfit-03-chinese-newyear.png" alt="Outfit 03 Chinese Newyear" loading="lazy"></div>
+      <figcaption><strong>Outfit 03 Chinese Newyear</strong><code>mascot/outfits/outfit-03-chinese-newyear.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/outfits/outfit-04-artist-painter.png" alt="Outfit 04 Artist Painter" loading="lazy"></div>
+      <figcaption><strong>Outfit 04 Artist Painter</strong><code>mascot/outfits/outfit-04-artist-painter.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame dark"><img src="assets/mascot/outfits/outfit-05-white-basic.png" alt="Outfit 05 White Basic" loading="lazy"></div>
+      <figcaption><strong>Outfit 05 White Basic</strong><code>mascot/outfits/outfit-05-white-basic.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="outfits-extra">
+    <header><div><span class="num">12</span><h2>牛小匠 Extra Outfits / 扩展造型</h2><p>额外扩展造型，不删除。</p></div><b>2</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/outfits-extra/green-ai-balance.png" alt="Green AI Balance" loading="lazy"></div>
+      <figcaption><strong>Green AI Balance</strong><code>mascot/outfits-extra/green-ai-balance.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/outfits-extra/pink-student-desk.png" alt="Pink Student Desk" loading="lazy"></div>
+      <figcaption><strong>Pink Student Desk</strong><code>mascot/outfits-extra/pink-student-desk.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="variants">
+    <header><div><span class="num">13</span><h2>牛小匠 Variants / 风格变体</h2><p>像素、3D、桌面小场景等实验变体。</p></div><b>5</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/variants/variant-01-pixel-8bit.png" alt="Variant 01 Pixel 8bit" loading="lazy"></div>
+      <figcaption><strong>Variant 01 Pixel 8bit</strong><code>mascot/variants/variant-01-pixel-8bit.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/variants/variant-02-3d-standing-grey.png" alt="Variant 02 3d Standing Grey" loading="lazy"></div>
+      <figcaption><strong>Variant 02 3d Standing Grey</strong><code>mascot/variants/variant-02-3d-standing-grey.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/variants/variant-03-3d-baseball-jacket.png" alt="Variant 03 3d Baseball Jacket" loading="lazy"></div>
+      <figcaption><strong>Variant 03 3d Baseball Jacket</strong><code>mascot/variants/variant-03-3d-baseball-jacket.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/variants/variant-04-3d-plushie-sitting.png" alt="Variant 04 3d Plushie Sitting" loading="lazy"></div>
+      <figcaption><strong>Variant 04 3d Plushie Sitting</strong><code>mascot/variants/variant-04-3d-plushie-sitting.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/variants/variant-05-3d-mini-desk-diorama.png" alt="Variant 05 3d Mini Desk Diorama" loading="lazy"></div>
+      <figcaption><strong>Variant 05 3d Mini Desk Diorama</strong><code>mascot/variants/variant-05-3d-mini-desk-diorama.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="chibi-icons">
+    <header><div><span class="num">14</span><h2>Chibi App Icons / Chibi 图标</h2><p>Chibi 风格 app icon。</p></div><b>2</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame dark"><img src="assets/mascot/chibi/app-icons/rounded-white.png" alt="Rounded White" loading="lazy"></div>
+      <figcaption><strong>Rounded White</strong><code>mascot/chibi/app-icons/rounded-white.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/app-icons/square-red.png" alt="Square Red" loading="lazy"></div>
+      <figcaption><strong>Square Red</strong><code>mascot/chibi/app-icons/square-red.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="chibi-expressions">
+    <header><div><span class="num">15</span><h2>Chibi Expressions / Chibi 表情</h2><p>Chibi 欢呼、思考、撒花等表达。</p></div><b>4</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/expressions/red-cheer-confetti.png" alt="Red Cheer Confetti" loading="lazy"></div>
+      <figcaption><strong>Red Cheer Confetti</strong><code>mascot/chibi/expressions/red-cheer-confetti.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/expressions/red-cheering-stars.png" alt="Red Cheering Stars" loading="lazy"></div>
+      <figcaption><strong>Red Cheering Stars</strong><code>mascot/chibi/expressions/red-cheering-stars.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/expressions/red-hoodie-cheering.png" alt="Red Hoodie Cheering" loading="lazy"></div>
+      <figcaption><strong>Red Hoodie Cheering</strong><code>mascot/chibi/expressions/red-hoodie-cheering.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/expressions/red-thinking-question.png" alt="Red Thinking Question" loading="lazy"></div>
+      <figcaption><strong>Red Thinking Question</strong><code>mascot/chibi/expressions/red-thinking-question.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="chibi-lifestyle">
+    <header><div><span class="num">16</span><h2>Chibi Lifestyle / Chibi 生活场景</h2><p>Chibi 生活化动作。</p></div><b>10</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/lifestyle/beige-camera.png" alt="Beige Camera" loading="lazy"></div>
+      <figcaption><strong>Beige Camera</strong><code>mascot/chibi/lifestyle/beige-camera.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/lifestyle/black-backpack-explorer.png" alt="Black Backpack Explorer" loading="lazy"></div>
+      <figcaption><strong>Black Backpack Explorer</strong><code>mascot/chibi/lifestyle/black-backpack-explorer.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/lifestyle/black-gym-dumbbell.png" alt="Black Gym Dumbbell" loading="lazy"></div>
+      <figcaption><strong>Black Gym Dumbbell</strong><code>mascot/chibi/lifestyle/black-gym-dumbbell.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/lifestyle/black-map-backpack.png" alt="Black Map Backpack" loading="lazy"></div>
+      <figcaption><strong>Black Map Backpack</strong><code>mascot/chibi/lifestyle/black-map-backpack.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/lifestyle/black-noodles-boba.png" alt="Black Noodles Boba" loading="lazy"></div>
+      <figcaption><strong>Black Noodles Boba</strong><code>mascot/chibi/lifestyle/black-noodles-boba.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/lifestyle/brown-plan-coffee.png" alt="Brown Plan Coffee" loading="lazy"></div>
+      <figcaption><strong>Brown Plan Coffee</strong><code>mascot/chibi/lifestyle/brown-plan-coffee.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/lifestyle/dark-reading-coffee.png" alt="Dark Reading Coffee" loading="lazy"></div>
+      <figcaption><strong>Dark Reading Coffee</strong><code>mascot/chibi/lifestyle/dark-reading-coffee.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/lifestyle/olive-writing-plants.png" alt="Olive Writing Plants" loading="lazy"></div>
+      <figcaption><strong>Olive Writing Plants</strong><code>mascot/chibi/lifestyle/olive-writing-plants.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/lifestyle/red-celebration-popper.png" alt="Red Celebration Popper" loading="lazy"></div>
+      <figcaption><strong>Red Celebration Popper</strong><code>mascot/chibi/lifestyle/red-celebration-popper.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/lifestyle/red-reading-ai.png" alt="Red Reading AI" loading="lazy"></div>
+      <figcaption><strong>Red Reading AI</strong><code>mascot/chibi/lifestyle/red-reading-ai.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="chibi-working">
+    <header><div><span class="num">17</span><h2>Chibi Working / Chibi 工作学习</h2><p>Chibi 学习、讲解、平板、电脑场景。</p></div><b>11</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/bw-code-bubble.png" alt="Bw Code Bubble" loading="lazy"></div>
+      <figcaption><strong>Bw Code Bubble</strong><code>mascot/chibi/working/bw-code-bubble.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/purple-laptop-thumbs-chibi.png" alt="Purple Laptop Thumbs Chibi" loading="lazy"></div>
+      <figcaption><strong>Purple Laptop Thumbs Chibi</strong><code>mascot/chibi/working/purple-laptop-thumbs-chibi.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/purple-laptop-thumbs-realistic.png" alt="Purple Laptop Thumbs Realistic" loading="lazy"></div>
+      <figcaption><strong>Purple Laptop Thumbs Realistic</strong><code>mascot/chibi/working/purple-laptop-thumbs-realistic.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/purple-tablet-design-realistic.png" alt="Purple Tablet Design Realistic" loading="lazy"></div>
+      <figcaption><strong>Purple Tablet Design Realistic</strong><code>mascot/chibi/working/purple-tablet-design-realistic.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/red-coffee-pointing-realistic.png" alt="Red Coffee Pointing Realistic" loading="lazy"></div>
+      <figcaption><strong>Red Coffee Pointing Realistic</strong><code>mascot/chibi/working/red-coffee-pointing-realistic.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/red-laptop-closeup.png" alt="Red Laptop Closeup" loading="lazy"></div>
+      <figcaption><strong>Red Laptop Closeup</strong><code>mascot/chibi/working/red-laptop-closeup.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/red-laptop-jr-mug.png" alt="Red Laptop JR Mug" loading="lazy"></div>
+      <figcaption><strong>Red Laptop JR Mug</strong><code>mascot/chibi/working/red-laptop-jr-mug.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/red-pen-book.png" alt="Red Pen Book" loading="lazy"></div>
+      <figcaption><strong>Red Pen Book</strong><code>mascot/chibi/working/red-pen-book.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/red-tablet-teaching.png" alt="Red Tablet Teaching" loading="lazy"></div>
+      <figcaption><strong>Red Tablet Teaching</strong><code>mascot/chibi/working/red-tablet-teaching.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/red-tablet-thumbs.png" alt="Red Tablet Thumbs" loading="lazy"></div>
+      <figcaption><strong>Red Tablet Thumbs</strong><code>mascot/chibi/working/red-tablet-thumbs.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/chibi/working/red-teaching-chart.png" alt="Red Teaching Chart" loading="lazy"></div>
+      <figcaption><strong>Red Teaching Chart</strong><code>mascot/chibi/working/red-teaching-chart.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="unimate">
+    <header><div><span class="num">18</span><h2>Sub-brand UniMate / 大学课代表</h2><p>UniMate AI 子品牌 mascot。</p></div><b>4</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/unimate/laptop-u-mug.png" alt="Laptop U Mug" loading="lazy"></div>
+      <figcaption><strong>Laptop U Mug</strong><code>mascot/unimate/laptop-u-mug.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/unimate/laptop-warning-sweating.png" alt="Laptop Warning Sweating" loading="lazy"></div>
+      <figcaption><strong>Laptop Warning Sweating</strong><code>mascot/unimate/laptop-warning-sweating.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/unimate/tablet-thumbs.png" alt="Tablet Thumbs" loading="lazy"></div>
+      <figcaption><strong>Tablet Thumbs</strong><code>mascot/unimate/tablet-thumbs.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/unimate/thinking-question.png" alt="Thinking Question" loading="lazy"></div>
+      <figcaption><strong>Thinking Question</strong><code>mascot/unimate/thinking-question.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="jobhunter">
+    <header><div><span class="num">19</span><h2>Sub-brand Job Hunter / 求职匠</h2><p>Job Hunter 子品牌 mascot。</p></div><b>2</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/jobhunter/beige-business.png" alt="Beige Business" loading="lazy"></div>
+      <figcaption><strong>Beige Business</strong><code>mascot/jobhunter/beige-business.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/jobhunter/blue-newspaper-ai.png" alt="Blue Newspaper AI" loading="lazy"></div>
+      <figcaption><strong>Blue Newspaper AI</strong><code>mascot/jobhunter/blue-newspaper-ai.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="inbox">
+    <header><div><span class="num">20</span><h2>Inbox / 待整理素材</h2><p>未整理素材先收进来，不丢。</p></div><b>3</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/_inbox/chatgpt-02-39-23.png" alt="Chatgpt 02 39 23" loading="lazy"></div>
+      <figcaption><strong>Chatgpt 02 39 23</strong><code>mascot/_inbox/chatgpt-02-39-23.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/_inbox/image-20260513-163441.png" alt="Image 20260513 163441" loading="lazy"></div>
+      <figcaption><strong>Image 20260513 163441</strong><code>mascot/_inbox/image-20260513-163441.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/mascot/_inbox/uuid-7904ea67.png" alt="Uuid 7904ea67" loading="lazy"></div>
+      <figcaption><strong>Uuid 7904ea67</strong><code>mascot/_inbox/uuid-7904ea67.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="career-impact">
+    <header><div><span class="num">21</span><h2>Career Impact / 职业影响力插画</h2><p>职业诊断、结果页、订阅转化相关插画。</p></div><b>16</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/hero-telescope.png" alt="Hero Telescope" loading="lazy"></div>
+      <figcaption><strong>Hero Telescope</strong><code>illustrations/career-impact/hero-telescope.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/map-78-careers-orbit.png" alt="Map 78 Careers Orbit" loading="lazy"></div>
+      <figcaption><strong>Map 78 Careers Orbit</strong><code>illustrations/career-impact/map-78-careers-orbit.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/path-journey-flag.png" alt="Path Journey Flag" loading="lazy"></div>
+      <figcaption><strong>Path Journey Flag</strong><code>illustrations/career-impact/path-journey-flag.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/quiz-growth-confident.png" alt="Quiz Growth Confident" loading="lazy"></div>
+      <figcaption><strong>Quiz Growth Confident</strong><code>illustrations/career-impact/quiz-growth-confident.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/quiz-mirror-relaxed.png" alt="Quiz Mirror Relaxed" loading="lazy"></div>
+      <figcaption><strong>Quiz Mirror Relaxed</strong><code>illustrations/career-impact/quiz-mirror-relaxed.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/quiz-risk-thinking.png" alt="Quiz Risk Thinking" loading="lazy"></div>
+      <figcaption><strong>Quiz Risk Thinking</strong><code>illustrations/career-impact/quiz-risk-thinking.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/result-ai-wizard.png" alt="Result AI Wizard" loading="lazy"></div>
+      <figcaption><strong>Result AI Wizard</strong><code>illustrations/career-impact/result-ai-wizard.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/result-creative-augmenter.png" alt="Result Creative Augmenter" loading="lazy"></div>
+      <figcaption><strong>Result Creative Augmenter</strong><code>illustrations/career-impact/result-creative-augmenter.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/result-cross-domain-translator.png" alt="Result Cross Domain Translator" loading="lazy"></div>
+      <figcaption><strong>Result Cross Domain Translator</strong><code>illustrations/career-impact/result-cross-domain-translator.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/result-half-beat-observer.png" alt="Result Half Beat Observer" loading="lazy"></div>
+      <figcaption><strong>Result Half Beat Observer</strong><code>illustrations/career-impact/result-half-beat-observer.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/result-mid-mountain-climber.png" alt="Result Mid Mountain Climber" loading="lazy"></div>
+      <figcaption><strong>Result Mid Mountain Climber</strong><code>illustrations/career-impact/result-mid-mountain-climber.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/result-old-map-holder.png" alt="Result Old Map Holder" loading="lazy"></div>
+      <figcaption><strong>Result Old Map Holder</strong><code>illustrations/career-impact/result-old-map-holder.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/result-sleeping-seed.png" alt="Result Sleeping Seed" loading="lazy"></div>
+      <figcaption><strong>Result Sleeping Seed</strong><code>illustrations/career-impact/result-sleeping-seed.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/result-still-life-vip.png" alt="Result Still Life Vip" loading="lazy"></div>
+      <figcaption><strong>Result Still Life Vip</strong><code>illustrations/career-impact/result-still-life-vip.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/result-wave-rider.png" alt="Result Wave Rider" loading="lazy"></div>
+      <figcaption><strong>Result Wave Rider</strong><code>illustrations/career-impact/result-wave-rider.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/career-impact/subscribe-paper-plane.png" alt="Subscribe Paper Plane" loading="lazy"></div>
+      <figcaption><strong>Subscribe Paper Plane</strong><code>illustrations/career-impact/subscribe-paper-plane.png</code></figcaption>
+    </figure></div>
+  </section><section class="asset-section" id="vi-boards">
+    <header><div><span class="num">22</span><h2>VI Boards / 设计板</h2><p>视觉识别和 mascot 设计总览板。</p></div><b>2</b></header>
+    <div class="asset-grid"><figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/vi-boards/jr-academy-visual-identity.png" alt="JR Academy Visual Identity" loading="lazy"></div>
+      <figcaption><strong>JR Academy Visual Identity</strong><code>illustrations/vi-boards/jr-academy-visual-identity.png</code></figcaption>
+    </figure>
+<figure class="asset-card">
+      <div class="asset-frame"><img src="assets/illustrations/vi-boards/unimate-ai-mascot-design.png" alt="Unimate AI Mascot Design" loading="lazy"></div>
+      <figcaption><strong>Unimate AI Mascot Design</strong><code>illustrations/vi-boards/unimate-ai-mascot-design.png</code></figcaption>
+    </figure></div>
+  </section>
+</main></body></html>

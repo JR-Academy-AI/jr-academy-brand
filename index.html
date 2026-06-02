@@ -1,612 +1,20 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JR Academy / 匠人学院 Brand Board</title>
-  <meta name="description" content="匠人学院新版品牌设计系统：品牌、颜色、字体、按钮、输入、标签、图标、导航、卡片、反馈、进度、表格与产品区块。" />
-  <link rel="stylesheet" href="tokens/tokens.css" />
-  <style>
-    :root {
-      --dark: #0D0F12;
-      --red: #FF4D4F;
-      --red-aa: #D92D20;
-      --red-text: #B42318;
-      --purple: #7B61FF;
-      --yellow: #FFC84D;
-      --green: #22C55E;
-      --n900: #1F2937;
-      --n600: #6B7280;
-      --n300: #D1D5DB;
-      --n100: #F3F4F6;
-      --n50: #FAFAFA;
-      --paper: #FFFCF6;
-      --panel: #FFFDF8;
-      --line: #F3D8B5;
-      --line-strong: #EFC98F;
-      --purple-soft: #F1EEFF;
-      --yellow-soft: #FFF4CF;
-      --green-soft: #E9FBEF;
-      --red-soft: #FFF0F0;
-      --blue-soft: #EEF5FF;
-      --shadow: 0 10px 28px rgba(13, 15, 18, 0.06);
-      --radius: 16px;
-      --r8: 8px;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; }
-    body {
-      background:
-        radial-gradient(circle at 28px 28px, rgba(255, 200, 77, 0.12) 0 1px, transparent 1px),
-        linear-gradient(180deg, var(--paper), #FFF8EA);
-      background-size: 42px 42px, auto;
-      color: var(--dark);
-      font-family: var(--jr-font-sans);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: geometricPrecision;
-    }
-    button, input, textarea { font: inherit; }
-
-    .board {
-      width: min(1512px, calc(100vw - 32px));
-      margin: 0 auto;
-      padding: 12px 0 16px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(24, minmax(0, 1fr));
-      gap: 10px;
-    }
-    .panel {
-      position: relative;
-      min-height: 154px;
-      overflow: hidden;
-      padding: 18px 20px;
-      background: rgba(255, 253, 248, 0.92);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .brand { grid-column: span 10; min-height: 330px; }
-    .colors { grid-column: span 6; min-height: 330px; }
-    .type { grid-column: span 8; min-height: 330px; }
-    .buttons { grid-column: span 5; min-height: 252px; }
-    .inputs { grid-column: span 6; min-height: 252px; }
-    .chips { grid-column: span 7; min-height: 252px; }
-    .icons { grid-column: span 6; min-height: 252px; }
-    .nav { grid-column: span 5; min-height: 220px; }
-    .cards { grid-column: span 7; min-height: 220px; }
-    .feedback { grid-column: span 5; min-height: 220px; }
-    .progress { grid-column: span 7; min-height: 220px; }
-    .table { grid-column: span 9; min-height: 250px; }
-    .product { grid-column: span 15; min-height: 250px; }
-
-    .title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 16px;
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1;
-      white-space: nowrap;
-    }
-    .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 34px;
-      height: 28px;
-      padding: 0 8px;
-      border-radius: 9px;
-      background: var(--red-aa);
-      color: #fff;
-      font-weight: 900;
-      box-shadow: inset 0 -2px 0 rgba(13, 15, 18, 0.12);
-    }
-    .title .en { color: var(--dark); font-size: 12px; font-weight: 700; }
-    .small { color: var(--n600); font-size: 11px; line-height: 1.45; }
-    .label { margin: 0 0 7px; color: var(--dark); font-size: 11px; font-weight: 800; }
-    .muted { color: var(--n600); }
-    .star { position: absolute; color: var(--yellow); font-size: 32px; line-height: 1; text-shadow: 1px 1px 0 var(--dark); }
-    .star.s1 { right: 38%; top: 50px; }
-    .star.s2 { right: 20px; top: 32px; font-size: 24px; }
-    .doodle { position: absolute; color: var(--dark); font-weight: 900; pointer-events: none; }
-
-    .brand-logo { width: 270px; max-width: 55%; height: auto; }
-    .brand-word {
-      margin: 24px 0 2px;
-      font-size: 42px;
-      font-weight: 900;
-      letter-spacing: 0;
-      line-height: 1.05;
-    }
-    .brand-word b { color: var(--red); }
-    .underline {
-      width: 250px;
-      height: 12px;
-      margin: -2px 0 12px 94px;
-      background: var(--yellow);
-      border-radius: 50%;
-      transform: rotate(-4deg);
-    }
-    .brand-copy {
-      max-width: 430px;
-      margin: 0 0 18px;
-      color: var(--n900);
-      font-size: 16px;
-      line-height: 1.55;
-      font-weight: 600;
-    }
-    .brand-pills {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      max-width: 700px;
-      padding-right: 230px;
-    }
-    .brand-pill {
-      display: grid;
-      grid-template-columns: 36px 1fr;
-      align-items: center;
-      gap: 8px;
-      min-width: 0;
-    }
-    .pill-ico {
-      width: 36px;
-      height: 36px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      font-size: 18px;
-      border: 1px solid rgba(13, 15, 18, 0.08);
-    }
-    .pill-ico.y { background: var(--yellow-soft); }
-    .pill-ico.p { background: var(--purple-soft); }
-    .pill-ico.g { background: var(--green-soft); }
-    .pill-ico.r { background: var(--red-soft); }
-    .brand-pill strong { display: block; font-size: 13px; font-weight: 800; }
-    .brand-pill span { display: block; margin-top: 2px; color: var(--n600); font-size: 11px; }
-    .brand-mascot {
-      position: absolute;
-      right: 30px;
-      top: 60px;
-      width: 190px;
-      max-height: 240px;
-      object-fit: contain;
-      filter: contrast(1.12) drop-shadow(0 18px 20px rgba(13, 15, 18, 0.18));
-    }
-
-    .color-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 20px; }
-    .swatch { min-width: 0; }
-    .box {
-      height: 68px;
-      border-radius: 10px;
-      margin-bottom: 8px;
-      box-shadow: inset 0 0 0 1px rgba(13, 15, 18, 0.08), 0 9px 20px rgba(13, 15, 18, 0.08);
-    }
-    .box.dark { background: var(--dark); }
-    .box.red { background: var(--red); }
-    .box.purple { background: var(--purple); }
-    .box.yellow { background: var(--yellow); }
-    .box.green { background: var(--green); }
-    .swatch strong, .neutral strong { display: block; font-size: 11px; }
-    .swatch code, .neutral code { color: var(--n600); font-family: var(--jr-font-mono); font-size: 10px; }
-    .neutral-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 14px; }
-    .neutral .nbox { height: 36px; border-radius: 8px; margin-bottom: 6px; border: 1px solid rgba(13, 15, 18, 0.08); }
-
-    .type-head { display: grid; grid-template-columns: 112px 1fr; gap: 20px; align-items: center; margin-bottom: 14px; }
-    .aa { font-size: 62px; line-height: 0.9; font-weight: 900; }
-    .font-line { font-size: 13px; font-weight: 700; line-height: 1.8; }
-    .type-table { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-    .type-row { display: grid; grid-template-columns: 1fr 96px 1.2fr; gap: 12px; align-items: center; min-height: 42px; padding: 0 16px; border-bottom: 1px solid #F0E2CF; }
-    .type-row:last-child { border-bottom: 0; }
-    .type-row strong { font-size: 12px; }
-    .type-row span { font-size: 12px; }
-
-    .btn-stack { display: grid; gap: 12px; max-width: 210px; }
-    .ui-btn {
-      height: 38px;
-      padding: 0 20px;
-      border: 1px solid var(--dark);
-      border-radius: var(--r8);
-      background: var(--dark);
-      color: #fff;
-      font-weight: 800;
-      cursor: default;
-    }
-    .ui-btn.outline { background: transparent; color: var(--dark); }
-    .ui-btn.text { height: 28px; border-color: transparent; background: transparent; color: var(--dark); }
-    .ui-btn.danger { height: 28px; border-color: transparent; background: transparent; color: var(--red-text); }
-
-    .form-grid { display: grid; grid-template-columns: 80px 1fr; gap: 10px 12px; align-items: start; }
-    .form-grid label { padding-top: 9px; font-size: 11px; font-weight: 800; }
-    .field, .select, textarea {
-      width: 100%;
-      min-height: 36px;
-      border: 1px solid var(--n300);
-      border-radius: var(--r8);
-      background: #fff;
-      padding: 0 12px;
-      color: var(--n900);
-      font-size: 12px;
-    }
-    .field.focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2); }
-    .select { display: flex; align-items: center; justify-content: space-between; color: var(--n600); }
-    textarea { min-height: 76px; padding-top: 10px; resize: none; }
-    .count { margin-top: -22px; padding-right: 10px; text-align: right; font-size: 10px; color: var(--n600); }
-
-    .chip-section { margin-bottom: 14px; }
-    .chips-row { display: flex; flex-wrap: wrap; gap: 9px; }
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 26px;
-      padding: 0 13px;
-      border-radius: 999px;
-      border: 1px solid #D6CEFF;
-      background: var(--purple-soft);
-      color: #3F2BA8;
-      font-size: 12px;
-      font-weight: 800;
-    }
-    .status { gap: 6px; }
-    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
-    .status.blue { color: #0E5FDB; background: var(--blue-soft); border-color: #B7D7FF; }
-    .status.green { color: #15803D; background: var(--green-soft); border-color: #BEEBD0; }
-    .status.gray { color: var(--n600); background: var(--n100); border-color: var(--n300); }
-    .status.red { color: var(--red-text); background: var(--red-soft); border-color: #FFCACA; }
-    .size-chip { background: #fff; color: var(--n900); border-color: var(--n300); }
-    .closable { background: var(--n100); color: var(--n900); border-color: var(--n300); }
-
-    .icon-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 17px 12px; }
-    .icon-item { display: grid; place-items: center; gap: 6px; font-size: 11px; font-weight: 700; }
-    .icon {
-      width: 23px;
-      height: 23px;
-      border: 2px solid var(--dark);
-      border-radius: 5px;
-      position: relative;
-    }
-    .icon.round { border-radius: 50%; }
-    .icon.starclip { border: 0; font-size: 23px; line-height: 1; }
-    .icon.starclip::before { content: "☆"; }
-
-    .topnav, .tabs, .bottomnav {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--r8);
-      margin-bottom: 10px;
-    }
-    .topnav img { width: 90px; }
-    .nav-item { padding: 6px 10px; border-radius: 7px; font-size: 11px; font-weight: 800; }
-    .nav-item.active { color: var(--red-text); border-bottom: 2px solid var(--red); }
-    .bottomnav { justify-content: space-around; }
-    .bottomnav .active { color: var(--dark); }
-
-    .card-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-    .mini-card {
-      min-height: 136px;
-      padding: 12px;
-      border: 1px solid var(--line);
-      border-radius: var(--r8);
-      background: #fff;
-    }
-    .mini-card.purple { background: linear-gradient(180deg, #F6F1FF, #FFFDF8); }
-    .mini-card.yellow { background: linear-gradient(180deg, #FFF4CF, #FFFDF8); }
-    .mini-title { font-size: 12px; font-weight: 900; margin-bottom: 8px; }
-    .big-num { margin: 10px 0 6px; font-size: 30px; font-weight: 900; }
-    .cta { display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 0 12px; background: var(--dark); color: #fff; border-radius: var(--r8); font-size: 11px; font-weight: 800; }
-
-    .alerts { display: grid; gap: 9px; }
-    .alert {
-      min-height: 38px;
-      display: grid;
-      grid-template-columns: 22px 1fr 16px;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 10px;
-      border-radius: var(--r8);
-      border: 1px solid;
-      font-size: 12px;
-      font-weight: 800;
-    }
-    .alert .mark { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 12px; }
-    .alert.success { background: var(--green-soft); border-color: #BEEBD0; }
-    .alert.warn { background: #FFF8DD; border-color: #F9DA85; }
-    .alert.error { background: var(--red-soft); border-color: #FFCACA; }
-    .alert.info { background: var(--blue-soft); border-color: #B7D7FF; }
-    .success .mark { background: var(--green); }
-    .warn .mark { background: var(--yellow); color: var(--dark); }
-    .error .mark { background: var(--red-aa); }
-    .info .mark { background: #2F7EF7; }
-
-    .steps { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; margin-bottom: 22px; }
-    .steps::before { content: ""; position: absolute; left: 12%; right: 12%; top: 14px; border-top: 1px dashed var(--n300); }
-    .step { position: relative; z-index: 1; display: grid; place-items: center; gap: 7px; font-size: 11px; font-weight: 700; }
-    .bubble { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--n300); background: #fff; font-weight: 900; }
-    .step.active .bubble { background: var(--red-aa); color: #fff; border-color: var(--red-aa); }
-    .progress-line { display: grid; grid-template-columns: 1fr 52px; align-items: center; gap: 14px; }
-    .track { height: 8px; background: var(--n300); border-radius: 999px; overflow: hidden; }
-    .track span { display: block; width: 68%; height: 100%; background: var(--red); border-radius: inherit; }
-    .badges { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 16px; }
-    .badge { min-height: 46px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: var(--r8); background: #fff; font-size: 10px; font-weight: 800; }
-
-    .data-layout { display: grid; grid-template-columns: 1.2fr 1fr 0.95fr; gap: 18px; }
-    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: var(--r8); background: #fff; font-size: 11px; }
-    th, td { padding: 11px 12px; border-bottom: 1px solid #F0E2CF; text-align: left; }
-    th { font-weight: 900; }
-    .list { display: grid; gap: 8px; }
-    .list-item { display: grid; grid-template-columns: 54px 1fr auto; gap: 8px; align-items: center; padding: 6px; border: 1px solid var(--line); border-radius: var(--r8); background: #fff; }
-    .thumb { height: 42px; border-radius: 7px; background: linear-gradient(135deg, var(--dark), var(--purple)); }
-    .empty-state { display: grid; place-items: center; text-align: center; gap: 8px; }
-    .empty-state img { width: 90px; }
-
-    .product-grid { display: grid; grid-template-columns: 1.05fr 1.1fr 1.05fr; gap: 14px; }
-    .product-card {
-      min-height: 196px;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--r8);
-      background: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-    .product-card.purple { background: linear-gradient(135deg, #F2EAFE, #FFFDF8); }
-    .product-card.green { background: linear-gradient(135deg, #F1FBF4, #FFFDF8); }
-    .product-card h3 { margin: 6px 0 8px; font-size: 28px; line-height: 1.05; }
-    .score { color: var(--red); font-size: 34px; font-weight: 900; }
-    .radar { width: 120px; height: 120px; margin: 0 auto; background: conic-gradient(from 0deg, rgba(255,77,79,.2), rgba(255,77,79,.08), rgba(255,77,79,.24)); clip-path: polygon(50% 0, 96% 35%, 78% 92%, 22% 92%, 4% 35%); border: 2px solid var(--red); }
-    .product-mascot { position: absolute; right: 8px; bottom: 0; width: 126px; }
-    .check-list { display: grid; gap: 7px; margin: 10px 0 14px; font-size: 12px; font-weight: 700; }
-    .check-list span::before { content: "✓"; color: var(--green); margin-right: 8px; font-weight: 900; }
-
-    @media (max-width: 1100px) {
-      .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
-      .brand, .colors, .type, .buttons, .inputs, .chips, .icons, .nav, .cards, .feedback, .progress, .table, .product { grid-column: 1 / -1; }
-      .brand-pills { padding-right: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .brand-mascot { opacity: 0.16; }
-      .product-grid, .data-layout, .card-row { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .board { width: min(100vw - 18px, 1512px); padding-top: 8px; }
-      .panel { padding: 15px; }
-      .brand-word { font-size: 34px; }
-      .color-grid { grid-template-columns: repeat(2, 1fr); }
-      .neutral-row { grid-template-columns: repeat(3, 1fr); }
-      .type-head { grid-template-columns: 1fr; }
-      .icon-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    /* ── Logo gallery, Mascot gallery, brand text panels ─────────────── */
-    .gallery .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--cell, 120px), 1fr)); gap: 12px; }
-    .gallery .cell {
-      display: grid;
-      grid-template-rows: var(--cell, 120px) auto;
-      gap: 6px; margin: 0;
-      padding: 10px 8px 12px;
-      border: 1px solid var(--line);
-      border-radius: var(--r8);
-      background: linear-gradient(180deg, var(--panel) 0%, var(--paper) 100%);
-      text-align: center;
-    }
-    .gallery .stage {
-      position: relative;
-      display: grid; place-items: center;
-      width: 100%; height: var(--cell, 120px);
-      overflow: hidden;
-    }
-    .gallery .stage::before {
-      content: "";
-      position: absolute; inset: 14% 14%;
-      border-radius: 50%;
-      background: radial-gradient(circle at 50% 60%, rgba(255, 200, 77, 0.4) 0%, rgba(255, 200, 77, 0.14) 35%, transparent 70%);
-      filter: blur(6px);
-    }
-    .gallery .stage img {
-      position: relative; z-index: 1;
-      max-width: 88%; max-height: 88%;
-      object-fit: contain;
-    }
-    .gallery figcaption { font-size: 10px; font-weight: 700; color: var(--n600); line-height: 1.3; }
-    .gallery .cell strong { font-size: 12px; font-weight: 800; color: var(--dark); }
-    .gallery .cell small { font-size: 10px; color: var(--n600); margin-top: -2px; }
-    .gallery .cell code {
-      display: inline-block; padding: 2px 6px;
-      background: var(--n100); border-radius: 4px;
-      font-family: ui-monospace, Menlo, monospace;
-      font-size: 10px; color: var(--n600);
-    }
-    .logo-gallery .cell { background: #fff; }
-
-    /* span helpers */
-    .span-5{--span:5}.span-6{--span:6}.span-7{--span:7}.span-8{--span:8}
-    .span-9{--span:9}.span-10{--span:10}.span-12{--span:12}.span-15{--span:15}.span-24{--span:24}
-    .panel { grid-column: span var(--span, 8); }
-
-    /* panel head v2 (override Codex .title with our .panel-head)
-       since v4-board uses .title not .panel-head, also style .panel-head */
-    .panel-head { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; }
-    .panel-head h3 { flex: 1; margin: 0; font-size: 14px; font-weight: 800; line-height: 1; color: var(--dark); }
-    .panel-head h3 span { font-size: 12px; font-weight: 700; opacity: 0.75; margin-left: 4px; }
-    .panel-head .num {
-      flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
-      min-width: 34px; height: 28px; padding: 0 8px;
-      border-radius: 9px; background: var(--red-aa, #D92D20); color: #fff;
-      font-size: 13px; font-weight: 900;
-      box-shadow: inset 0 -2px 0 rgba(13,15,18,0.14);
-    }
-    .panel-head .count {
-      flex-shrink: 0; display: inline-flex; align-items: center; height: 22px; padding: 0 8px;
-      border-radius: 999px; background: var(--n100); color: var(--n600);
-      font-size: 11px; font-weight: 700;
-    }
-    .panel p.lead { margin: -4px 0 14px; color: var(--n600); font-size: 12px; line-height: 1.5; }
-
-    /* Brand text panels */
-    .panel .quote {
-      padding: 12px 14px; border-left: 3px solid var(--red);
-      background: var(--yellow-soft); border-radius: 0 8px 8px 0;
-      font-size: 14px; line-height: 1.6;
-    }
-    .panel .quote b { font-size: 18px; color: var(--dark); }
-    .panel ul.pros, .panel ul.cons { margin: 6px 0 0; padding-left: 18px; font-size: 12px; line-height: 1.7; }
-    .panel ul.cons li { color: var(--red-text); }
-    .panel .mini-tbl { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
-    .panel .mini-tbl th, .panel .mini-tbl td { padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--n100); }
-    .panel .mini-tbl th { background: var(--n50); font-weight: 800; }
-    .panel .mini-tbl code { font-family: ui-monospace, Menlo, monospace; font-size: 10px; background: var(--n100); padding: 1px 5px; border-radius: 3px; }
-    .dd { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
-    /* Deco panels reused styles */
-    .deco-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
-    .deco-cell { display: grid; grid-template-rows: 64px auto; align-items: center; justify-items: center; gap: 6px; padding: 12px 8px; border: 1px solid var(--line); border-radius: var(--r8); background: #fff; text-align: center; }
-    .deco-cell .stage { display: grid; place-items: center; width: 100%; height: 64px; }
-    .deco-cell strong { font-size: 11px; font-weight: 800; }
-    .scatter { position: relative; min-height: 200px; padding: 24px; border: 1px dashed var(--line); border-radius: var(--r8); background: linear-gradient(180deg, #fffdf7 0%, #fbfcfe 100%); overflow: hidden; }
-    .scatter .pin { position: absolute; pointer-events: none; }
-    .scatter .stage-text { position: relative; z-index: 1; text-align: center; padding: 32px 0; font-size: 24px; font-weight: 900; line-height: 1.2; }
-    .highlight { padding: 0 5px; background: linear-gradient(transparent 62%, var(--yellow) 62%); font-weight: 900; }
-    .highlight--red { color: var(--red); }
-
-    /* ── v4.2 — gallery sub-group header (合并 panel 内多分组标题) ──── */
-    .gallery-group {
-      margin: 16px 0 8px;
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .gallery-group:first-of-type { margin-top: 4px; }
-    .gallery-group .count-inline {
-      display: inline-flex;
-      align-items: center;
-      height: 18px;
-      padding: 0 6px;
-      border-radius: 999px;
-      background: var(--n100);
-      color: var(--n600);
-      font-size: 10px;
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-    }
-
-    /* ── v4.1 polish ───────────────────────────────────────────────── */
-    /* Real lucide icons for panel 07 */
-    .icon-grid--lucide .icon-item {
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-      font-size: 11px; font-weight: 700; color: var(--dark);
-    }
-    .icon-grid--lucide .icon-item svg {
-      width: 24px; height: 24px; color: var(--dark);
-    }
-    /* Make brand panel mascot slightly larger and softer */
-    .brand-mascot {
-      filter: drop-shadow(0 18px 20px rgba(13, 15, 18, 0.18));
-    }
-    /* Panel title (top 13) — add `/ ` prefix to .en for design parity */
-    .title .en::before { content: ""; }
-    /* Soften body so design contrasts read correctly */
-    body { color-scheme: light; }
-  </style>
-</head>
-<body>
-  <main class="board">
-    <div class="grid">
-      <section class="panel brand">
-        <header class="title"><span class="num">01</span><span>品牌头部</span><span class="en">/ Brand</span></header>
-        <img class="brand-logo" src="assets/logo/logo-zh-full.svg" alt="匠人学院 JR Academy" />
-        <div class="brand-word">学<b>AI</b>来匠人</div>
-        <div class="underline"></div>
-        <p class="brand-copy">系统化 AI 学习与职业成长平台，<br>陪你从入门到精通，用 AI 改变未来。</p>
-        <div class="brand-pills">
-          <div class="brand-pill"><span class="pill-ico p"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span><strong>体系化课程</strong><span>系统学习路径</span></span></div>
-          <div class="brand-pill"><span class="pill-ico y"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><span><strong>AI 实战项目</strong><span>学以致用</span></span></div>
-          <div class="brand-pill"><span class="pill-ico g"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span><span><strong>职业赋能</strong><span>能力进阶</span></span></div>
-          <div class="brand-pill"><span class="pill-ico r"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span><strong>陪伴式成长</strong><span>社群与教练</span></span></div>
-        </div>
-        <img class="brand-mascot" src="assets/mascot/official/01-hero-fullbody.png" alt="牛小匠" />
-        <span class="star s1">✦</span><span class="doodle" style="right:22px;top:88px;font-size:26px;">⌁</span>
-      </section>
-
-      <section class="panel colors">
-        <header class="title"><span class="num">02</span><span>颜色系统</span><span class="en">/ Colors</span></header>
-        <div class="color-grid">
-          <div class="swatch"><div class="box dark"></div><strong>主色 / Dark</strong><code>#0D0F12</code></div>
-          <div class="swatch"><div class="box red"></div><strong>强调色 / Red</strong><code>#FF4D4F</code></div>
-          <div class="swatch"><div class="box purple"></div><strong>紫色 / Purple</strong><code>#7B61FF</code></div>
-          <div class="swatch"><div class="box yellow"></div><strong>黄色 / Yellow</strong><code>#FFC84D</code></div>
-          <div class="swatch"><div class="box green"></div><strong>绿色 / Green</strong><code>#22C55E</code></div>
-        </div>
-        <div class="neutral-row">
-          <div class="neutral"><div class="nbox" style="background:#1F2937"></div><strong>中性 900</strong><code>#1F2937</code></div>
-          <div class="neutral"><div class="nbox" style="background:#6B7280"></div><strong>中性 600</strong><code>#6B7280</code></div>
-          <div class="neutral"><div class="nbox" style="background:#D1D5DB"></div><strong>中性 300</strong><code>#D1D5DB</code></div>
-          <div class="neutral"><div class="nbox" style="background:#F3F4F6"></div><strong>中性 100</strong><code>#F3F4F6</code></div>
-          <div class="neutral"><div class="nbox" style="background:#FAFAFA"></div><strong>中性 50</strong><code>#FAFAFA</code></div>
-        </div>
-        <span class="doodle" style="right:30px;bottom:40px;font-size:42px;transform:rotate(-20deg);">↝</span>
-      </section>
-
-      <section class="panel type">
-        <header class="title"><span class="num">03</span><span>字体系统</span><span class="en">/ Typography</span></header>
-        <div class="type-head">
-          <div class="aa">Aa</div>
-          <div>
-            <div class="font-line">中文字体：思源黑体 / Source Han Sans</div>
-            <div class="font-line">英文字体：Inter</div>
-          </div>
-        </div>
-        <div class="type-table">
-          <div class="type-row"><strong>标题 1 / H1</strong><span>32px / Bold</span><b>学AI来匠人</b></div>
-          <div class="type-row"><strong>标题 2 / H2</strong><span>24px / Bold</span><b>开启你的 AI 职业新旅程</b></div>
-          <div class="type-row"><strong>标题 3 / H3</strong><span>18px / Semibold</span><b>体系化学习，高效成长</b></div>
-          <div class="type-row"><strong>正文 / Body</strong><span>14px / Regular</span><span>AI 让学习更高效，工作更轻松。</span></div>
-          <div class="type-row"><strong>辅助 / Caption</strong><span>12px / Regular</span><span>陪伴式成长，成就更好的你。</span></div>
-        </div>
-        <span class="star s2">✦</span>
-      </section>
-
-      <section class="panel buttons">
-        <header class="title"><span class="num">04</span><span>按钮系统</span><span class="en">/ Buttons</span></header>
-        <p class="label">主要按钮（Primary）</p>
-        <div class="btn-stack">
-          <button class="ui-btn">开始学习 →</button>
-          <button class="ui-btn outline">了解课程</button>
-          <button class="ui-btn text">查看更多 →</button>
-          <button class="ui-btn danger">删除 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg></button>
-        </div>
-        <span class="doodle" style="right:20px;top:20px;font-size:42px;transform:rotate(28deg);">⌒</span>
-      </section>
-
-      <section class="panel inputs">
-        <header class="title"><span class="num">05</span><span>输入框</span><span class="en">/ Inputs</span></header>
-        <div class="form-grid">
-          <label>默认输入框</label><input class="field" placeholder="输入你的邮箱地址" />
-          <label>聚焦状态</label><input class="field focus" value="hello@jracademy.com" readonly />
-          <label>选择器</label><div class="select">选择学习方向 <b style="color:var(--red)">⌄</b></div>
-          <label>多行文本</label><div><textarea placeholder="说说你的学习目标或问题..."></textarea><div class="count">0/200</div></div>
-        </div>
-      </section>
-
-      <section class="panel chips">
-        <header class="title"><span class="num">06</span><span>标签 / Chips / 状态</span></header>
-        <div class="chip-section"><p class="label">标签 / Tags</p><div class="chips-row"><span class="tag">AI 入门</span><span class="tag">Python</span><span class="tag">大模型</span><span class="tag">数据分析</span></div></div>
-        <div class="chip-section"><p class="label">状态 / Status Pills</p><div class="chips-row"><span class="tag status blue">进行中</span><span class="tag status green">已完成</span><span class="tag status gray">待开始</span><span class="tag status red">已过期</span></div></div>
-        <div class="chip-section"><p class="label">大小 / Size</p><div class="chips-row"><span class="tag">大标签</span><span class="tag size-chip">中标签</span><span class="tag size-chip" style="min-height:22px;font-size:11px;">小标签</span></div></div>
-        <div><p class="label">可关闭标签</p><div class="chips-row"><span class="tag closable">前端开发 ×</span><span class="tag closable">提示词工程 ×</span><span class="tag closable">AI 绘画 ×</span></div></div>
-      </section>
-
-      <section class="panel icons">
+<html lang="zh-CN"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>JR Academy / 匠人学院 Brand Board</title><meta name="description" content="匠人学院品牌设计系统：13 模块 UI 规范、Logo、装饰元素、牛小匠吉祥物、Chibi、子品牌 mascot 与插画资产库。" /><link rel="stylesheet" href="tokens/tokens.css" /><style>
+    :root{--dark:#0D0F12;--red:#FF4D4F;--red-aa:#D92D20;--red-text:#B42318;--purple:#7B61FF;--yellow:#FFC84D;--green:#22C55E;--n900:#1F2937;--n600:#6B7280;--n300:#D1D5DB;--n100:#F3F4F6;--n50:#FAFAFA;--paper:#FFFCF6;--panel:#FFFDF8;--line:#F3D8B5;--purple-soft:#F1EEFF;--yellow-soft:#FFF4CF;--green-soft:#E9FBEF;--red-soft:#FFF0F0;--blue-soft:#EEF5FF;--shadow:0 10px 28px rgba(13,15,18,.06);--radius:16px;--r8:8px}*{box-sizing:border-box}html,body{margin:0;min-height:100%}body{background:radial-gradient(circle at 28px 28px,rgba(255,200,77,.12) 0 1px,transparent 1px),linear-gradient(180deg,var(--paper),#FFF8EA);background-size:42px 42px,auto;color:var(--dark);font-family:var(--jr-font-sans);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.page{width:min(1512px,calc(100vw - 32px));margin:0 auto;padding:12px 0 44px}.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:10px 0;background:linear-gradient(180deg,rgba(255,252,246,.96),rgba(255,252,246,.76));backdrop-filter:blur(10px)}.topbar img{width:138px;height:auto}.topbar strong{font-size:13px}.toplinks{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}.toplinks a{min-height:34px;display:inline-flex;align-items:center;padding:0 13px;border:1px solid var(--line);border-radius:var(--r8);background:#fff;font-size:12px;font-weight:900}.toplinks a.primary{background:var(--dark);color:#fff;border-color:var(--dark)}.board-grid{display:grid;grid-template-columns:repeat(24,minmax(0,1fr));gap:10px}.panel{position:relative;overflow:hidden;padding:16px 18px;background:rgba(255,253,248,.94);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.brand{grid-column:span 10;min-height:330px}.colors{grid-column:span 6;min-height:330px}.type{grid-column:span 8;min-height:330px}.buttons{grid-column:span 5;min-height:252px}.inputs{grid-column:span 6;min-height:252px}.chips{grid-column:span 7;min-height:252px}.icons{grid-column:span 6;min-height:252px}.nav{grid-column:span 5;min-height:220px}.cards{grid-column:span 7;min-height:220px}.feedback{grid-column:span 5;min-height:220px}.progress{grid-column:span 7;min-height:220px}.table{grid-column:span 9;min-height:250px}.product{grid-column:span 15;min-height:250px}.title,.section-head{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:14px;font-weight:900;line-height:1}.num{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;padding:0 8px;border-radius:9px;background:var(--red-aa);color:#fff;font-weight:900;box-shadow:inset 0 -2px 0 rgba(13,15,18,.12)}.en{font-size:12px;font-weight:800}.label{margin:0 0 7px;font-size:11px;font-weight:900}.small{color:var(--n600);font-size:11px;line-height:1.45}.brand-logo{width:270px;max-width:55%;height:auto}.brand-word{margin:22px 0 0;font-size:42px;font-weight:900;line-height:1.05}.brand-word b{color:var(--red)}.underline{width:250px;height:12px;margin:-2px 0 12px 92px;background:var(--yellow);border-radius:50%;transform:rotate(-4deg)}.brand-copy{max-width:430px;margin:0 0 16px;color:var(--n900);font-size:16px;line-height:1.55;font-weight:700}.brand-pills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:560px}.brand-pill{display:grid;grid-template-columns:36px 1fr;gap:8px;align-items:center}.pill-ico{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(13,15,18,.08);color:var(--dark)}.pill-ico.y{background:var(--yellow-soft)}.pill-ico.p{background:var(--purple-soft)}.pill-ico.g{background:var(--green-soft)}.pill-ico.r{background:var(--red-soft)}.brand-pill strong{display:block;white-space:nowrap;font-size:13px}.brand-pill span span{display:block;margin-top:2px;color:var(--n600);white-space:nowrap;font-size:11px}.brand-mascot{position:absolute;right:28px;top:58px;width:190px;max-height:240px;object-fit:contain;filter:contrast(1.12) drop-shadow(0 18px 20px rgba(13,15,18,.18))}.doodle{position:absolute;pointer-events:none;color:var(--dark);font-weight:900}.color-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 20px}.box{height:68px;border-radius:10px;margin-bottom:8px;box-shadow:inset 0 0 0 1px rgba(13,15,18,.08),0 9px 20px rgba(13,15,18,.08)}.box.dark{background:var(--dark)}.box.red{background:var(--red)}.box.purple{background:var(--purple)}.box.yellow{background:var(--yellow)}.box.green{background:var(--green)}.swatch strong,.neutral strong{display:block;font-size:11px}.swatch code,.neutral code{color:var(--n600);font-family:var(--jr-font-mono);font-size:10px}.neutral-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}.nbox{height:36px;border-radius:8px;margin-bottom:6px;border:1px solid rgba(13,15,18,.08)}.type-head{display:grid;grid-template-columns:112px 1fr;gap:20px;align-items:center;margin-bottom:14px}.aa{font-size:62px;line-height:.9;font-weight:900}.font-line{font-size:13px;font-weight:800;line-height:1.8}.type-table{border:1px solid var(--line);border-radius:12px;overflow:hidden}.type-row{display:grid;grid-template-columns:1fr 96px 1.2fr;gap:12px;align-items:center;min-height:42px;padding:0 16px;border-bottom:1px solid #F0E2CF}.type-row:last-child{border-bottom:0}.type-row strong,.type-row span{font-size:12px}.btn-stack{display:grid;gap:10px;max-width:210px}.ui-btn{height:38px;padding:0 20px;border:1px solid var(--dark);border-radius:var(--r8);background:var(--dark);color:#fff;font-weight:900}.ui-btn.outline{background:transparent;color:var(--dark)}.ui-btn.text{height:28px;border-color:transparent;background:transparent;color:var(--dark)}.ui-btn.danger{height:28px;width:fit-content;border-color:transparent;background:transparent;color:var(--red);padding:0}.form{display:grid;grid-template-columns:86px 1fr;gap:9px 14px;align-items:start}.form label{padding-top:9px;font-size:11px;font-weight:900}.field,textarea,select{width:100%;height:36px;padding:0 14px;border:1px solid var(--n300);border-radius:var(--r8);background:#fff;color:var(--dark);outline:0;box-shadow:inset 0 1px 2px rgba(13,15,18,.04)}.field.focus{border-color:var(--purple);box-shadow:0 0 0 3px var(--jr-focus-ring);color:#3F2BA8}textarea{height:64px;padding-top:10px;resize:none}.count{margin-top:-22px;padding-right:10px;text-align:right;color:var(--n600);font-size:11px}.chip-section{margin-bottom:11px}.chips-row{display:flex;flex-wrap:wrap;gap:10px}.tag{display:inline-flex;align-items:center;gap:6px;min-height:24px;padding:0 14px;border:1px solid #D6CEFF;border-radius:999px;background:var(--purple-soft);color:#3F2BA8;font-size:12px;font-weight:900;white-space:nowrap}.status.blue{background:#EAF3FF;border-color:#BBD7FF;color:#0969DA}.status.green{background:var(--green-soft);border-color:#BDECCB;color:#15803D}.status.gray{background:var(--n100);border-color:var(--n300);color:var(--n600)}.status.red{background:var(--red-soft);border-color:#FFC2C2;color:var(--red-text)}.tag.sm{min-height:22px;padding:0 12px;background:#fff;border-color:var(--n300);color:var(--n900)}.icon-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px 18px;padding-top:8px}.icon-grid--lucide .icon-item,.icon-item{display:grid;justify-items:center;gap:5px;color:var(--dark);font-size:11px;font-weight:900;text-align:center}.icon-grid--lucide .icon-item svg,.icon-item svg{width:24px;height:24px}.topnav{display:flex;align-items:center;gap:14px;height:34px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:#fff}.topnav img{width:76px;height:auto}.nav-item{font-size:10px;font-weight:900}.nav-item.active{color:var(--red-text)}.tabs,.bottom-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:10px;padding:4px;border:1px solid var(--line);border-radius:8px;background:#fff}.tabs span,.bottom-nav span{display:grid;place-items:center;min-height:30px;font-size:11px;font-weight:900;border-radius:6px}.tabs .active{background:var(--red-soft);color:var(--red-text)}.mini-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.mini-card{min-height:150px;padding:12px;border:1px solid var(--line);border-radius:var(--r8);background:#fff;overflow:hidden}.mini-card:nth-child(2){background:#FFF7FB}.mini-card:nth-child(3){background:#F8F4FF}.mini-card:nth-child(4){background:#FFF8E8}.mini-title{margin-bottom:10px;font-size:11px;font-weight:900}.mini-card b{font-size:13px;line-height:1.25}.metric{margin:8px 0;font-size:28px;font-weight:900}.avatars{display:flex;margin-top:24px}.avatars span{width:20px;height:20px;margin-right:-5px;border:2px solid #fff;border-radius:50%;background:var(--dark)}.cta{display:inline-flex;align-items:center;justify-content:center;min-height:30px;padding:0 12px;border-radius:var(--r8);background:var(--dark);color:#fff;font-size:11px;font-weight:900;white-space:nowrap}.alerts{display:grid;gap:9px}.alert{display:grid;grid-template-columns:22px 1fr 16px;align-items:center;min-height:34px;padding:0 12px;border:1px solid;border-radius:8px;font-size:12px;font-weight:900}.alert.success{background:var(--green-soft);border-color:#BDECCB;color:#166534}.alert.warn{background:#FFF7D7;border-color:#F5D66A;color:#854D0E}.alert.error{background:var(--red-soft);border-color:#FFC2C2;color:var(--red-text)}.alert.info{background:#EEF5FF;border-color:#BBD7FF;color:#1D4ED8}.mark{width:18px;height:18px;border-radius:50%;background:currentColor}.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin:8px 0 16px}.steps::before{content:"";position:absolute;left:12%;right:12%;top:14px;border-top:1px dashed var(--n300)}.step{position:relative;z-index:1;display:grid;justify-items:center;gap:8px;font-size:11px;font-weight:900}.bubble{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#fff;border:1px solid var(--n300)}.step.active .bubble{background:var(--red);border-color:var(--red);color:#fff}.progress-line{display:grid;grid-template-columns:1fr 52px;align-items:center;gap:14px}.track{height:8px;border-radius:999px;background:var(--n300);overflow:hidden}.track span{display:block;width:68%;height:100%;border-radius:inherit;background:var(--red)}.badges{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}.badge{min-height:42px;display:grid;place-items:center;padding:5px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:10px;font-weight:900;text-align:center}.data-layout{display:grid;grid-template-columns:1.1fr 1.15fr 1fr;gap:16px}table{width:100%;border-collapse:collapse;overflow:hidden;border:1px solid #E5E7EB;border-radius:8px;background:#fff;font-size:11px}th,td{padding:8px;border-bottom:1px solid #E5E7EB;text-align:left}th{background:#F9FAFB;font-weight:900}tr:last-child td{border-bottom:0}.list{display:grid;gap:6px}.list-item{display:grid;grid-template-columns:40px 1fr auto;gap:8px;align-items:center;min-height:42px;padding:5px;border:1px solid #E5E7EB;border-radius:8px;background:#fff;font-size:11px}.thumb{width:40px;height:32px;border-radius:6px;background:linear-gradient(135deg,#0F172A,#FF4D4F)}.empty-state{display:grid;justify-items:center;align-content:center;gap:6px;min-height:150px;text-align:center}.empty-state img{width:72px;height:54px;object-fit:contain;filter:grayscale(1) contrast(1.1)}.product-grid{display:grid;grid-template-columns:1.05fr 1.1fr 1.05fr;gap:14px}.product-card{position:relative;min-height:184px;padding:16px;overflow:hidden;border:1px solid var(--line);border-radius:var(--r8);background:#fff}.product-card.purple{background:linear-gradient(135deg,#F3EEFF,#FFFDF8)}.product-card.green{background:linear-gradient(135deg,#EFFBF4,#FFFDF8)}.product-card h3{margin:6px 0 8px;font-size:22px;line-height:1.12}.score{color:var(--red);font-size:24px;font-weight:900}.radar{width:100px;height:100px;margin:0 auto;background:conic-gradient(from 0deg,rgba(255,77,79,.2),rgba(255,77,79,.08),rgba(255,77,79,.24));clip-path:polygon(50% 0,96% 35%,78% 92%,22% 92%,4% 35%);border:2px solid var(--red)}.product-mascot{position:absolute;right:-6px;bottom:-14px;width:104px;max-height:132px;object-fit:contain;filter:drop-shadow(0 12px 14px rgba(13,15,18,.16))}.check-list{display:grid;gap:5px;margin:8px 0 10px;font-size:11px;font-weight:800}.check-list span::before{content:"✓";color:var(--green);margin-right:7px}.asset-library{margin-top:18px}.library-hero{padding:22px 24px;border:1px solid var(--line);border-radius:16px;background:rgba(255,253,248,.94);box-shadow:var(--shadow)}.library-hero h1{margin:0 0 8px;font-size:30px;line-height:1.15}.library-hero p{margin:0;color:var(--n600);font-size:14px;line-height:1.6}.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.toc a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:12px;font-weight:900}.asset-section{margin-top:12px;padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,253,248,.94);box-shadow:var(--shadow)}.section-head{align-items:flex-start;margin-bottom:14px}.section-head h2{margin:0 0 5px;font-size:16px}.section-head p{margin:0;color:var(--n600);font-size:12px;line-height:1.45}.section-head b{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:24px;border-radius:999px;background:var(--n100);color:var(--n600);font-size:11px}.asset-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}.asset-card{margin:0;min-height:184px;padding:10px;display:grid;grid-template-rows:124px auto;gap:8px;border:1px solid var(--line);border-radius:10px;background:#fff;text-align:center;overflow:hidden}.asset-stage{position:relative;display:grid;place-items:center;overflow:hidden;border-radius:8px;background:#FFFDF8}.asset-stage::before{content:"";position:absolute;inset:18% 14%;border-radius:50%;background:radial-gradient(circle at 50% 60%,rgba(255,200,77,.34),rgba(255,200,77,.1) 48%,transparent 72%);filter:blur(5px)}.dark-stage{background:var(--dark)}.dark-stage::before{background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%)}.asset-stage img{position:relative;z-index:1;max-width:90%;max-height:90%;object-fit:contain}.asset-card strong{display:block;margin-bottom:5px;font-size:12px;line-height:1.25}.asset-card code{display:inline-block;max-width:100%;padding:2px 6px;border-radius:4px;background:var(--n100);color:var(--n600);font-family:var(--jr-font-mono);font-size:10px;line-height:1.25;word-break:break-all}
+.brand::after{content:"";position:absolute;right:30px;top:74px;width:172px;height:172px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,77,.15),transparent 66%);filter:blur(2px)}.brand-logo{width:272px}.tagline-art{display:block;width:376px;max-width:62%;height:auto;margin:18px 0 8px -4px}.brand-mascot{right:42px;top:58px;width:166px;max-height:176px;z-index:2;filter:contrast(1.12) drop-shadow(0 16px 18px rgba(13,15,18,.18))}.brand-pill .pill-ico svg{width:20px;height:20px;stroke-width:2.2}.brand-pill strong{font-size:13px}.doodle.spark2{right:168px;top:55px;font-size:18px}.doodle.spark3{right:228px;top:132px;font-size:18px}.doodle.lines{right:32px;top:126px;font-size:28px;letter-spacing:3px;transform:rotate(15deg)}.buttons .squiggle{position:absolute;right:34px;top:22px;width:52px;height:34px}.buttons .trash-icon{width:16px;height:16px;vertical-align:-3px;margin-left:52px}.ui-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-width:214px}.ui-btn.text{justify-content:flex-start;min-width:190px}.colors .curve-arrow,.icons .corner-star,.progress .curve-arrow{position:absolute;pointer-events:none}.colors .curve-arrow{right:34px;bottom:86px;width:70px;height:70px}.icons .corner-star{right:22px;top:20px;width:48px;height:48px}.progress .curve-arrow{right:16px;bottom:12px;width:60px;height:60px}.mini-card{position:relative}.mini-card .tiny-icon{width:30px;height:30px;display:grid;place-items:center;border:1px solid #D6CEFF;border-radius:8px;background:var(--purple-soft);color:var(--purple);margin:2px 0 10px}.mini-card .tiny-icon svg{width:18px;height:18px}.starscore{position:absolute;right:10px;bottom:10px;color:var(--red-text);font-size:11px;font-weight:900}.badge{min-height:56px;gap:4px}.badge svg{width:25px;height:25px}.badge.purple svg{color:#6D5BD0}.badge.gold svg{color:#D68A00}.badge.blue svg{color:#2F73D9}.badge.red svg{color:#E35231}.badge.yellow svg{color:#F5A400}.product-card h3{font-size:23px}.product-card.purple .product-mascot{width:112px;right:4px;bottom:8px}.product-card.green .product-mascot{width:130px;right:-2px;bottom:10px}.meta-dots{display:flex;gap:14px;margin:10px 0 14px;font-size:11px;font-weight:800;color:var(--n600)}.meta-dots span{display:inline-flex;align-items:center;gap:4px}.meta-dots i{width:10px;height:10px;border:1px solid currentColor;border-radius:50%}.speech{position:absolute;right:12px;bottom:8px;max-width:178px;padding:8px 10px;border:1px solid var(--dark);border-radius:18px;background:#fff;font-size:11px;line-height:1.45;font-weight:800;transform:rotate(-4deg)}.radar-wrap{display:grid;grid-template-columns:1fr 128px;gap:8px;align-items:center}.axis-note{font-size:10px;color:var(--n600);line-height:1.9}.axis-note b{color:var(--dark)}
+@media(max-width:1100px){.board-grid{grid-template-columns:repeat(12,minmax(0,1fr))}.brand,.colors,.type,.buttons,.inputs,.chips,.icons,.nav,.cards,.feedback,.progress,.table,.product{grid-column:span 12}.brand-mascot{opacity:.25}}@media(max-width:720px){.page{width:min(100vw - 20px,560px)}.topbar{align-items:flex-start;flex-direction:column}.toplinks{margin-left:0}.panel{padding:15px}.brand-logo{max-width:76%}.brand-word{font-size:34px}.brand-mascot{position:static;width:150px;opacity:1;margin:4px auto 0;display:block}.brand-pills,.color-grid,.neutral-row,.mini-cards,.data-layout,.product-grid,.badges,.type-head,.type-row,.form{grid-template-columns:1fr}.icon-grid{grid-template-columns:repeat(3,1fr)}.asset-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
+</style></head>
+<body><main class="page"><nav class="topbar" aria-label="Brand navigation"><img src="assets/logo/logo-official-black.svg" alt="JR Academy" /><strong>Brand Board · 完整资产库</strong><div class="toplinks"><a class="primary" href="#brand-board">13 模块规范</a><a href="assets.html">完整图片资产库</a><a href="#asset-library">本页资产摘要</a><a href="#asset-04">牛小匠</a><a href="#asset-13">Chibi</a></div></nav>
+<section id="brand-board" class="board-grid">
+<section class="panel brand"><header class="title"><span class="num">01</span><span>品牌头部</span><span class="en">/ Brand</span></header><img class="brand-logo" src="assets/logo/logo-official-black.svg" alt="匠人学院 JR Academy" /><img class="tagline-art" src="assets/logo/tagline-xueai-laijiangren.png" alt="学 AI 来匠人单独标语素材" /><p class="brand-copy">系统化 AI 学习与职业成长平台，陪你从入门到精通，用 AI 改变未来。</p><div class="brand-pills"><div class="brand-pill"><span class="pill-ico p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span><strong>体系化课程</strong><span>系统学习路径</span></span></div><div class="brand-pill"><span class="pill-ico y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span><span><strong>AI 实战项目</strong><span>学以致用</span></span></div><div class="brand-pill"><span class="pill-ico g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v3M12 11v7M17 7v11"/></svg></span><span><strong>职业赋能</strong><span>能力进阶</span></span></div><div class="brand-pill"><span class="pill-ico r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span><span><strong>陪伴式成长</strong><span>社群与教练</span></span></div></div><img class="brand-mascot" src="assets/mascot/heads/01-default.png" alt="牛小匠头像" /><span class="doodle" style="right:34px;top:34px;font-size:32px;color:var(--yellow);text-shadow:1px 1px 0 var(--dark);">✦</span><span class="doodle spark2">✦</span><span class="doodle spark3">· ·</span><span class="doodle lines">⌁</span></section>
+<section class="panel colors"><header class="title"><span class="num">02</span><span>颜色系统</span><span class="en">/ Colors</span></header><div class="color-grid"><div class="swatch"><div class="box dark"></div><strong>主色 / Dark</strong><code>#0D0F12</code></div><div class="swatch"><div class="box red"></div><strong>强调色 / Red</strong><code>#FF4D4F</code></div><div class="swatch"><div class="box purple"></div><strong>紫色 / Purple</strong><code>#7B61FF</code></div><div class="swatch"><div class="box yellow"></div><strong>黄色 / Yellow</strong><code>#FFC84D</code></div><div class="swatch"><div class="box green"></div><strong>绿色 / Green</strong><code>#22C55E</code></div></div><div class="neutral-row"><div class="neutral"><div class="nbox" style="background:#1F2937"></div><strong>中性 900</strong><code>#1F2937</code></div><div class="neutral"><div class="nbox" style="background:#6B7280"></div><strong>中性 600</strong><code>#6B7280</code></div><div class="neutral"><div class="nbox" style="background:#D1D5DB"></div><strong>中性 300</strong><code>#D1D5DB</code></div><div class="neutral"><div class="nbox" style="background:#F3F4F6"></div><strong>中性 100</strong><code>#F3F4F6</code></div><div class="neutral"><div class="nbox" style="background:#FAFAFA"></div><strong>中性 50</strong><code>#FAFAFA</code></div></div><svg class="curve-arrow" viewBox="0 0 80 80" fill="none"><path d="M62 18c-17 1-29 8-28 19 1 9 13 11 17 4 5-8-5-18-18-8-10 8-15 18-16 31" stroke="#0D0F12" stroke-width="2.5" stroke-linecap="round"/><path d="M11 57l6 7 8-5" stroke="#0D0F12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></section>
+<section class="panel type"><header class="title"><span class="num">03</span><span>字体系统</span><span class="en">/ Typography</span></header><div class="type-head"><div class="aa">Aa</div><div><div class="font-line">中文字体：思源黑体 / Source Han Sans</div><div class="font-line">英文字体：Inter</div></div></div><div class="type-table"><div class="type-row"><strong>标题 1 / H1</strong><span>32px / Bold</span><b>学AI来匠人</b></div><div class="type-row"><strong>标题 2 / H2</strong><span>24px / Bold</span><b>开启你的 AI 职业新旅程</b></div><div class="type-row"><strong>标题 3 / H3</strong><span>18px / Semibold</span><b>体系化学习，高效成长</b></div><div class="type-row"><strong>正文 / Body</strong><span>14px / Regular</span><span>AI 让学习更高效，工作更轻松。</span></div><div class="type-row"><strong>辅助 / Caption</strong><span>12px / Regular</span><span>陪伴式成长，成就更好的你。</span></div></div></section>
+<section class="panel buttons"><header class="title"><span class="num">04</span><span>按钮系统</span><span class="en">/ Buttons</span></header><svg class="squiggle" viewBox="0 0 80 52" fill="none"><path d="M4 26c16-24 54-24 52-4-1 11-14 8-11 0 4-10 24-5 30 5" stroke="#0D0F12" stroke-width="3" stroke-linecap="round"/></svg><div class="btn-stack"><p class="label">主要按钮 (Primary)</p><button class="ui-btn">开始学习 <span>→</span></button><p class="label">次要按钮 (Outline)</p><button class="ui-btn outline">了解课程</button><p class="label">文本按钮 (Text)</p><button class="ui-btn text">查看更多 <span>→</span></button><p class="label">危险按钮 (Danger)</p><button class="ui-btn danger">删除 <svg class="trash-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 16H6L5 6"/><path d="M10 11v6M14 11v6"/></svg></button></div></section>
+<section class="panel inputs"><header class="title"><span class="num">05</span><span>输入框</span><span class="en">/ Inputs</span></header><div class="form"><label>默认输入框</label><input class="field" placeholder="输入你的邮箱地址" /><label>聚焦状态</label><input class="field focus" value="hello@jracademy.com" aria-label="聚焦状态示例" /><label>选择器 / Select</label><select><option>选择学习方向</option></select><label>多行文本 / Textarea</label><div><textarea placeholder="说说你的学习目标或问题..."></textarea><div class="count">0/200</div></div></div></section>
+<section class="panel chips"><header class="title"><span class="num">06</span><span>标签 / Chips / 状态</span></header><div class="chip-section"><p class="label">标签 / Tags</p><div class="chips-row"><span class="tag">AI 入门</span><span class="tag">Python</span><span class="tag">大模型</span><span class="tag">数据分析</span></div></div><div class="chip-section"><p class="label">状态 / Status Pills</p><div class="chips-row"><span class="tag status blue">● 进行中</span><span class="tag status green">● 已完成</span><span class="tag status gray">● 待开始</span><span class="tag status red">● 已过期</span></div></div><div class="chip-section"><p class="label">大小 / Size</p><div class="chips-row"><span class="tag">大标签</span><span class="tag sm">中标签</span><span class="tag sm">小标签</span></div></div><div><p class="label">可关闭标签</p><div class="chips-row"><span class="tag sm">前端开发 ×</span><span class="tag sm">提示词工程 ×</span><span class="tag sm">AI 绘画 ×</span></div></div></section>
+<section class="panel icons">
         <header class="title"><span class="num">07</span><span>图标系统</span><span class="en">/ Icons</span></header>
-        <p class="small" style="margin-top:-6px;">线性风格 · 2px 描边 · 圆角端头 · 24×24 viewBox</p>
+        <p class="small" style="margin-top:-6px;">线性风格 · 2px 描边 · 圆角端头 · 24×24 viewBox</p><svg class="corner-star" viewBox="0 0 64 64" fill="none"><path d="M32 6l6 20 20 6-20 6-6 20-6-20-20-6 20-6 6-20z" stroke="#0D0F12" stroke-width="3" stroke-linejoin="round"/><path d="M52 6v8M48 10h8" stroke="#0D0F12" stroke-width="3" stroke-linecap="round"/></svg>
         <div class="icon-grid icon-grid--lucide">
           <div class="icon-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>首页</div>
           <div class="icon-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>课程</div>
@@ -625,374 +33,650 @@
           <div class="icon-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>帮助</div>
         </div>
       </section>
-
-      <section class="panel nav">
-        <header class="title"><span class="num">08</span><span>导航系统</span><span class="en">/ Navigation</span></header>
-        <p class="label">顶部导航 / Top Nav</p>
-        <div class="topnav"><img src="assets/logo/logo-zh-full.svg" alt=""><span class="nav-item active">课程</span><span class="nav-item">项目</span><span class="nav-item">学习</span><span class="nav-item">社区</span></div>
-        <p class="label">标签页 / Tabs</p>
-        <div class="tabs"><span class="nav-item active">推荐</span><span class="nav-item">课程</span><span class="nav-item">项目</span><span class="nav-item">活动</span></div>
-        <p class="label">底部导航 / Bottom Nav</p>
-        <div class="bottomnav"><span class="active">首页</span><span>学习</span><span>AI 工具</span><span>消息</span><span>我的</span></div>
-      </section>
-
-      <section class="panel cards">
-        <header class="title"><span class="num">09</span><span>卡片系统</span><span class="en">/ Cards</span></header>
-        <div class="card-row">
-          <div class="mini-card"><div class="mini-title">课程卡片 /</div><p class="small">LLM 大模型入门实战</p><br><span class="small">12w+ 人学习 ⭐ 4.9</span></div>
-          <div class="mini-card purple"><div class="mini-title">数据卡片 /</div><p class="small">学习时长（分钟）</p><div class="big-num">128.5</div><span class="small" style="color:var(--red-text)">↑ 12%</span></div>
-          <div class="mini-card"><div class="mini-title">功能卡片 /</div><span class="tag" style="gap:4px"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>AI</span><p class="small"><b>智能学习路径</b><br>根据你的目标与进度生成路径。</p></div>
-          <div class="mini-card yellow"><div class="mini-title">CTA 卡片 /</div><p class="small"><b>还没规划学习方向？</b><br>定制你的专属学习计划。</p><span class="cta">立即探索 →</span></div>
+<section class="panel nav"><header class="title"><span class="num">08</span><span>导航系统</span><span class="en">/ Navigation</span></header><p class="label">顶部导航 / Top Nav</p><div class="topnav"><img src="assets/logo/logo-official-black.svg" alt=""><span class="nav-item active">课程</span><span class="nav-item">项目</span><span class="nav-item">学习</span><span class="nav-item">社区</span></div><p class="label" style="margin-top:12px">标签页 / Tabs</p><div class="tabs"><span class="active">推荐</span><span>课程</span><span>项目</span><span>活动</span></div><p class="label" style="margin-top:12px">底部导航 / Bottom Nav</p><div class="bottom-nav"><span>首页</span><span>学习</span><span>AI 工具</span><span>消息</span></div></section>
+<section class="panel cards"><header class="title"><span class="num">09</span><span>卡片系统</span><span class="en">/ Cards</span></header><div class="mini-cards"><div class="mini-card"><div class="mini-title">课程卡片 /</div><b>LLM 大模型入门实战</b><p class="small">从基础到应用项目</p><div class="avatars"><span></span><span></span><span></span></div><p class="small">12w+ 人学习</p><span class="starscore">★ 4.9</span></div><div class="mini-card"><div class="mini-title">数据卡片 /</div><p class="small">学习时长（分钟）</p><div class="metric">128.5</div><p class="small" style="color:var(--red-text)">↑ 12% 较上周</p></div><div class="mini-card"><div class="mini-title">功能卡片 /</div><div class="tiny-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M9 13v2M15 13v2"/></svg></div><p class="small"><b>智能学习路径</b><br>根据你的目标与进度生成路径。</p></div><div class="mini-card"><div class="mini-title">CTA 卡片 /</div><b>还没找到学习方向?</b><p class="small">定制你的专属学习计划。</p><span class="cta">立即探索 →</span></div></div></section>
+<section class="panel feedback"><header class="title"><span class="num">10</span><span>反馈系统</span><span class="en">/ Feedback</span></header><div class="alerts"><div class="alert success"><span class="mark"></span><span>成功提示：操作已成功完成！</span><b>×</b></div><div class="alert warn"><span class="mark"></span><span>警告提示：请检查你的输入内容。</span><b>×</b></div><div class="alert error"><span class="mark"></span><span>错误提示：提交失败，请重试。</span><b>×</b></div><div class="alert info"><span class="mark"></span><span>信息提示：新功能已上线，快去体验吧！</span><b>×</b></div></div></section>
+<section class="panel progress"><header class="title"><span class="num">11</span><span>进度 / 步骤 / 徽章</span></header><p class="label">步骤条 / Steps</p><div class="steps"><div class="step active"><span class="bubble">1</span>选择方向</div><div class="step"><span class="bubble">2</span>制定计划</div><div class="step"><span class="bubble">3</span>开始学习</div><div class="step"><span class="bubble">4</span>完成目标</div></div><p class="label">进度条 / Progress</p><div class="progress-line"><div class="track"><span></span></div><b>68%</b></div><div class="badges"><div class="badge purple"><svg viewBox="0 0 24 24" fill="currentColor" stroke="#0D0F12" stroke-width="1.5"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 16.8 6.2 20l1.1-6.5-4.7-4.6 6.5-.9L12 2z"/></svg><span>新手入门</span></div><div class="badge gold"><svg viewBox="0 0 24 24" fill="currentColor" stroke="#0D0F12" stroke-width="1.5"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 16.8 6.2 20l1.1-6.5-4.7-4.6 6.5-.9L12 2z"/></svg><span>坚持学习</span></div><div class="badge blue"><svg viewBox="0 0 24 24" fill="currentColor" stroke="#0D0F12" stroke-width="1.5"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 16.8 6.2 20l1.1-6.5-4.7-4.6 6.5-.9L12 2z"/></svg><span>项目达人</span></div><div class="badge red"><svg viewBox="0 0 24 24" fill="currentColor" stroke="#0D0F12" stroke-width="1.5"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 16.8 6.2 20l1.1-6.5-4.7-4.6 6.5-.9L12 2z"/></svg><span>AI 实践家</span></div><div class="badge yellow"><svg viewBox="0 0 24 24" fill="currentColor" stroke="#0D0F12" stroke-width="1.5"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 16.8 6.2 20l1.1-6.5-4.7-4.6 6.5-.9L12 2z"/></svg><span>匠人之星</span></div></div><svg class="curve-arrow" viewBox="0 0 80 80" fill="none"><path d="M12 54c22 4 46-4 48-22" stroke="#0D0F12" stroke-width="2.5" stroke-linecap="round"/><path d="M52 33l8-1 2 8" stroke="#0D0F12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></section>
+<section class="panel table"><header class="title"><span class="num">12</span><span>表格 / 列表 / 空状态</span></header><div class="data-layout"><div><p class="label">表格 / Table</p><table><tr><th>课程名称</th><th>学习进度</th><th>状态</th></tr><tr><td>AI 基础速成</td><td>75%</td><td><span class="tag status blue">进行中</span></td></tr><tr><td>Python 基础</td><td>100%</td><td><span class="tag status green">已完成</span></td></tr><tr><td>数据可视化</td><td>30%</td><td><span class="tag status blue">进行中</span></td></tr></table></div><div><p class="label">列表 / List</p><div class="list"><div class="list-item"><span class="thumb"></span><span><b>ChatGPT 高效办公</b><br><span class="small">12 课时 · 中级</span></span><span class="tag status blue">进行中</span></div><div class="list-item"><span class="thumb"></span><span><b>数据分析实战</b><br><span class="small">16 课时 · 中级</span></span><span class="tag status gray">待开始</span></div><div class="list-item"><span class="thumb"></span><span><b>Midjourney 从入门到精通</b><br><span class="small">15 课时 · 中级</span></span><span class="tag status green">已完成</span></div></div></div><div class="empty-state"><p class="label">空状态 / Empty State</p><img src="assets/mascot/heads/01-default.png" alt=""><span class="small">这里还没有内容哦～</span><span class="cta">去探索课程</span></div></div></section>
+<section class="panel product"><header class="title"><span class="num">13</span><span>页面区块卡片示例</span><span class="en">/ Section Cards in Product</span></header><div class="product-grid"><div class="product-card purple"><p class="label">诊断卡片 / Diagnostic Card</p><h3>AI 职业诊断卡</h3><p class="small"><b>60 秒</b>找到你的职业定位</p><div class="meta-dots"><span><i></i>自测</span><span><i></i>0 分钟</span><span><i></i>智能</span></div><span class="cta">开始诊断 →</span><img class="product-mascot" src="assets/mascot/heads/03-magnifying.png" alt=""></div><div class="product-card"><p class="label">结果卡片 / Result Card</p><h3>你的职业定位是<br>数据分析师</h3><div>匹配度：<span class="score">85%</span></div><div class="radar-wrap"><p class="axis-note"><b>技能匹配</b><br>学习能力<br>沟通表达</p><div class="radar"></div></div><span class="cta">查看发展建议 →</span></div><div class="product-card green"><p class="label">学习计划卡片 / Learning Plan Card</p><h3>你的学习计划</h3><p class="small">阶段 1 · 基础入门<br>4/5 节课程已完成</p><div class="check-list"><span>数据思维入门</span><span>Excel 基础操作</span><span>SQL 基础查询</span><span>数据可视化初步</span></div><span class="cta">继续学习 →</span><img class="product-mascot" src="assets/mascot/working/working-04-tablet-drawing.png" alt=""><div class="speech">设计别急，借一部脑让学习更有趣。</div></div></div></section>
+</section>
+<section id="asset-library" class="asset-library"><div class="library-hero"><h1>完整图片 / 吉祥物资产库</h1><p>下方直接读取当前仓库里所有图片资产路径生成，共 132 张/个图片文件。包含 spec sheet、当前 logo、backup logo、装饰、牛小匠、Chibi、子品牌 mascot、_inbox 待整理素材、Career Impact 插画和 VI 设计板。</p><div class="toc"><a href="#asset-00">Spec Sheets</a><a href="#asset-01">Logo Family</a><a href="#asset-02">Logo Backup</a><a href="#asset-03">Decorations</a><a href="#asset-04">牛小匠 Official</a><a href="#asset-05">牛小匠 Emojis</a><a href="#asset-06">牛小匠 Heads</a><a href="#asset-07">牛小匠 Busts</a><a href="#asset-08">牛小匠 Working</a><a href="#asset-09">牛小匠 Lifestyle</a><a href="#asset-10">牛小匠 Outfits</a><a href="#asset-11">牛小匠 Extra Outfits</a><a href="#asset-12">牛小匠 Variants</a><a href="#asset-13">Chibi App Icons</a><a href="#asset-13">Chibi Expressions</a><a href="#asset-13">Chibi Lifestyle</a><a href="#asset-13">Chibi Working</a><a href="#asset-14">Sub-brand UniMate</a><a href="#asset-15">Sub-brand Job Hunter</a><a href="#asset-16">Inbox</a><a href="#asset-18">Career Impact Illustrations</a><a href="#asset-19">VI Boards</a></div></div>
+      <section class="asset-section" id="asset-00">
+        <header class="section-head"><span class="num">00</span><div><h2>Spec Sheets / 总览图</h2><p>完整视觉规范图，保留新版和旧版对照。</p></div><b>2</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/spec-sheet-v2.png" alt="Spec Sheet V2" loading="lazy"></div>
+            <figcaption><strong>Spec Sheet V2</strong><code>spec-sheet-v2.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/spec-sheet-v4.png" alt="Spec Sheet V4" loading="lazy"></div>
+            <figcaption><strong>Spec Sheet V4</strong><code>spec-sheet-v4.png</code></figcaption>
+          </figure>
         </div>
       </section>
-
-      <section class="panel feedback">
-        <header class="title"><span class="num">10</span><span>反馈系统</span><span class="en">/ Feedback</span></header>
-        <div class="alerts">
-          <div class="alert success"><span class="mark">✓</span><span>成功提示：操作已成功完成！</span><b>×</b></div>
-          <div class="alert warn"><span class="mark">!</span><span>警告提示：请检查你的输入内容。</span><b>×</b></div>
-          <div class="alert error"><span class="mark">×</span><span>错误提示：提交失败，请重试。</span><b>×</b></div>
-          <div class="alert info"><span class="mark">i</span><span>信息提示：新功能已上线，快去体验吧！</span><b>×</b></div>
+      <section class="asset-section" id="asset-01">
+        <header class="section-head"><span class="num">01</span><div><h2>Logo Family / Logo 资产</h2><p>当前可用的 JR Academy logo、app icon、tagline 与牛小匠 logo。</p></div><b>17</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/logo-official-black.svg" alt="JR Academy Official Chinese Lockup" loading="lazy"></div>
+            <figcaption><strong>Official Designer Lockup</strong><code>logo/logo-official-black.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage dark-stage"><img src="assets/logo/logo-official-icon.svg" alt="JR Academy Official Icon Mark" loading="lazy"></div>
+            <figcaption><strong>Official Designer Icon</strong><code>logo/logo-official-icon.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/app-icon-red.png" alt="App Icon Red" loading="lazy"></div>
+            <figcaption><strong>App Icon Red</strong><code>logo/app-icon-red.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage dark-stage"><img src="assets/logo/app-icon-white.png" alt="App Icon White" loading="lazy"></div>
+            <figcaption><strong>App Icon White</strong><code>logo/app-icon-white.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/avatar-mascot-96.png" alt="Avatar Mascot 96" loading="lazy"></div>
+            <figcaption><strong>Avatar Mascot 96</strong><code>logo/avatar-mascot-96.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/jr-box.png" alt="JR Box" loading="lazy"></div>
+            <figcaption><strong>JR Box</strong><code>logo/jr-box.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/jr-box.svg" alt="JR Box" loading="lazy"></div>
+            <figcaption><strong>JR Box</strong><code>logo/jr-box.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage dark-stage"><img src="assets/logo/logo-en-white.svg" alt="Logo En White" loading="lazy"></div>
+            <figcaption><strong>Logo En White</strong><code>logo/logo-en-white.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/logo-en.svg" alt="Logo En" loading="lazy"></div>
+            <figcaption><strong>Logo En</strong><code>logo/logo-en.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/logo-rounded.svg" alt="Logo Rounded" loading="lazy"></div>
+            <figcaption><strong>Logo Rounded</strong><code>logo/logo-rounded.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/logo-transparent.svg" alt="Logo Transparent" loading="lazy"></div>
+            <figcaption><strong>Logo Transparent</strong><code>logo/logo-transparent.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/logo-zh-full.png" alt="Logo Zh Full" loading="lazy"></div>
+            <figcaption><strong>Logo Zh Full</strong><code>logo/logo-zh-full.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/logo-zh-full.svg" alt="Legacy Chinese Lockup" loading="lazy"></div>
+            <figcaption><strong>Legacy Chinese Lockup</strong><code>logo/logo-zh-full.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage dark-stage"><img src="assets/logo/logo-zh-white.png" alt="Logo Zh White" loading="lazy"></div>
+            <figcaption><strong>Logo Zh White</strong><code>logo/logo-zh-white.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage dark-stage"><img src="assets/logo/logo-zh-white.svg" alt="Logo Zh White" loading="lazy"></div>
+            <figcaption><strong>Logo Zh White</strong><code>logo/logo-zh-white.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/niuxiaojiang-logo.png" alt="Niuxiaojiang Logo" loading="lazy"></div>
+            <figcaption><strong>Niuxiaojiang Logo</strong><code>logo/niuxiaojiang-logo.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/tagline-xueai-laijiangren.png" alt="学 AI 来匠人单独标语素材" loading="lazy"></div>
+            <figcaption><strong>学 AI 来匠人 / 单独标语素材</strong><code>logo/tagline-xueai-laijiangren.png</code></figcaption>
+          </figure>
         </div>
       </section>
-
-      <section class="panel progress">
-        <header class="title"><span class="num">11</span><span>进度 / 步骤 / 徽章</span></header>
-        <p class="label">步骤条 / Steps</p>
-        <div class="steps"><div class="step active"><span class="bubble">1</span>选择方向</div><div class="step"><span class="bubble">2</span>制定计划</div><div class="step"><span class="bubble">3</span>开始学习</div><div class="step"><span class="bubble">4</span>完成目标</div></div>
-        <p class="label">进度条 / Progress</p>
-        <div class="progress-line"><div class="track"><span></span></div><b>68%</b></div>
-        <div class="badges"><div class="badge">🏆 新手入门</div><div class="badge">🥇 坚持学习</div><div class="badge">🎯 项目达人</div><div class="badge">💎 AI 实践家</div><div class="badge">⭐ 匠人之星</div></div>
-      </section>
-
-      <section class="panel table">
-        <header class="title"><span class="num">12</span><span>表格 / 列表 / 空状态</span></header>
-        <div class="data-layout">
-          <div><p class="label">表格 / Table</p><table><tr><th>课程名称</th><th>学习进度</th><th>状态</th></tr><tr><td>AI 基础速成</td><td>75%</td><td><span class="tag status blue">进行中</span></td></tr><tr><td>Python 基础</td><td>100%</td><td><span class="tag status green">已完成</span></td></tr><tr><td>数据可视化</td><td>30%</td><td><span class="tag status blue">进行中</span></td></tr></table></div>
-          <div><p class="label">列表 / List</p><div class="list"><div class="list-item"><span class="thumb"></span><span><b>ChatGPT 高效办公</b><br><span class="small">12 课时 · 中级</span></span><span class="tag status blue">进行中</span></div><div class="list-item"><span class="thumb"></span><span><b>数据分析实战</b><br><span class="small">16 课时 · 中级</span></span><span class="tag status gray">待开始</span></div><div class="list-item"><span class="thumb"></span><span><b>Midjourney 从入门到精通</b><br><span class="small">15 课时 · 中级</span></span><span class="tag status green">已完成</span></div></div></div>
-          <div class="empty-state"><p class="label">空状态 / Empty State</p><img src="assets/mascot/heads/01-default.png" alt=""><span class="small">这里还没有内容哦～</span><span class="cta">去探索课程</span></div>
+      <section class="asset-section" id="asset-02">
+        <header class="section-head"><span class="num">02</span><div><h2>Logo Backup / 旧版备份</h2><p>历史 logo 备份，只用于追溯，不作为主视觉引用。</p></div><b>3</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/_backup-pre-2026-05-15/jr-box.svg" alt="JR Box" loading="lazy"></div>
+            <figcaption><strong>JR Box</strong><code>logo/_backup-pre-2026-05-15/jr-box.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/logo/_backup-pre-2026-05-15/logo-zh-full.svg" alt="Logo Zh Full" loading="lazy"></div>
+            <figcaption><strong>Logo Zh Full</strong><code>logo/_backup-pre-2026-05-15/logo-zh-full.svg</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage dark-stage"><img src="assets/logo/_backup-pre-2026-05-15/logo-zh-white.svg" alt="Logo Zh White" loading="lazy"></div>
+            <figcaption><strong>Logo Zh White</strong><code>logo/_backup-pre-2026-05-15/logo-zh-white.svg</code></figcaption>
+          </figure>
         </div>
       </section>
-
-      <section class="panel product">
-        <header class="title"><span class="num">13</span><span>页面区块卡片示例</span><span class="en">/ Section Cards in Product</span></header>
-        <div class="product-grid">
-          <div class="product-card purple"><p class="label">诊断卡片 / Diagnostic Card</p><h3>AI 职业诊断卡</h3><p class="small"><b>60 秒</b>找到你的藏身地位</p><span class="cta">开始诊断 →</span><img class="product-mascot" src="assets/mascot/heads/03-magnifying.png" alt=""></div>
-          <div class="product-card"><p class="label">结果卡片 / Result Card</p><h3>你的职业定位是<br>数据分析师</h3><div>匹配度：<span class="score">85%</span></div><div class="radar"></div><span class="cta">查看发展建议 →</span></div>
-          <div class="product-card green"><p class="label">学习计划卡片 / Learning Plan Card</p><h3>你的学习计划</h3><p class="small">阶段 1 · 基础入门<br>4/5 节课程已完成</p><div class="check-list"><span>数据思维入门</span><span>Excel 基础操作</span><span>SQL 基础查询</span><span>数据可视化初步</span></div><span class="cta">继续学习 →</span><img class="product-mascot" src="assets/mascot/working/working-01-laptop-desk.png" alt=""></div>
-        </div>
-        <span class="doodle" style="right:22px;bottom:18px;font-size:40px;transform:rotate(-20deg);">↝</span>
-      </section>
-      <!-- 14 Logo 资产 -->
-      <section class="panel gallery logo-gallery span-24" style="--cell:160px;">
-        <header class="panel-head"><span class="num">14</span><h3>Logo 资产 <span>/ Logo Family</span></h3><span class="count">10</span></header>
-        <div class="grid">
-          <figure class="cell logo-cell"><div class="stage"><img src="assets/logo/jr-box.svg" alt="JR Box · 主 mark v2" loading="lazy"></div><strong>JR Box · 主 mark v2</strong><code>jr-box.svg</code></figure>
-          <figure class="cell logo-cell"><div class="stage"><img src="assets/logo/logo-zh-full.svg" alt="完整中文 Logo v2" loading="lazy"></div><strong>完整中文 Logo v2</strong><code>logo-zh-full.svg</code></figure>
-          <figure class="cell logo-cell"><div class="stage"><img src="assets/logo/logo-zh-white.svg" alt="完整中文 · 反白" loading="lazy"></div><strong>完整中文 · 反白</strong><code>logo-zh-white.svg</code></figure>
-          <figure class="cell logo-cell"><div class="stage"><img src="assets/logo/logo-en.svg" alt="英文 Logo" loading="lazy"></div><strong>英文 Logo</strong><code>logo-en.svg</code></figure>
-          <figure class="cell logo-cell"><div class="stage"><img src="assets/logo/logo-en-white.svg" alt="英文 · 反白" loading="lazy"></div><strong>英文 · 反白</strong><code>logo-en-white.svg</code></figure>
-          <figure class="cell logo-cell"><div class="stage"><img src="assets/logo/logo-rounded.svg" alt="Rounded Mark" loading="lazy"></div><strong>Rounded Mark</strong><code>logo-rounded.svg</code></figure>
-          <figure class="cell logo-cell"><div class="stage"><img src="assets/logo/logo-transparent.svg" alt="透明 Mark" loading="lazy"></div><strong>透明 Mark</strong><code>logo-transparent.svg</code></figure>
-          <figure class="cell logo-cell"><div class="stage"><img src="assets/logo/tagline-xueai-laijiangren.png" alt="学 AI 来匠人 Tagline" loading="lazy"></div><strong>学 AI 来匠人 Tagline</strong><code>tagline-xueai-laijiangren.png</code></figure>
-          <figure class="cell logo-cell"><div class="stage"><img src="assets/logo/app-icon-red.png" alt="App Icon · Red" loading="lazy"></div><strong>App Icon · Red</strong><code>app-icon-red.png</code></figure>
-          <figure class="cell logo-cell"><div class="stage"><img src="assets/logo/app-icon-white.png" alt="App Icon · White" loading="lazy"></div><strong>App Icon · White</strong><code>app-icon-white.png</code></figure>
-        </div>
-      </section>
-
-      <!-- 15 装饰元素 (Shapes + Highlights + Scatter) -->
-      <section class="panel span-24">
-        <header class="panel-head"><span class="num">15</span><h3>装饰元素 <span>/ Decorations</span></h3></header>
-        <p class="lead">SVG 内联 + currentColor 控色。装饰只在 hero / 庆祝场景，不污染数据视图。</p>
-
-        <h4 class="gallery-group">Shapes &amp; Arrows</h4>
-        <div class="deco-grid">
-          <div class="deco-cell"><div class="stage"><svg viewBox="0 0 24 24" width="30" height="30" fill="#FFC84D"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg></div><strong>Sparkle 4-pt</strong></div>
-          <div class="deco-cell"><div class="stage"><svg viewBox="0 0 24 24" width="30" height="30" fill="#FF4D4F"><path d="M12 2 L13.5 9 L20 11 L13.5 13 L12 20 L10.5 13 L4 11 L10.5 9 Z"/></svg></div><strong>Sparkle 5-pt</strong></div>
-          <div class="deco-cell"><div class="stage" style="gap:6px;display:flex"><span style="width:10px;height:10px;border-radius:50%;background:#FF4D4F"></span><span style="width:7px;height:7px;border-radius:50%;background:#FFC84D"></span><span style="width:5px;height:5px;border-radius:50%;background:#7B61FF"></span></div><strong>Dot</strong></div>
-          <div class="deco-cell"><div class="stage" style="gap:6px;display:flex"><span style="width:12px;height:12px;border-radius:50%;border:1.5px solid #7B61FF"></span><span style="width:10px;height:10px;border-radius:50%;border:1.5px solid #22C55E"></span><span style="width:8px;height:8px;border-radius:50%;border:1.5px solid #FF4D4F"></span></div><strong>Ring</strong></div>
-          <div class="deco-cell"><div class="stage"><svg viewBox="0 0 64 16" width="64" height="16" fill="none"><line x1="4" y1="8" x2="56" y2="8" stroke="#0D0F12" stroke-width="2.4" stroke-linecap="round"/><polyline points="46,2 56,8 46,14" stroke="#0D0F12" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><strong>Arrow Straight</strong></div>
-          <div class="deco-cell"><div class="stage"><svg viewBox="0 0 64 40" width="60" height="38" fill="none"><path d="M6 6 C 20 8, 32 22, 54 30" stroke="#FF4D4F" stroke-width="2.4" stroke-linecap="round"/><polyline points="44,24 54,30 46,36" stroke="#FF4D4F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><strong>Arrow Curved</strong></div>
-          <div class="deco-cell"><div class="stage"><svg viewBox="0 0 64 24" width="60" height="22" fill="none"><path d="M4 12 C 10 4, 16 20, 22 12 S 34 4, 40 12 S 52 20, 60 12" stroke="#7B61FF" stroke-width="2.4" stroke-linecap="round"/></svg></div><strong>Scribble</strong></div>
-          <div class="deco-cell"><div class="stage"><span style="width:50px;height:50px;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,0.7),rgba(251,191,36,0.18) 45%,transparent 75%);filter:blur(4px)"></span></div><strong>Soft Blob</strong></div>
-        </div>
-
-        <h4 class="gallery-group" style="margin-top:18px">Highlights &amp; Quotes</h4>
-        <div class="deco-grid">
-          <div class="deco-cell"><div class="stage" style="height:auto;padding:6px 0"><span style="font-size:18px;font-weight:900">学 <span class="highlight">AI</span> 来匠人</span></div><strong>Highlighter</strong></div>
-          <div class="deco-cell"><div class="stage" style="height:auto;padding:6px 0"><span style="font-size:18px;font-weight:900">未来 <span style="position:relative;display:inline-block;padding-bottom:6px">10 年<svg viewBox="0 0 60 7" preserveAspectRatio="none" style="position:absolute;left:0;right:0;bottom:-2px;width:100%;height:7px;color:#FFC84D" fill="none"><path d="M0 4 Q 7.5 0, 15 4 T 30 4 T 45 4 T 60 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></span></span></div><strong>Wave Underline</strong></div>
-          <div class="deco-cell"><div class="stage" style="height:auto;padding:6px 0"><span style="font-size:16px;font-weight:900"><span style="position:relative;display:inline-block;padding:4px 10px">关键<svg viewBox="0 0 80 36" preserveAspectRatio="none" style="position:absolute;inset:-4px -2px;width:calc(100% + 4px);height:calc(100% + 8px);color:#FF4D4F" fill="none"><path d="M 8 16 Q 4 4, 40 4 Q 76 4, 72 18 Q 76 32, 40 32 Q 4 32, 8 16 Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="120 4 70 6" fill="none"/></svg></span></span></div><strong>Hand-Drawn Circle</strong></div>
-          <div class="deco-cell"><div class="stage" style="height:auto;padding:6px 0"><span style="position:relative;display:inline-block;max-width:140px;padding:10px 14px;border-radius:14px;background:#FFF4CF;font-size:11px;line-height:1.5">学完这周给自己一个 high-five</span></div><strong>Bubble Quote</strong></div>
-          <div class="deco-cell"><div class="stage" style="height:auto;padding:6px 0;display:flex;gap:6px"><span style="display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#0D0F12;color:#fff;font-size:12px;font-weight:900">01</span><span style="display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#FFC84D;color:#0D0F12;font-size:12px;font-weight:900">02</span><span style="display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#FF4D4F;color:#fff;font-size:12px;font-weight:900">03</span><span style="display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#fff;color:#0D0F12;border:1.5px solid #0D0F12;font-size:12px;font-weight:900">04</span></div><strong>Number Badge</strong></div>
-          <div class="deco-cell"><div class="stage" style="height:auto;padding:14px 0;flex-direction:column;display:flex;gap:8px;width:100%"><span style="display:block;width:80%;border-top:2px dashed #FFC84D"></span><span style="display:block;width:80%;border-top:2px dashed #D1D5DB"></span><span style="display:block;width:80%;border-top:2px dashed #FF4D4F"></span></div><strong>Dashed Divider</strong></div>
-        </div>
-
-        <h4 class="gallery-group" style="margin-top:18px">Scatter Layout</h4>
-        <div class="scatter">
-          <span class="pin" style="top:8%;left:4%;color:#FFC84D"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg></span>
-          <span class="pin" style="top:12%;left:50%;width:6px;height:6px;border-radius:50%;background:#FF4D4F"></span>
-          <span class="pin" style="top:24%;left:80%;color:#FF4D4F"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2 L13.5 9 L20 11 L13.5 13 L12 20 L10.5 13 L4 11 L10.5 9 Z"/></svg></span>
-          <span class="pin" style="top:46%;left:14%;width:10px;height:10px;border-radius:50%;border:1.5px solid #7B61FF"></span>
-          <span class="pin" style="top:70%;left:8%;color:#FFC84D"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2 L13.5 9 L20 11 L13.5 13 L12 20 L10.5 13 L4 11 L10.5 9 Z"/></svg></span>
-          <span class="pin" style="top:78%;left:88%;width:8px;height:8px;border-radius:50%;border:1.5px solid #22C55E"></span>
-          <span class="pin" style="top:8%;right:6%;color:#7B61FF"><svg viewBox="0 0 64 24" width="60" height="22" fill="none"><path d="M4 12 C 10 4, 16 20, 22 12 S 34 4, 40 12 S 52 20, 60 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-          <span class="pin" style="top:60%;right:8%;color:#FF4D4F"><svg viewBox="0 0 64 40" width="56" height="36" fill="none"><path d="M6 6 C 20 8, 32 22, 54 30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><polyline points="44,24 54,30 46,36" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div class="stage-text">AI 时代<br>你的职业在哪个 <span class="highlight highlight--red">位置</span>？</div>
+      <section class="asset-section" id="asset-03">
+        <header class="section-head"><span class="num">03</span><div><h2>Decorations / 装饰元素</h2><p>手绘箭头、星星、强调线，用于品牌板、空状态和营销图。</p></div><b>8</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/decorations/arrow-loop-black.png" alt="Arrow Loop Black" loading="lazy"></div>
+            <figcaption><strong>Arrow Loop Black</strong><code>decorations/arrow-loop-black.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/decorations/arrow-loop-purple.png" alt="Arrow Loop Purple" loading="lazy"></div>
+            <figcaption><strong>Arrow Loop Purple</strong><code>decorations/arrow-loop-purple.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/decorations/arrow-wavy-black.png" alt="Arrow Wavy Black" loading="lazy"></div>
+            <figcaption><strong>Arrow Wavy Black</strong><code>decorations/arrow-wavy-black.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/decorations/emphasis-burst-black.png" alt="Emphasis Burst Black" loading="lazy"></div>
+            <figcaption><strong>Emphasis Burst Black</strong><code>decorations/emphasis-burst-black.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/decorations/sparkle-4pt-black.png" alt="Sparkle 4pt Black" loading="lazy"></div>
+            <figcaption><strong>Sparkle 4pt Black</strong><code>decorations/sparkle-4pt-black.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/decorations/sparkle-4pt-yellow.png" alt="Sparkle 4pt Yellow" loading="lazy"></div>
+            <figcaption><strong>Sparkle 4pt Yellow</strong><code>decorations/sparkle-4pt-yellow.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/decorations/underline-double-yellow.png" alt="Underline Double Yellow" loading="lazy"></div>
+            <figcaption><strong>Underline Double Yellow</strong><code>decorations/underline-double-yellow.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/decorations/yellow-brush-underline.png" alt="Yellow Brush Underline" loading="lazy"></div>
+            <figcaption><strong>Yellow Brush Underline</strong><code>decorations/yellow-brush-underline.png</code></figcaption>
+          </figure>
         </div>
       </section>
-
-      <!-- 16 牛小匠官方 + 表情 -->
-      <section class="panel gallery span-24">
-        <header class="panel-head"><span class="num">16</span><h3>牛小匠 · 官方主形象 + 表情包 <span>/ Official + Emoji</span></h3><span class="count">14</span></header>
-        <h4 class="gallery-group">官方主形象 / Official <span class="count-inline">8</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/official/01-hero-fullbody.png" alt="01-hero-fullbody" loading="lazy"></div><figcaption>01 hero fullbody</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/official/02-laptop-jr-mug.png" alt="02-laptop-jr-mug" loading="lazy"></div><figcaption>02 laptop jr mug</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/official/03-laptop-code-bubble.png" alt="03-laptop-code-bubble" loading="lazy"></div><figcaption>03 laptop code bubble</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/official/04-thinking.png" alt="04-thinking" loading="lazy"></div><figcaption>04 thinking</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/official/05-teaching-data.png" alt="05-teaching-data" loading="lazy"></div><figcaption>05 teaching data</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/official/06-celebration.png" alt="06-celebration" loading="lazy"></div><figcaption>06 celebration</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/official/07-laptop-closeup.png" alt="07-laptop-closeup" loading="lazy"></div><figcaption>07 laptop closeup</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/official/08-cheering-victory.png" alt="08-cheering-victory" loading="lazy"></div><figcaption>08 cheering victory</figcaption></figure>
-        </div>
-        <h4 class="gallery-group">表情包 / Emoji Set <span class="count-inline">6</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/emojis/emoji-01-happy-tongue.png" alt="emoji-01-happy-tongue" loading="lazy"></div><figcaption>emoji 01 happy tongue</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/emojis/emoji-02-shy-smile.png" alt="emoji-02-shy-smile" loading="lazy"></div><figcaption>emoji 02 shy smile</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/emojis/emoji-03-thumbs-up.png" alt="emoji-03-thumbs-up" loading="lazy"></div><figcaption>emoji 03 thumbs up</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/emojis/emoji-04-thinking.png" alt="emoji-04-thinking" loading="lazy"></div><figcaption>emoji 04 thinking</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/emojis/emoji-05-surprised-question.png" alt="emoji-05-surprised-question" loading="lazy"></div><figcaption>emoji 05 surprised question</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/emojis/emoji-06-wow-shout.png" alt="emoji-06-wow-shout" loading="lazy"></div><figcaption>emoji 06 wow shout</figcaption></figure>
-        </div>
-      </section>
-
-      <!-- 17 牛小匠头像 + 半身 + 服装 -->
-      <section class="panel gallery span-24">
-        <header class="panel-head"><span class="num">17</span><h3>牛小匠 · 头像 + 半身 + 服装 <span>/ Heads + Busts + Outfits</span></h3><span class="count">17</span></header>
-        <h4 class="gallery-group">头像 / Heads <span class="count-inline">4</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/heads/01-default.png" alt="01-default" loading="lazy"></div><figcaption>01 default</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/heads/02-surprised.png" alt="02-surprised" loading="lazy"></div><figcaption>02 surprised</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/heads/03-magnifying.png" alt="03-magnifying" loading="lazy"></div><figcaption>03 magnifying</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/heads/04-clipboard.png" alt="04-clipboard" loading="lazy"></div><figcaption>04 clipboard</figcaption></figure>
-        </div>
-        <h4 class="gallery-group">半身像 / Busts <span class="count-inline">6</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/busts/bust-01-cheer-victory.png" alt="bust-01-cheer-victory" loading="lazy"></div><figcaption>bust 01 cheer victory</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/busts/bust-02-praying.png" alt="bust-02-praying" loading="lazy"></div><figcaption>bust 02 praying</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/busts/bust-03-loving-heart.png" alt="bust-03-loving-heart" loading="lazy"></div><figcaption>bust 03 loving heart</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/busts/bust-04-crying.png" alt="bust-04-crying" loading="lazy"></div><figcaption>bust 04 crying</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/busts/bust-05-angry.png" alt="bust-05-angry" loading="lazy"></div><figcaption>bust 05 angry</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/busts/bust-06-embarrassed.png" alt="bust-06-embarrassed" loading="lazy"></div><figcaption>bust 06 embarrassed</figcaption></figure>
-        </div>
-        <h4 class="gallery-group">服装变体 / Outfits <span class="count-inline">7</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/outfits/outfit-01-naked-basic.png" alt="outfit-01-naked-basic" loading="lazy"></div><figcaption>outfit 01 naked basic</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/outfits/outfit-02-mandarin-collar.png" alt="outfit-02-mandarin-collar" loading="lazy"></div><figcaption>outfit 02 mandarin collar</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/outfits/outfit-03-chinese-newyear.png" alt="outfit-03-chinese-newyear" loading="lazy"></div><figcaption>outfit 03 chinese newyear</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/outfits/outfit-04-artist-painter.png" alt="outfit-04-artist-painter" loading="lazy"></div><figcaption>outfit 04 artist painter</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/outfits/outfit-05-white-basic.png" alt="outfit-05-white-basic" loading="lazy"></div><figcaption>outfit 05 white basic</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/outfits-extra/green-ai-balance.png" alt="green-ai-balance" loading="lazy"></div><figcaption>green ai balance</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/outfits-extra/pink-student-desk.png" alt="pink-student-desk" loading="lazy"></div><figcaption>pink student desk</figcaption></figure>
+      <section class="asset-section" id="asset-04">
+        <header class="section-head"><span class="num">04</span><div><h2>牛小匠 Official / 官方主形象</h2><p>红 JR 运动套装主形象，官网和核心产品优先使用。</p></div><b>8</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/official/01-hero-fullbody.png" alt="01 Hero Fullbody" loading="lazy"></div>
+            <figcaption><strong>01 Hero Fullbody</strong><code>mascot/official/01-hero-fullbody.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/official/02-laptop-jr-mug.png" alt="02 Laptop JR Mug" loading="lazy"></div>
+            <figcaption><strong>02 Laptop JR Mug</strong><code>mascot/official/02-laptop-jr-mug.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/official/03-laptop-code-bubble.png" alt="03 Laptop Code Bubble" loading="lazy"></div>
+            <figcaption><strong>03 Laptop Code Bubble</strong><code>mascot/official/03-laptop-code-bubble.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/official/04-thinking.png" alt="04 Thinking" loading="lazy"></div>
+            <figcaption><strong>04 Thinking</strong><code>mascot/official/04-thinking.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/official/05-teaching-data.png" alt="05 Teaching Data" loading="lazy"></div>
+            <figcaption><strong>05 Teaching Data</strong><code>mascot/official/05-teaching-data.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/official/06-celebration.png" alt="06 Celebration" loading="lazy"></div>
+            <figcaption><strong>06 Celebration</strong><code>mascot/official/06-celebration.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/official/07-laptop-closeup.png" alt="07 Laptop Closeup" loading="lazy"></div>
+            <figcaption><strong>07 Laptop Closeup</strong><code>mascot/official/07-laptop-closeup.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/official/08-cheering-victory.png" alt="08 Cheering Victory" loading="lazy"></div>
+            <figcaption><strong>08 Cheering Victory</strong><code>mascot/official/08-cheering-victory.png</code></figcaption>
+          </figure>
         </div>
       </section>
-
-      <!-- 18 牛小匠工作 + 生活 + 风格变体 -->
-      <section class="panel gallery span-24">
-        <header class="panel-head"><span class="num">18</span><h3>牛小匠 · 工作 + 生活 + 风格变体 <span>/ Working + Lifestyle + Variants</span></h3><span class="count">17</span></header>
-        <h4 class="gallery-group">工作场景 / Working <span class="count-inline">6</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/working/working-01-laptop-desk.png" alt="working-01-laptop-desk" loading="lazy"></div><figcaption>working 01 laptop desk</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/working/working-02-note-taking.png" alt="working-02-note-taking" loading="lazy"></div><figcaption>working 02 note taking</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/working/working-03-coding.png" alt="working-03-coding" loading="lazy"></div><figcaption>working 03 coding</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/working/working-04-tablet-drawing.png" alt="working-04-tablet-drawing" loading="lazy"></div><figcaption>working 04 tablet drawing</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/working/working-05-teaching-charts.png" alt="working-05-teaching-charts" loading="lazy"></div><figcaption>working 05 teaching charts</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/working/working-06-headphones-gaming.png" alt="working-06-headphones-gaming" loading="lazy"></div><figcaption>working 06 headphones gaming</figcaption></figure>
-        </div>
-        <h4 class="gallery-group">生活场景 / Lifestyle <span class="count-inline">6</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/lifestyle/lifestyle-01-eating-noodles.png" alt="lifestyle-01-eating-noodles" loading="lazy"></div><figcaption>lifestyle 01 eating noodles</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/lifestyle/lifestyle-02-lazy-beanbag.png" alt="lifestyle-02-lazy-beanbag" loading="lazy"></div><figcaption>lifestyle 02 lazy beanbag</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/lifestyle/lifestyle-03-laptop-sitting.png" alt="lifestyle-03-laptop-sitting" loading="lazy"></div><figcaption>lifestyle 03 laptop sitting</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/lifestyle/lifestyle-04-candy-pink.png" alt="lifestyle-04-candy-pink" loading="lazy"></div><figcaption>lifestyle 04 candy pink</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/lifestyle/lifestyle-05-sleeping.png" alt="lifestyle-05-sleeping" loading="lazy"></div><figcaption>lifestyle 05 sleeping</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/lifestyle/lifestyle-06-cheering-pompom.png" alt="lifestyle-06-cheering-pompom" loading="lazy"></div><figcaption>lifestyle 06 cheering pompom</figcaption></figure>
-        </div>
-        <h4 class="gallery-group">风格变体 / Variants（3D · Pixel） <span class="count-inline">5</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/variants/variant-01-pixel-8bit.png" alt="variant-01-pixel-8bit" loading="lazy"></div><figcaption>variant 01 pixel 8bit</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/variants/variant-02-3d-standing-grey.png" alt="variant-02-3d-standing-grey" loading="lazy"></div><figcaption>variant 02 3d standing grey</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/variants/variant-03-3d-baseball-jacket.png" alt="variant-03-3d-baseball-jacket" loading="lazy"></div><figcaption>variant 03 3d baseball jacket</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/variants/variant-04-3d-plushie-sitting.png" alt="variant-04-3d-plushie-sitting" loading="lazy"></div><figcaption>variant 04 3d plushie sitting</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/variants/variant-05-3d-mini-desk-diorama.png" alt="variant-05-3d-mini-desk-diorama" loading="lazy"></div><figcaption>variant 05 3d mini desk diorama</figcaption></figure>
+      <section class="asset-section" id="asset-05">
+        <header class="section-head"><span class="num">05</span><div><h2>牛小匠 Emojis / 表情头像</h2><p>小尺寸反馈、toast、chat reaction。</p></div><b>6</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/emojis/emoji-01-happy-tongue.png" alt="Emoji 01 Happy Tongue" loading="lazy"></div>
+            <figcaption><strong>Emoji 01 Happy Tongue</strong><code>mascot/emojis/emoji-01-happy-tongue.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/emojis/emoji-02-shy-smile.png" alt="Emoji 02 Shy Smile" loading="lazy"></div>
+            <figcaption><strong>Emoji 02 Shy Smile</strong><code>mascot/emojis/emoji-02-shy-smile.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/emojis/emoji-03-thumbs-up.png" alt="Emoji 03 Thumbs Up" loading="lazy"></div>
+            <figcaption><strong>Emoji 03 Thumbs Up</strong><code>mascot/emojis/emoji-03-thumbs-up.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/emojis/emoji-04-thinking.png" alt="Emoji 04 Thinking" loading="lazy"></div>
+            <figcaption><strong>Emoji 04 Thinking</strong><code>mascot/emojis/emoji-04-thinking.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/emojis/emoji-05-surprised-question.png" alt="Emoji 05 Surprised Question" loading="lazy"></div>
+            <figcaption><strong>Emoji 05 Surprised Question</strong><code>mascot/emojis/emoji-05-surprised-question.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/emojis/emoji-06-wow-shout.png" alt="Emoji 06 Wow Shout" loading="lazy"></div>
+            <figcaption><strong>Emoji 06 Wow Shout</strong><code>mascot/emojis/emoji-06-wow-shout.png</code></figcaption>
+          </figure>
         </div>
       </section>
-
-      <!-- 19 Chibi 全套 -->
-      <section class="panel gallery span-24">
-        <header class="panel-head"><span class="num">19</span><h3>Chibi 资产库 <span>/ Chibi Set</span></h3><span class="count">27</span></header>
-        <h4 class="gallery-group">表情 / Expressions <span class="count-inline">4</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/expressions/red-cheer-confetti.png" alt="red-cheer-confetti" loading="lazy"></div><figcaption>red cheer confetti</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/expressions/red-cheering-stars.png" alt="red-cheering-stars" loading="lazy"></div><figcaption>red cheering stars</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/expressions/red-hoodie-cheering.png" alt="red-hoodie-cheering" loading="lazy"></div><figcaption>red hoodie cheering</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/expressions/red-thinking-question.png" alt="red-thinking-question" loading="lazy"></div><figcaption>red thinking question</figcaption></figure>
-        </div>
-        <h4 class="gallery-group">工作 / Working <span class="count-inline">11</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/bw-code-bubble.png" alt="bw-code-bubble" loading="lazy"></div><figcaption>bw code bubble</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/purple-laptop-thumbs-chibi.png" alt="purple-laptop-thumbs-chibi" loading="lazy"></div><figcaption>purple laptop thumbs chibi</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/purple-laptop-thumbs-realistic.png" alt="purple-laptop-thumbs-realistic" loading="lazy"></div><figcaption>purple laptop thumbs realistic</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/purple-tablet-design-realistic.png" alt="purple-tablet-design-realistic" loading="lazy"></div><figcaption>purple tablet design realistic</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/red-coffee-pointing-realistic.png" alt="red-coffee-pointing-realistic" loading="lazy"></div><figcaption>red coffee pointing realistic</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/red-laptop-closeup.png" alt="red-laptop-closeup" loading="lazy"></div><figcaption>red laptop closeup</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/red-laptop-jr-mug.png" alt="red-laptop-jr-mug" loading="lazy"></div><figcaption>red laptop jr mug</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/red-pen-book.png" alt="red-pen-book" loading="lazy"></div><figcaption>red pen book</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/red-tablet-teaching.png" alt="red-tablet-teaching" loading="lazy"></div><figcaption>red tablet teaching</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/red-tablet-thumbs.png" alt="red-tablet-thumbs" loading="lazy"></div><figcaption>red tablet thumbs</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/working/red-teaching-chart.png" alt="red-teaching-chart" loading="lazy"></div><figcaption>red teaching chart</figcaption></figure>
-        </div>
-        <h4 class="gallery-group">生活 / Lifestyle <span class="count-inline">10</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/lifestyle/beige-camera.png" alt="beige-camera" loading="lazy"></div><figcaption>beige camera</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/lifestyle/black-backpack-explorer.png" alt="black-backpack-explorer" loading="lazy"></div><figcaption>black backpack explorer</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/lifestyle/black-gym-dumbbell.png" alt="black-gym-dumbbell" loading="lazy"></div><figcaption>black gym dumbbell</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/lifestyle/black-map-backpack.png" alt="black-map-backpack" loading="lazy"></div><figcaption>black map backpack</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/lifestyle/black-noodles-boba.png" alt="black-noodles-boba" loading="lazy"></div><figcaption>black noodles boba</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/lifestyle/brown-plan-coffee.png" alt="brown-plan-coffee" loading="lazy"></div><figcaption>brown plan coffee</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/lifestyle/dark-reading-coffee.png" alt="dark-reading-coffee" loading="lazy"></div><figcaption>dark reading coffee</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/lifestyle/olive-writing-plants.png" alt="olive-writing-plants" loading="lazy"></div><figcaption>olive writing plants</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/lifestyle/red-celebration-popper.png" alt="red-celebration-popper" loading="lazy"></div><figcaption>red celebration popper</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/lifestyle/red-reading-ai.png" alt="red-reading-ai" loading="lazy"></div><figcaption>red reading ai</figcaption></figure>
-        </div>
-        <h4 class="gallery-group">App Icon <span class="count-inline">2</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/app-icons/rounded-white.png" alt="rounded-white" loading="lazy"></div><figcaption>rounded white</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/chibi/app-icons/square-red.png" alt="square-red" loading="lazy"></div><figcaption>square red</figcaption></figure>
+      <section class="asset-section" id="asset-06">
+        <header class="section-head"><span class="num">06</span><div><h2>牛小匠 Heads / 头像</h2><p>头像、空状态和诊断卡使用。</p></div><b>4</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/heads/01-default.png" alt="01 Default" loading="lazy"></div>
+            <figcaption><strong>01 Default</strong><code>mascot/heads/01-default.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/heads/02-surprised.png" alt="02 Surprised" loading="lazy"></div>
+            <figcaption><strong>02 Surprised</strong><code>mascot/heads/02-surprised.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/heads/03-magnifying.png" alt="03 Magnifying" loading="lazy"></div>
+            <figcaption><strong>03 Magnifying</strong><code>mascot/heads/03-magnifying.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/heads/04-clipboard.png" alt="04 Clipboard" loading="lazy"></div>
+            <figcaption><strong>04 Clipboard</strong><code>mascot/heads/04-clipboard.png</code></figcaption>
+          </figure>
         </div>
       </section>
-
-      <!-- 20 子品牌 mascot -->
-      <section class="panel gallery span-12">
-        <header class="panel-head"><span class="num">20</span><h3>子品牌 mascot <span>/ Sub-brand Mascot</span></h3><span class="count">6</span></header>
-        <h4 class="gallery-group">UniMate AI <span class="count-inline">4</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/unimate/laptop-u-mug.png" alt="laptop-u-mug" loading="lazy"></div><figcaption>laptop u mug</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/unimate/laptop-warning-sweating.png" alt="laptop-warning-sweating" loading="lazy"></div><figcaption>laptop warning sweating</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/unimate/tablet-thumbs.png" alt="tablet-thumbs" loading="lazy"></div><figcaption>tablet thumbs</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/unimate/thinking-question.png" alt="thinking-question" loading="lazy"></div><figcaption>thinking question</figcaption></figure>
-        </div>
-        <h4 class="gallery-group">Job Hunter <span class="count-inline">2</span></h4>
-        <div class="grid" style="--cell:120px;">
-          <figure class="cell"><div class="stage"><img src="assets/mascot/jobhunter/beige-business.png" alt="beige-business" loading="lazy"></div><figcaption>beige business</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/mascot/jobhunter/blue-newspaper-ai.png" alt="blue-newspaper-ai" loading="lazy"></div><figcaption>blue newspaper ai</figcaption></figure>
-        </div>
-      </section>
-
-      <!-- 21 Career Impact 插画 -->
-      <section class="panel gallery span-24" style="--cell:140px;">
-        <header class="panel-head"><span class="num">21</span><h3>Career Impact · 人物插画 <span>/ People Illustrations</span></h3><span class="count">16</span></header>
-        <div class="grid">
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/hero-telescope.png" alt="hero-telescope" loading="lazy"></div><figcaption>hero telescope</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/map-78-careers-orbit.png" alt="map-78-careers-orbit" loading="lazy"></div><figcaption>map 78 careers orbit</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/path-journey-flag.png" alt="path-journey-flag" loading="lazy"></div><figcaption>path journey flag</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/quiz-growth-confident.png" alt="quiz-growth-confident" loading="lazy"></div><figcaption>quiz growth confident</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/quiz-mirror-relaxed.png" alt="quiz-mirror-relaxed" loading="lazy"></div><figcaption>quiz mirror relaxed</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/quiz-risk-thinking.png" alt="quiz-risk-thinking" loading="lazy"></div><figcaption>quiz risk thinking</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/result-ai-wizard.png" alt="result-ai-wizard" loading="lazy"></div><figcaption>result ai wizard</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/result-creative-augmenter.png" alt="result-creative-augmenter" loading="lazy"></div><figcaption>result creative augmenter</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/result-cross-domain-translator.png" alt="result-cross-domain-translator" loading="lazy"></div><figcaption>result cross domain translator</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/result-half-beat-observer.png" alt="result-half-beat-observer" loading="lazy"></div><figcaption>result half beat observer</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/result-mid-mountain-climber.png" alt="result-mid-mountain-climber" loading="lazy"></div><figcaption>result mid mountain climber</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/result-old-map-holder.png" alt="result-old-map-holder" loading="lazy"></div><figcaption>result old map holder</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/result-sleeping-seed.png" alt="result-sleeping-seed" loading="lazy"></div><figcaption>result sleeping seed</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/result-still-life-vip.png" alt="result-still-life-vip" loading="lazy"></div><figcaption>result still life vip</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/result-wave-rider.png" alt="result-wave-rider" loading="lazy"></div><figcaption>result wave rider</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/career-impact/subscribe-paper-plane.png" alt="subscribe-paper-plane" loading="lazy"></div><figcaption>subscribe paper plane</figcaption></figure>
+      <section class="asset-section" id="asset-07">
+        <header class="section-head"><span class="num">07</span><div><h2>牛小匠 Busts / 半身像</h2><p>引导卡、结果页和弹窗使用。</p></div><b>6</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/busts/bust-01-cheer-victory.png" alt="Bust 01 Cheer Victory" loading="lazy"></div>
+            <figcaption><strong>Bust 01 Cheer Victory</strong><code>mascot/busts/bust-01-cheer-victory.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/busts/bust-02-praying.png" alt="Bust 02 Praying" loading="lazy"></div>
+            <figcaption><strong>Bust 02 Praying</strong><code>mascot/busts/bust-02-praying.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/busts/bust-03-loving-heart.png" alt="Bust 03 Loving Heart" loading="lazy"></div>
+            <figcaption><strong>Bust 03 Loving Heart</strong><code>mascot/busts/bust-03-loving-heart.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/busts/bust-04-crying.png" alt="Bust 04 Crying" loading="lazy"></div>
+            <figcaption><strong>Bust 04 Crying</strong><code>mascot/busts/bust-04-crying.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/busts/bust-05-angry.png" alt="Bust 05 Angry" loading="lazy"></div>
+            <figcaption><strong>Bust 05 Angry</strong><code>mascot/busts/bust-05-angry.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/busts/bust-06-embarrassed.png" alt="Bust 06 Embarrassed" loading="lazy"></div>
+            <figcaption><strong>Bust 06 Embarrassed</strong><code>mascot/busts/bust-06-embarrassed.png</code></figcaption>
+          </figure>
         </div>
       </section>
-
-      <!-- 22 VI 设计板 -->
-      <section class="panel gallery span-12" style="--cell:240px;">
-        <header class="panel-head"><span class="num">22</span><h3>VI 设计板 <span>/ Visual Identity Boards</span></h3><span class="count">2</span></header>
-        <div class="grid">
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/vi-boards/jr-academy-visual-identity.png" alt="jr-academy-visual-identity" loading="lazy"></div><figcaption>jr academy visual identity</figcaption></figure>
-          <figure class="cell"><div class="stage"><img src="assets/illustrations/vi-boards/unimate-ai-mascot-design.png" alt="unimate-ai-mascot-design" loading="lazy"></div><figcaption>unimate ai mascot design</figcaption></figure>
+      <section class="asset-section" id="asset-08">
+        <header class="section-head"><span class="num">08</span><div><h2>牛小匠 Working / 学习工作</h2><p>学习、编程、数据、远程场景。</p></div><b>6</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/working/working-01-laptop-desk.png" alt="Working 01 Laptop Desk" loading="lazy"></div>
+            <figcaption><strong>Working 01 Laptop Desk</strong><code>mascot/working/working-01-laptop-desk.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/working/working-02-note-taking.png" alt="Working 02 Note Taking" loading="lazy"></div>
+            <figcaption><strong>Working 02 Note Taking</strong><code>mascot/working/working-02-note-taking.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/working/working-03-coding.png" alt="Working 03 Coding" loading="lazy"></div>
+            <figcaption><strong>Working 03 Coding</strong><code>mascot/working/working-03-coding.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/working/working-04-tablet-drawing.png" alt="Working 04 Tablet Drawing" loading="lazy"></div>
+            <figcaption><strong>Working 04 Tablet Drawing</strong><code>mascot/working/working-04-tablet-drawing.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/working/working-05-teaching-charts.png" alt="Working 05 Teaching Charts" loading="lazy"></div>
+            <figcaption><strong>Working 05 Teaching Charts</strong><code>mascot/working/working-05-teaching-charts.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/working/working-06-headphones-gaming.png" alt="Working 06 Headphones Gaming" loading="lazy"></div>
+            <figcaption><strong>Working 06 Headphones Gaming</strong><code>mascot/working/working-06-headphones-gaming.png</code></figcaption>
+          </figure>
         </div>
       </section>
-
-      <!-- 23 品牌定位 + Voice -->
-      <section class="panel span-24">
-        <header class="panel-head"><span class="num">23</span><h3>品牌定位 + Voice &amp; Tone <span>/ Positioning + Voice</span></h3></header>
-        <div class="dd">
-          <div>
-            <p class="label">品牌定位 / Positioning</p>
-            <p class="lead">JR Academy / 匠人学院 是全球华人 AI 学习第一站。覆盖官网入口、Dashboard、AI 职业诊断、社区活动和跨产品成长路径。</p>
-            <div class="quote"><b>学 AI 来匠人</b><br>STUDY AI AT JR ACADEMY.<br>一起成为 AI 时代的匠人。</div>
-            <p class="label" style="margin-top:14px">三关键词</p>
-            <ul class="pros">
-              <li><b>AI 时代感</b> — 面向 AI 学习、职业成长、技能升级。</li>
-              <li><b>可信赖教育</b> — 界面清晰、结构专业、路径明确。</li>
-              <li><b>年轻陪伴感</b> — 牛小匠降低学习压力，增强记忆点。</li>
-            </ul>
-          </div>
-          <div>
-            <p class="label">Voice &amp; Tone / 文案语气</p>
-            <ul class="pros">
-              <li><b>陪伴而不卖弄</b> — 把"我教你"换成"我陪你试一下"。</li>
-              <li><b>具体而不空泛</b> — 少说"赋能"，多说"你今天能做出 X"。</li>
-              <li><b>真实而不油腻</b> — 不要"宝子 / 您好 / 智能化"，用"咱 / 你 / 一起"。</li>
-              <li><b>克制 emoji</b> — 标题/CTA 最多 1 个，正文不堆。</li>
-            </ul>
-            <p class="label" style="margin-top:12px">关键表达 · 推荐 vs 禁用</p>
-            <table class="mini-tbl">
-              <tr><th>场景</th><th>推荐</th><th>禁用</th></tr>
-              <tr><td>开课邀请</td><td>"我陪你做完这一节"</td><td>"赋能你的 AI 之旅"</td></tr>
-              <tr><td>错题反馈</td><td>"这题大家都容易踩坑"</td><td>"亲，您这道题做错啦~"</td></tr>
-              <tr><td>导师介绍</td><td>"在 Google 做了 5 年 ML"</td><td>"业内顶尖大咖"</td></tr>
-            </table>
-          </div>
+      <section class="asset-section" id="asset-09">
+        <header class="section-head"><span class="num">09</span><div><h2>牛小匠 Lifestyle / 生活场景</h2><p>活动、节日、休息提醒与营销 banner。</p></div><b>6</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/lifestyle/lifestyle-01-eating-noodles.png" alt="Lifestyle 01 Eating Noodles" loading="lazy"></div>
+            <figcaption><strong>Lifestyle 01 Eating Noodles</strong><code>mascot/lifestyle/lifestyle-01-eating-noodles.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/lifestyle/lifestyle-02-lazy-beanbag.png" alt="Lifestyle 02 Lazy Beanbag" loading="lazy"></div>
+            <figcaption><strong>Lifestyle 02 Lazy Beanbag</strong><code>mascot/lifestyle/lifestyle-02-lazy-beanbag.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/lifestyle/lifestyle-03-laptop-sitting.png" alt="Lifestyle 03 Laptop Sitting" loading="lazy"></div>
+            <figcaption><strong>Lifestyle 03 Laptop Sitting</strong><code>mascot/lifestyle/lifestyle-03-laptop-sitting.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/lifestyle/lifestyle-04-candy-pink.png" alt="Lifestyle 04 Candy Pink" loading="lazy"></div>
+            <figcaption><strong>Lifestyle 04 Candy Pink</strong><code>mascot/lifestyle/lifestyle-04-candy-pink.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/lifestyle/lifestyle-05-sleeping.png" alt="Lifestyle 05 Sleeping" loading="lazy"></div>
+            <figcaption><strong>Lifestyle 05 Sleeping</strong><code>mascot/lifestyle/lifestyle-05-sleeping.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/lifestyle/lifestyle-06-cheering-pompom.png" alt="Lifestyle 06 Cheering Pompom" loading="lazy"></div>
+            <figcaption><strong>Lifestyle 06 Cheering Pompom</strong><code>mascot/lifestyle/lifestyle-06-cheering-pompom.png</code></figcaption>
+          </figure>
         </div>
       </section>
-
-      <!-- 24 Do/Don't + Brand Family -->
-      <section class="panel span-24">
-        <header class="panel-head"><span class="num">24</span><h3>Do / Don't + Brand Family <span>/ 设计红线 + 四品牌隔离</span></h3></header>
-        <div class="dd">
-          <div>
-            <p class="label" style="color:var(--green-text)">✓ Do</p>
-            <ul class="pros">
-              <li>主 CTA 用黑色 <code>#0D0F12</code> 背景 + 白字</li>
-              <li>页面底色用暖白 <code>#FFFCF6</code></li>
-              <li>红色 <code>#FF4D4F</code> 只做编号、强调、danger</li>
-              <li>AI / 学习类 tag、focus 用紫色 <code>#7B61FF</code></li>
-              <li>卡片 8px 圆角，大面板 16px，浅橙细边</li>
-              <li>icon 用 lucide 24×24 + 2px stroke + currentColor</li>
-            </ul>
-            <p class="label" style="margin-top:14px;color:var(--red-text)">✗ Don't</p>
-            <ul class="cons">
-              <li>大块 bg 用红色（红色不是底色）</li>
-              <li>蓝紫做主 CTA（那是 Job Hunter 子品牌）</li>
-              <li>冷灰蓝大底 <code>#F7F8FC</code> / <code>#F8FBFF</code></li>
-              <li>全 pill 按钮（普通按钮必须 8px）</li>
-              <li>20px+ 大圆角产品卡（最大 16px）</li>
-              <li>牛小匠混用不同 outfit / 去掉墨镜</li>
-              <li>emoji 当 icon 用</li>
-            </ul>
-          </div>
-          <div>
-            <p class="label">Brand Family / 四品牌隔离</p>
-            <p class="lead">JR Academy 是母品牌，UniMate AI / Cert Master / Job Hunter 是子品牌。CSS 前缀严格隔离，token 不共享。</p>
-            <table class="mini-tbl">
-              <tr><th>品牌</th><th>定位</th><th>CSS 前缀</th><th>主 CTA</th></tr>
-              <tr><td><b>JR Academy</b></td><td>全球华人 AI 学习总入口</td><td><code>--jr-*</code></td><td>黑色</td></tr>
-              <tr><td>UniMate AI</td><td>大学生 AI 学习陪伴</td><td><code>--um-*</code></td><td>紫色</td></tr>
-              <tr><td>Cert Master</td><td>考证 (CKA / 注会 / 一建 / 法考)</td><td><code>--cm-*</code></td><td>红色</td></tr>
-              <tr><td>Job Hunter</td><td>求职 (JD / 简历 / 面试)</td><td><code>--jh-*</code></td><td>蓝色</td></tr>
-            </table>
-          </div>
+      <section class="asset-section" id="asset-10">
+        <header class="section-head"><span class="num">10</span><div><h2>牛小匠 Outfits / 服装变体</h2><p>节日、主题、二次创作基础像。</p></div><b>5</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/outfits/outfit-01-naked-basic.png" alt="Outfit 01 Naked Basic" loading="lazy"></div>
+            <figcaption><strong>Outfit 01 Naked Basic</strong><code>mascot/outfits/outfit-01-naked-basic.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/outfits/outfit-02-mandarin-collar.png" alt="Outfit 02 Mandarin Collar" loading="lazy"></div>
+            <figcaption><strong>Outfit 02 Mandarin Collar</strong><code>mascot/outfits/outfit-02-mandarin-collar.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/outfits/outfit-03-chinese-newyear.png" alt="Outfit 03 Chinese Newyear" loading="lazy"></div>
+            <figcaption><strong>Outfit 03 Chinese Newyear</strong><code>mascot/outfits/outfit-03-chinese-newyear.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/outfits/outfit-04-artist-painter.png" alt="Outfit 04 Artist Painter" loading="lazy"></div>
+            <figcaption><strong>Outfit 04 Artist Painter</strong><code>mascot/outfits/outfit-04-artist-painter.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage dark-stage"><img src="assets/mascot/outfits/outfit-05-white-basic.png" alt="Outfit 05 White Basic" loading="lazy"></div>
+            <figcaption><strong>Outfit 05 White Basic</strong><code>mascot/outfits/outfit-05-white-basic.png</code></figcaption>
+          </figure>
         </div>
       </section>
-  </main>
-</body>
-</html>
+      <section class="asset-section" id="asset-11">
+        <header class="section-head"><span class="num">11</span><div><h2>牛小匠 Extra Outfits / 补充服装</h2><p>额外主题服装，使用前确认场景。</p></div><b>2</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/outfits-extra/green-ai-balance.png" alt="Green AI Balance" loading="lazy"></div>
+            <figcaption><strong>Green AI Balance</strong><code>mascot/outfits-extra/green-ai-balance.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/outfits-extra/pink-student-desk.png" alt="Pink Student Desk" loading="lazy"></div>
+            <figcaption><strong>Pink Student Desk</strong><code>mascot/outfits-extra/pink-student-desk.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="asset-section" id="asset-12">
+        <header class="section-head"><span class="num">12</span><div><h2>牛小匠 Variants / 风格变体</h2><p>像素、3D、玩偶和 diorama 等非标准风格。</p></div><b>5</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/variants/variant-01-pixel-8bit.png" alt="Variant 01 Pixel 8bit" loading="lazy"></div>
+            <figcaption><strong>Variant 01 Pixel 8bit</strong><code>mascot/variants/variant-01-pixel-8bit.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/variants/variant-02-3d-standing-grey.png" alt="Variant 02 3d Standing Grey" loading="lazy"></div>
+            <figcaption><strong>Variant 02 3d Standing Grey</strong><code>mascot/variants/variant-02-3d-standing-grey.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/variants/variant-03-3d-baseball-jacket.png" alt="Variant 03 3d Baseball Jacket" loading="lazy"></div>
+            <figcaption><strong>Variant 03 3d Baseball Jacket</strong><code>mascot/variants/variant-03-3d-baseball-jacket.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/variants/variant-04-3d-plushie-sitting.png" alt="Variant 04 3d Plushie Sitting" loading="lazy"></div>
+            <figcaption><strong>Variant 04 3d Plushie Sitting</strong><code>mascot/variants/variant-04-3d-plushie-sitting.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/variants/variant-05-3d-mini-desk-diorama.png" alt="Variant 05 3d Mini Desk Diorama" loading="lazy"></div>
+            <figcaption><strong>Variant 05 3d Mini Desk Diorama</strong><code>mascot/variants/variant-05-3d-mini-desk-diorama.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="asset-section" id="asset-13">
+        <header class="section-head"><span class="num">13</span><div><h2>Chibi App Icons / App 图标</h2><p>Chibi 子集，营销和社媒图优先使用。</p></div><b>2</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage dark-stage"><img src="assets/mascot/chibi/app-icons/rounded-white.png" alt="Rounded White" loading="lazy"></div>
+            <figcaption><strong>Rounded White</strong><code>mascot/chibi/app-icons/rounded-white.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/app-icons/square-red.png" alt="Square Red" loading="lazy"></div>
+            <figcaption><strong>Square Red</strong><code>mascot/chibi/app-icons/square-red.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="asset-section" id="asset-13">
+        <header class="section-head"><span class="num">13</span><div><h2>Chibi Expressions / 表情</h2><p>Chibi 子集，营销和社媒图优先使用。</p></div><b>4</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/expressions/red-cheer-confetti.png" alt="Red Cheer Confetti" loading="lazy"></div>
+            <figcaption><strong>Red Cheer Confetti</strong><code>mascot/chibi/expressions/red-cheer-confetti.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/expressions/red-cheering-stars.png" alt="Red Cheering Stars" loading="lazy"></div>
+            <figcaption><strong>Red Cheering Stars</strong><code>mascot/chibi/expressions/red-cheering-stars.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/expressions/red-hoodie-cheering.png" alt="Red Hoodie Cheering" loading="lazy"></div>
+            <figcaption><strong>Red Hoodie Cheering</strong><code>mascot/chibi/expressions/red-hoodie-cheering.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/expressions/red-thinking-question.png" alt="Red Thinking Question" loading="lazy"></div>
+            <figcaption><strong>Red Thinking Question</strong><code>mascot/chibi/expressions/red-thinking-question.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="asset-section" id="asset-13">
+        <header class="section-head"><span class="num">13</span><div><h2>Chibi Lifestyle / 生活</h2><p>Chibi 子集，营销和社媒图优先使用。</p></div><b>10</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/lifestyle/beige-camera.png" alt="Beige Camera" loading="lazy"></div>
+            <figcaption><strong>Beige Camera</strong><code>mascot/chibi/lifestyle/beige-camera.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/lifestyle/black-backpack-explorer.png" alt="Black Backpack Explorer" loading="lazy"></div>
+            <figcaption><strong>Black Backpack Explorer</strong><code>mascot/chibi/lifestyle/black-backpack-explorer.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/lifestyle/black-gym-dumbbell.png" alt="Black Gym Dumbbell" loading="lazy"></div>
+            <figcaption><strong>Black Gym Dumbbell</strong><code>mascot/chibi/lifestyle/black-gym-dumbbell.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/lifestyle/black-map-backpack.png" alt="Black Map Backpack" loading="lazy"></div>
+            <figcaption><strong>Black Map Backpack</strong><code>mascot/chibi/lifestyle/black-map-backpack.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/lifestyle/black-noodles-boba.png" alt="Black Noodles Boba" loading="lazy"></div>
+            <figcaption><strong>Black Noodles Boba</strong><code>mascot/chibi/lifestyle/black-noodles-boba.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/lifestyle/brown-plan-coffee.png" alt="Brown Plan Coffee" loading="lazy"></div>
+            <figcaption><strong>Brown Plan Coffee</strong><code>mascot/chibi/lifestyle/brown-plan-coffee.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/lifestyle/dark-reading-coffee.png" alt="Dark Reading Coffee" loading="lazy"></div>
+            <figcaption><strong>Dark Reading Coffee</strong><code>mascot/chibi/lifestyle/dark-reading-coffee.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/lifestyle/olive-writing-plants.png" alt="Olive Writing Plants" loading="lazy"></div>
+            <figcaption><strong>Olive Writing Plants</strong><code>mascot/chibi/lifestyle/olive-writing-plants.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/lifestyle/red-celebration-popper.png" alt="Red Celebration Popper" loading="lazy"></div>
+            <figcaption><strong>Red Celebration Popper</strong><code>mascot/chibi/lifestyle/red-celebration-popper.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/lifestyle/red-reading-ai.png" alt="Red Reading AI" loading="lazy"></div>
+            <figcaption><strong>Red Reading AI</strong><code>mascot/chibi/lifestyle/red-reading-ai.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="asset-section" id="asset-13">
+        <header class="section-head"><span class="num">13</span><div><h2>Chibi Working / 工作</h2><p>Chibi 子集，营销和社媒图优先使用。</p></div><b>11</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/bw-code-bubble.png" alt="Bw Code Bubble" loading="lazy"></div>
+            <figcaption><strong>Bw Code Bubble</strong><code>mascot/chibi/working/bw-code-bubble.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/purple-laptop-thumbs-chibi.png" alt="Purple Laptop Thumbs Chibi" loading="lazy"></div>
+            <figcaption><strong>Purple Laptop Thumbs Chibi</strong><code>mascot/chibi/working/purple-laptop-thumbs-chibi.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/purple-laptop-thumbs-realistic.png" alt="Purple Laptop Thumbs Realistic" loading="lazy"></div>
+            <figcaption><strong>Purple Laptop Thumbs Realistic</strong><code>mascot/chibi/working/purple-laptop-thumbs-realistic.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/purple-tablet-design-realistic.png" alt="Purple Tablet Design Realistic" loading="lazy"></div>
+            <figcaption><strong>Purple Tablet Design Realistic</strong><code>mascot/chibi/working/purple-tablet-design-realistic.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/red-coffee-pointing-realistic.png" alt="Red Coffee Pointing Realistic" loading="lazy"></div>
+            <figcaption><strong>Red Coffee Pointing Realistic</strong><code>mascot/chibi/working/red-coffee-pointing-realistic.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/red-laptop-closeup.png" alt="Red Laptop Closeup" loading="lazy"></div>
+            <figcaption><strong>Red Laptop Closeup</strong><code>mascot/chibi/working/red-laptop-closeup.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/red-laptop-jr-mug.png" alt="Red Laptop JR Mug" loading="lazy"></div>
+            <figcaption><strong>Red Laptop JR Mug</strong><code>mascot/chibi/working/red-laptop-jr-mug.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/red-pen-book.png" alt="Red Pen Book" loading="lazy"></div>
+            <figcaption><strong>Red Pen Book</strong><code>mascot/chibi/working/red-pen-book.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/red-tablet-teaching.png" alt="Red Tablet Teaching" loading="lazy"></div>
+            <figcaption><strong>Red Tablet Teaching</strong><code>mascot/chibi/working/red-tablet-teaching.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/red-tablet-thumbs.png" alt="Red Tablet Thumbs" loading="lazy"></div>
+            <figcaption><strong>Red Tablet Thumbs</strong><code>mascot/chibi/working/red-tablet-thumbs.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/chibi/working/red-teaching-chart.png" alt="Red Teaching Chart" loading="lazy"></div>
+            <figcaption><strong>Red Teaching Chart</strong><code>mascot/chibi/working/red-teaching-chart.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="asset-section" id="asset-14">
+        <header class="section-head"><span class="num">14</span><div><h2>Sub-brand UniMate / 子品牌 mascot</h2><p>UniMate AI 子品牌 mascot。</p></div><b>4</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/unimate/laptop-u-mug.png" alt="Laptop U Mug" loading="lazy"></div>
+            <figcaption><strong>Laptop U Mug</strong><code>mascot/unimate/laptop-u-mug.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/unimate/laptop-warning-sweating.png" alt="Laptop Warning Sweating" loading="lazy"></div>
+            <figcaption><strong>Laptop Warning Sweating</strong><code>mascot/unimate/laptop-warning-sweating.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/unimate/tablet-thumbs.png" alt="Tablet Thumbs" loading="lazy"></div>
+            <figcaption><strong>Tablet Thumbs</strong><code>mascot/unimate/tablet-thumbs.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/unimate/thinking-question.png" alt="Thinking Question" loading="lazy"></div>
+            <figcaption><strong>Thinking Question</strong><code>mascot/unimate/thinking-question.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="asset-section" id="asset-15">
+        <header class="section-head"><span class="num">15</span><div><h2>Sub-brand Job Hunter / 子品牌 mascot</h2><p>Job Hunter 子品牌 mascot。</p></div><b>2</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/jobhunter/beige-business.png" alt="Beige Business" loading="lazy"></div>
+            <figcaption><strong>Beige Business</strong><code>mascot/jobhunter/beige-business.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/jobhunter/blue-newspaper-ai.png" alt="Blue Newspaper AI" loading="lazy"></div>
+            <figcaption><strong>Blue Newspaper AI</strong><code>mascot/jobhunter/blue-newspaper-ai.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="asset-section" id="asset-16">
+        <header class="section-head"><span class="num">16</span><div><h2>Inbox / 待整理素材</h2><p>未归档素材，保留用于筛选和后续整理。</p></div><b>3</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/_inbox/chatgpt-02-39-23.png" alt="Chatgpt 02 39 23" loading="lazy"></div>
+            <figcaption><strong>Chatgpt 02 39 23</strong><code>mascot/_inbox/chatgpt-02-39-23.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/_inbox/image-20260513-163441.png" alt="Image 20260513 163441" loading="lazy"></div>
+            <figcaption><strong>Image 20260513 163441</strong><code>mascot/_inbox/image-20260513-163441.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/mascot/_inbox/uuid-7904ea67.png" alt="Uuid 7904ea67" loading="lazy"></div>
+            <figcaption><strong>Uuid 7904ea67</strong><code>mascot/_inbox/uuid-7904ea67.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="asset-section" id="asset-18">
+        <header class="section-head"><span class="num">18</span><div><h2>Career Impact Illustrations / 职业影响插画</h2><p>AI 职业诊断和职业成长场景插画。</p></div><b>16</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/hero-telescope.png" alt="Hero Telescope" loading="lazy"></div>
+            <figcaption><strong>Hero Telescope</strong><code>illustrations/career-impact/hero-telescope.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/map-78-careers-orbit.png" alt="Map 78 Careers Orbit" loading="lazy"></div>
+            <figcaption><strong>Map 78 Careers Orbit</strong><code>illustrations/career-impact/map-78-careers-orbit.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/path-journey-flag.png" alt="Path Journey Flag" loading="lazy"></div>
+            <figcaption><strong>Path Journey Flag</strong><code>illustrations/career-impact/path-journey-flag.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/quiz-growth-confident.png" alt="Quiz Growth Confident" loading="lazy"></div>
+            <figcaption><strong>Quiz Growth Confident</strong><code>illustrations/career-impact/quiz-growth-confident.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/quiz-mirror-relaxed.png" alt="Quiz Mirror Relaxed" loading="lazy"></div>
+            <figcaption><strong>Quiz Mirror Relaxed</strong><code>illustrations/career-impact/quiz-mirror-relaxed.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/quiz-risk-thinking.png" alt="Quiz Risk Thinking" loading="lazy"></div>
+            <figcaption><strong>Quiz Risk Thinking</strong><code>illustrations/career-impact/quiz-risk-thinking.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/result-ai-wizard.png" alt="Result AI Wizard" loading="lazy"></div>
+            <figcaption><strong>Result AI Wizard</strong><code>illustrations/career-impact/result-ai-wizard.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/result-creative-augmenter.png" alt="Result Creative Augmenter" loading="lazy"></div>
+            <figcaption><strong>Result Creative Augmenter</strong><code>illustrations/career-impact/result-creative-augmenter.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/result-cross-domain-translator.png" alt="Result Cross Domain Translator" loading="lazy"></div>
+            <figcaption><strong>Result Cross Domain Translator</strong><code>illustrations/career-impact/result-cross-domain-translator.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/result-half-beat-observer.png" alt="Result Half Beat Observer" loading="lazy"></div>
+            <figcaption><strong>Result Half Beat Observer</strong><code>illustrations/career-impact/result-half-beat-observer.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/result-mid-mountain-climber.png" alt="Result Mid Mountain Climber" loading="lazy"></div>
+            <figcaption><strong>Result Mid Mountain Climber</strong><code>illustrations/career-impact/result-mid-mountain-climber.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/result-old-map-holder.png" alt="Result Old Map Holder" loading="lazy"></div>
+            <figcaption><strong>Result Old Map Holder</strong><code>illustrations/career-impact/result-old-map-holder.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/result-sleeping-seed.png" alt="Result Sleeping Seed" loading="lazy"></div>
+            <figcaption><strong>Result Sleeping Seed</strong><code>illustrations/career-impact/result-sleeping-seed.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/result-still-life-vip.png" alt="Result Still Life Vip" loading="lazy"></div>
+            <figcaption><strong>Result Still Life Vip</strong><code>illustrations/career-impact/result-still-life-vip.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/result-wave-rider.png" alt="Result Wave Rider" loading="lazy"></div>
+            <figcaption><strong>Result Wave Rider</strong><code>illustrations/career-impact/result-wave-rider.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/career-impact/subscribe-paper-plane.png" alt="Subscribe Paper Plane" loading="lazy"></div>
+            <figcaption><strong>Subscribe Paper Plane</strong><code>illustrations/career-impact/subscribe-paper-plane.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="asset-section" id="asset-19">
+        <header class="section-head"><span class="num">19</span><div><h2>VI Boards / 视觉识别板</h2><p>JR Academy 与 UniMate AI 的视觉识别参考板。</p></div><b>2</b></header>
+        <div class="asset-grid">
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/vi-boards/jr-academy-visual-identity.png" alt="JR Academy Visual Identity" loading="lazy"></div>
+            <figcaption><strong>JR Academy Visual Identity</strong><code>illustrations/vi-boards/jr-academy-visual-identity.png</code></figcaption>
+          </figure>
+          <figure class="asset-card">
+            <div class="asset-stage"><img src="assets/illustrations/vi-boards/unimate-ai-mascot-design.png" alt="Unimate AI Mascot Design" loading="lazy"></div>
+            <figcaption><strong>Unimate AI Mascot Design</strong><code>illustrations/vi-boards/unimate-ai-mascot-design.png</code></figcaption>
+          </figure>
+        </div>
+      </section>
+</section></main></body></html>
