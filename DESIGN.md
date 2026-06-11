@@ -128,6 +128,7 @@ v4.4+ roadmap（不在本次范围）：Dashboard / Mobile 示例 panel、dark m
 13. [四品牌隔离规则](#13-四品牌隔离规则)
 14. [装饰元素 · Decorations](#14-装饰元素--decorations)
 15. [Chibi 资产批次 · 2026-05-13](#15-chibi-资产批次--2026-05-13)
+16. [Zine 年轻化表达层](#16-zine-年轻化表达层)
 
 ---
 
@@ -1044,6 +1045,55 @@ design system/assets/mascot/{official,emojis,busts,lifestyle,working,outfits,var
 
 ---
 
+## 16. Zine 年轻化表达层
+
+> v4.5 新增 · 2026-06-11 · 实战来源：jr-ebooks 电子书 web 版（用户验收）
+
+### 定位
+
+**Marketing 物料的年轻化表达层**，不是新的设计语言：token（色彩/圆角/阴影）全走 v4.2，cool 感只来自四件事 —— **字体（Anton/Caveat）、角度（贴纸歪贴）、纹理（点阵/噪点/镭射）、动效（入场/跑马灯）**。
+
+| | |
+|---|---|
+| ✅ 用在 | 电子书 web 版、campaign landing、活动页、社媒长图 HTML、招生季专题页 |
+| ❌ 不用在 | 官网产品 UI 主框架（导航/表单/后台）、premium-dark 高端物料、正式商务文档 |
+
+### 标准件（`styles/zine.css`，class 前缀 `zine-`）
+
+| # | 标准件 | class | 说明 |
+|---|--------|-------|------|
+| 1 | 大字报 Display | `.zine-display` / `.zine-blocktitle` | Anton 大写英文/数字；blocktitle 黑底反白歪 1.2° |
+| 2 | 马克笔高亮 | `.zine-hl` / `.zine-hl-red` | 黄/红 marker 划重点，行内用 |
+| 3 | 贴纸胶囊 | `.zine-sticker` / `.zine-chip-{red,purple,yellow}` | 歪角度彩色胶囊，三色轮换不重角度 |
+| 3b | 裁切白边贴纸 | `.zine-diecut` | 白描边贴住字形（text-shadow 12 向堆叠），像真 die-cut 贴纸 |
+| 3c | 镭射全息贴纸 | `.zine-holo`（`.square` `.rim` `.sm`） | 彩虹箔 conic 底 + 斜向反光，内容放 emoji/icon |
+| 4 | 胶带贴图 | `.zine-tape-wrap` | 黄色半透明胶带把图"贴"在页面上 |
+| 5 | 跑马灯 | `.zine-marquee` | 黑底白字 + 红 ✦，整条微歪 .6° |
+| 6 | 幽灵数字 | `.zine-ghost` | 章节背后 outline 大数字（stroke 7% 黑） |
+| 7 | 纸感底 | `.zine-paper`（`.noise`） | 暖白点阵网格 + SVG 噪点 |
+| 8 | mac 窗代码块 | `.zine-macdots` / `.zine-hand` | 代码块红黄绿三点；Caveat 手写注释 |
+| 9 | 入场动效 | `.zine-reveal` + IntersectionObserver | 上浮入场，支持 prefers-reduced-motion |
+
+### 字体
+
+- **Anton**（Google Fonts）：只用于英文大写/数字 display，不排中文正文
+- **Caveat**：只做手写注释/图注点缀，单页 ≤2 处
+- 中文一律走 v4.2 字体链（思源黑体/PingFang），靠字重和字号造势
+
+### 红线
+
+- token 不新增不改写：没有"zine 专属色"，镭射箔是唯一例外（贴纸内部纹理，不是 UI 色）
+- 贴纸角度 ±1° ~ ±8°，超过就是歪而不是俏；同屏贴纸 ≤3 张
+- 跑马灯每页最多 1 条；动效必须给 `prefers-reduced-motion` 降级
+- 与 premium-dark 互斥（稀缺感靠克制，贴纸是反方向）
+
+### 参考实现
+
+- 整页级完整版：`jr-ebooks/theme/web-zine.css` + `jr-ebooks/ebooks/become-ai-engineer/draft.html`（金标准）
+- board 视觉示例：`index.html` panel 19
+
+---
+
 ## 维护
 
 - 每次改 token 必须三处同步：`tokens.json` / `tokens.css` /（如果以后加）`tokens.ts`
@@ -1069,9 +1119,10 @@ index.html  ←  视觉手册
 
 ---
 
-_v4.4 · 2026-06-02 · JR Academy 总品牌_
+_v4.5 · 2026-06-11 · JR Academy 总品牌_
 
 _Changelog_
+- **v4.5 (2026-06-11)**: 新增 §16 Zine 年轻化表达层 + `styles/zine.css`（11 个标准件：大字报/马克笔/贴纸胶囊/die-cut 白边贴纸/镭射全息贴纸/胶带/跑马灯/幽灵数字/纸感底/mac 窗/入场动效）+ board panel 19 视觉示例；来源 jr-ebooks 电子书实战，token 不变，仅限 marketing 表达层
 - **v4.4 (2026-06-02)**: `index.html` 扩展为 18 模块标准设计系统，新增 Motion / Spacing / Elevation / States / Implementation Rules；动效示例包含 entrance、hover lift、feedback pop、loading progress，并支持 `prefers-reduced-motion`
 - **v4.3 (2026-06-02)**: 上半部分按新版 13 模块重排 / 主 Logo 换为设计师正式 Logo 文件 / 下半部分按 `assets/` 当前文件全量展示 132 个图片资产卡片 / 新增 `assets.html` 独立完整资产页，保留 spec sheet、backup、_inbox、吉祥物、Chibi、子品牌 mascot 与插画
 - **v4.2 (2026-05-24)**: emoji→lucide SVG (6 处) / 牛小匠头像统一 / 资产库 panel 合并 20→11 / 新增 `--jr-icon-*` token namespace / 新增 §0.5 Icon System
