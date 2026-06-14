@@ -524,8 +524,7 @@ JR Academy (匠人学院 · 总品牌)
 | JR Box · 主 mark ⭐ v2 | `assets/logo/jr-box.svg` / `.png` | favicon / Avatar / 装饰 / loading |
 | 完整中文 Logo ⭐ v2 | `assets/logo/logo-zh-full.svg` / `.png` | 官网 header / 邮件签名 / PPT 封面 |
 | 反白版（深色 bg）⭐ v2 | `assets/logo/logo-zh-white.png` | Dark mode / 深色 hero / 视频片头 |
-| Rounded 圆角变体 | `assets/logo/logo-rounded.svg` | 头像 / 圆角容器内 |
-| English Logo | `assets/logo/logo-en.svg` / `logo-en-white.svg` | 英文站 / 国际化 banner |
+| English Logo（反白）| `assets/logo/logo-en-white.svg` | 英文站深色 bg。⚠️ 旧 `logo-en.svg`（浅底）+ `logo-rounded.svg` + `logo-transparent.svg` 已删除（2026-06-14），英文站浅底 logo 待补新版 |
 | App Icon · 红底 / 白底 | `assets/logo/app-icon-red.png` / `app-icon-white.png` | 通用 App 图标 |
 | 牛小匠 Avatar | `assets/logo/avatar-mascot-96.png` / `niuxiaojiang-logo.png` | 头像位 / chat avatar |
 | 品牌口号 Tagline | `assets/logo/tagline-xueai-laijiangren.png` | Hero / 营销 banner |
