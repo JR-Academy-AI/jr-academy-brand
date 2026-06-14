@@ -81,7 +81,7 @@
 | **深色三栏卡** dark canvas | 黄眉标 + 白标题 + 3 张 `.trio-card`（彩色 `.tlabel` + `.cmp-rule` 分隔 + `.eg` 彩边例子框）+ `.dark-callout` 红边 + `.dark-conclusion` 黄结论 | `.slide-demo.dark` + `.trio` |
 | **深色流程** pipeline | 黄眉标 + 白/黄标题 + 3 张 `.flow-card`（彩色右边 `.edge-g/o/b`）`.flow-arrow` → 连接 + 黄结论 | `.slide-demo.dark` + `.flow3` |
 
-深色页要点：底 `#10162f`，卡用白底或深 `#161d38`，强调/结论用黄 `--jr-yellow`，标签/边线用红/蓝/绿点缀。
+深色页要点：底 `#10162f`，卡用白底或深 `#161d38`，强调/结论用黄 `--jr-yellow`，标签/边线用红/蓝/绿点缀。**牛小匠放深色背景上加 `.outline`（白描边）** —— 吉祥物本体偏黑，深底会糊；用 8 方向 `drop-shadow` 沿透明 PNG 剪影描白边（不改图片）。class：`.product-mascot.outline` / `.mascot-outline`。
 
 ### 0.2d 表单控件 + 浮层（panel 22）
 
