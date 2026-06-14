@@ -21,7 +21,20 @@
 
 `jr-academy-brand/index.html` 是当前视觉 source of truth。任何 AI / Codex / Claude / 设计实现，必须按这张 Brand Board 写 UI，不能再沿用旧 UI Kit。
 
-### 0.1 当前品牌风格（v5 = Neo-Brutalism）
+### 0.0 🚨 两个 register（先判断你在做哪种场景，别用错风格）
+
+品牌**分两套表达 register，各管各场景，这是刻意的、不是两套真相**：
+
+| Register | 用在哪 | 风格 | 参考 SoT |
+|----------|--------|------|---------|
+| **A · 精致软风**（默认对外） | 官网首页 / landing / 营销页 / 面向用户的产品 UI | 暖底 + 圆角 + 柔阴影 + 饱和渐变图标 + AI 氛围（渐变眉标/神经网络/火花/工具箱/光晕）；官方 tagline 字标图 + official 牛小匠精修图 | mockup：`homepage-soft.html`（首页范本） |
+| **B · Neo-Brutalism**（表达/教学） | 讲课 deck / 海报 / zine / campaign 冲击物料 | 3px 黑边 + 直角 + 偏移硬阴影（下面 §0.1 起全是这套） | Brand Board `index.html` + curriculum 讲课 deck |
+
+> 判断：**对外要转化、要体面 → A 软风**；要个性、要冲击、教学/营销表达 → B neo。
+> 决策背景：neo 用在首页"一眼显糙、不够 AI"，软风 + AI 氛围更体面更像 AI 产品（用户验收 2026-06-15）。token 色板/字体两 register 可共用，差别在边框/圆角/阴影/质感。
+> ⬇️ 下面 §0.1～§16 描述的是 **register B（neo-brutalism）**。做 register A（首页/landing）时以 `homepage-soft.html` 为范本。
+
+### 0.1 当前品牌风格（register B · v5 = Neo-Brutalism）
 
 **一句话**：黑 3px 粗边 + 直角 + 偏移硬阴影 + hover 位移，配 deck 暖底 + 六色 + Bricolage/DM Sans/Space Mono。和 `curriculum/` 讲课 deck（`ai-adoption-bootcamp/src/styles/theme.ts`）是**同一套语言**。
 
