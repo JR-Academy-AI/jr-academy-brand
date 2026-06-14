@@ -58,6 +58,21 @@
 
 自检：一屏里带"3px 黑边 + 硬阴影"的卡 > 6 个 → 八成过载了，把次要的降级成细边/无阴影。
 
+### 0.2c 表达范式（别只会堆卡片网格）
+
+同一套 neo-brutalism 有很多表达方式，对照 `curriculum/` 讲课 deck 的 slide。Brand Board **panel 20「版式表达」**收了一套可复用词汇：
+
+| 范式 | class | 用途 |
+|------|-------|------|
+| **眉标 Eyebrow** | `.eyebrow` | 黑底白字 mono 小标签，放在大标题上方点题 |
+| **马克笔高亮标题** | `.mark-title` + `.mk` | Bricolage 大标题，关键词用黄色马克笔 `.mk` 框住 |
+| **副标题 Lede** | `.lede` | 暖灰一句话引子 |
+| **利弊对比卡** | `.cmp-card` / `.cmp-pill.good\|bad\|info` / `.cmp-rule.g\|r\|b` / `.pro` / `.con` | 标题 + 状态药丸 + 彩色分隔线 + ➕绿利 / ➖红弊 |
+| **深色总结条** | `.callout` + `.kw-g\|kw-b\|kw-r` | 深底结论条，内嵌彩色关键词，offset 硬阴影 |
+| **代码注释脚注** | `.code-note` | `// ...` mono 暖灰，放原则 / 边注 |
+
+做页面 / landing / slide 时，先想用哪几种范式组合（标题用 eyebrow+marker、对比用 cmp-card、结论用 callout、边注用 code-note），不要从头到尾只有一种卡片网格。
+
 ### 0.3 AI 写代码时的最小落地清单
 
 1. 先 import/use `tokens/tokens.css` 或把等价 token 映射到项目 design tokens。
