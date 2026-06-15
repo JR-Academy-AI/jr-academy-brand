@@ -249,6 +249,17 @@ footer .copy{border-top:1px solid #2a2833;margin-top:36px;padding-top:20px;font-
 .gridfx{position:absolute;inset:0;background-image:linear-gradient(rgba(124,92,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(124,92,255,.08) 1px,transparent 1px);background-size:44px 44px;-webkit-mask:radial-gradient(circle at 70% 26%,#000,transparent 70%);mask:radial-gradient(circle at 70% 26%,#000,transparent 70%);z-index:0;pointer-events:none}
 .grad-ai{background:linear-gradient(110deg,#7C5CFF,#3B9EFF 55%,#FF5B9E);-webkit-background-clip:text;background-clip:text;color:transparent}
 .tag-ai{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#fff;background:linear-gradient(135deg,#8B5CFF,#5A2EE6);padding:3px 10px;border-radius:99px;margin-left:8px;vertical-align:middle}
+/* ── Airbotix 风：彩色 pill 徽章 + 手绘波浪线 + pastel 区块 ── */
+.pills{display:flex;gap:9px;margin-bottom:14px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 14px;border-radius:99px;font-size:12.5px;font-weight:800;color:#fff;font-family:var(--cn);box-shadow:0 6px 14px rgba(28,27,34,.14)}
+.pill svg{width:13px;height:13px}
+.pill.p1{background:linear-gradient(135deg,#FF6FA5,#E0246E)}
+.pill.p2{background:linear-gradient(135deg,#FFC24B,#FF9500);color:#5a3c00}
+.pill.p3{background:linear-gradient(135deg,#8B5CFF,#5A2EE6)}
+.squiggle{position:relative;white-space:nowrap}
+.squiggle svg{position:absolute;left:-2px;right:-2px;bottom:-8px;width:calc(100% + 4px);height:10px}
+.sec.tint-warm{background:linear-gradient(180deg,#FFF1E9,#FFFAF5)}
+.sec.tint-mint{background:linear-gradient(180deg,#E8FAF1,#F5FCF9)}
 
 @media(max-width:980px){
   .hero .wrap{grid-template-columns:1fr;gap:40px}
@@ -278,9 +289,9 @@ footer .copy{border-top:1px solid #2a2833;margin-top:36px;padding-top:20px;font-
   <span class="spark s4" style="top:212px;left:52%"><svg width="20" height="20" viewBox="0 0 24 24" fill="#3B9EFF"><path d="M12 0c1 6 5 10 12 12-7 2-11 6-12 12-1-6-5-10-12-12 7-2 11-6 12-12z"/></svg></span>
   <div class="wrap">
   <div class="hero-left">
-    <span class="eyebrow ai"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 6 5 10 12 12-7 2-11 6-12 12-1-6-5-10-12-12 7-2 11-6 12-12z"/></svg> <b>AI 驱动的学习与成长平台</b></span>
+    <div class="pills"><span class="pill p1">🌏 面向全球华人</span><span class="pill p3"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 6 5 10 12 12-7 2-11 6-12 12-1-6-5-10-12-12 7-2 11-6 12-12z"/></svg> AI 驱动学习</span><span class="pill p2">🇦🇺 澳洲出品</span></div>
     <img class="tagline-img" src="assets/logo/tagline-xueai-laijiangren.png" alt="学 AI 来匠人"/>
-    <p class="hero-sub">更快掌握 AI 技能，打造可落地的<b>实战能力</b>。</p>
+    <p class="hero-sub">更快掌握 AI 技能，打造可落地的<span class="squiggle"><b>实战能力</b><svg viewBox="0 0 100 10" preserveAspectRatio="none" fill="none"><path d="M2 6 Q 14 1 26 6 T 50 6 T 74 6 T 98 6" stroke="#FF6B4A" stroke-width="3.4" stroke-linecap="round"/></svg></span>。</p>
     <div class="feat">
       <span><i class="c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></i>系统化学习路径</span>
       <span><i class="c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></i>实战项目驱动</span>
@@ -339,7 +350,7 @@ footer .copy{border-top:1px solid #2a2833;margin-top:36px;padding-top:20px;font-
   <div style="text-align:center;margin-top:26px"><a class="btn btn-ghost" href="/bootcamp">浏览全部课程 →</a></div>
 </div></section>
 
-<section class="sec"><div class="wrap">
+<section class="sec tint-warm"><div class="wrap">
   <div class="sec-head"><span class="sec-num n3">03</span><div><h2>学员成果</h2><p>他们在匠人，收获了更好的自己</p></div></div>
   <div class="proof-grid">
     <div class="stu"><div class="top"><span class="av"></span><div><div class="nm">张同学</div><div class="ro">Vibe Coding 学员</div></div></div><p class="q">"跟着做完 3 个项目，现在能自己用 AI 搭小工具解决工作里的问题了。"</p><span class="badge">做出 3 个作品</span></div>
@@ -369,7 +380,7 @@ footer .copy{border-top:1px solid #2a2833;margin-top:36px;padding-top:20px;font-
   </div>
 </div></section>
 
-<section class="sec"><div class="wrap">
+<section class="sec tint-mint"><div class="wrap">
   <div class="sec-head"><span class="sec-num n6">06</span><div><h2>全球华人学 AI 的入口</h2><p>免费学习资源，持续更新</p></div></div>
   <div class="free-grid">
     <a class="free" href="/wiki"><div class="ic f1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><b>Wiki 知识库</b><p>系统知识条目</p><small>持续更新</small></a>
