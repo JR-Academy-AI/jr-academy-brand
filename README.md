@@ -9,7 +9,7 @@
 >
 > ---
 >
-> 🌐 **在线手册**: <https://jr-academy-ai.github.io/jr-academy-brand/>
+> 🌐 **在线手册**: <https://jr-academy-omni.github.io/jr-academy-brand/>
 >
 > 总品牌 UI 规范 / 设计系统，不是产品代码。双击 `index.html` 就能看，或直接访问上面的在线版本。
 > JR Academy 是母品牌，UniMate AI / Cert Master / Job Hunter 是子品牌。
@@ -175,7 +175,7 @@ Front · Side · Back · Sitting · Laptop · Tablet · Wave · Like · Thinking
 
 GitHub Pages auto-deploy via `.github/workflows/deploy.yml` — push to `main` 自动构建发布。
 
-- **在线访问**: <https://jr-academy-ai.github.io/jr-academy-brand/>
+- **在线访问**: <https://jr-academy-omni.github.io/jr-academy-brand/>
 - **Repo**: <https://github.com/JR-Academy-AI/jr-academy-brand>
 
 ---
