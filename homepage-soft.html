@@ -238,6 +238,24 @@ h1,h2,h3,h4{font-family:var(--cn);font-weight:900;line-height:1.18;margin:0;lett
 .wk pre{background:#10162f;color:#e6e6ef;border-radius:10px;padding:13px 15px;font-family:var(--jr-font-mono,monospace);font-size:12.5px;line-height:1.75;overflow:auto;margin:0 0 12px}
 .wk .callout{background:#FFF4EC;border:1px solid #F7E0CE;border-left:3px solid #F2542E;border-radius:10px;padding:12px 15px;font-size:13.5px;line-height:1.75;color:#5b4a3e}
 @media(max-width:780px){.plab,.flab{grid-template-columns:1fr}.flab .pv{border-left:0;border-top:1px solid #1c2440}}
+/* ── Lab 家族子选择器 ── */
+.lab-fam{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:11px 16px;border-bottom:1px solid #EFE7D8;background:#FCFAF6}
+.lab-fam .lf{cursor:pointer;border:1.5px solid #E7DFD0;background:#fff;border-radius:99px;padding:5px 13px;font-size:12.5px;font-weight:700;color:#46423b;transition:.15s;user-select:none}
+.lab-fam .lf:hover{border-color:#F2542E;color:#F2542E}
+.lab-fam .lf.on{background:#F2542E;color:#fff;border-color:#F2542E}
+.lab-fam .lf-more{font-size:12px;color:var(--muted)}
+.lab-fam .lf-count{margin-left:auto;font-size:11.5px;font-weight:700;color:#F2542E;background:#FFF0E9;padding:5px 12px;border-radius:99px}
+.lab-view{display:none}.lab-view.on{display:block}
+.pyout{background:#0c1226;color:#b9c0d8;font-family:var(--jr-font-mono,monospace);font-size:12.5px;line-height:1.85;padding:16px 18px;flex:1}
+.pyout .ok{color:#7ED957}.pyout .p{color:#86c5ff}
+/* ── AI 带练 Quest ── */
+.quest{padding:20px 22px;display:grid;gap:12px}
+.quest .qstep{font-size:11px;font-weight:700;color:#1E8E5E;background:#E9F8EF;justify-self:start;padding:4px 12px;border-radius:99px}
+.quest .qrow{display:flex;gap:11px;align-items:flex-start}
+.quest .qav{width:32px;height:32px;border-radius:50%;flex:none;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;background:linear-gradient(135deg,#FF7A4D,#F2542E)}
+.quest .qb{background:#FFF4EC;border:1px solid #F7E4D4;border-radius:14px;padding:12px 15px;font-size:14px;line-height:1.7;color:#33302b}
+.quest .qb b{color:#F2542E;font-family:var(--jr-font-mono,monospace)}
+.quest .quser{align-self:flex-end;background:#7B61E8;color:#fff;border-radius:14px;padding:10px 14px;font-size:13.5px;font-family:var(--jr-font-mono,monospace);margin-left:auto}
 .sec-num{font-family:var(--sans);font-weight:800;font-size:13px;color:#fff;background:var(--red);width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none;box-shadow:0 6px 14px rgba(28,27,34,.16)}
 .sec-num.n1,.sec-num.n2,.sec-num.n3,.sec-num.n4,.sec-num.n5,.sec-num.n6{background:linear-gradient(135deg,#FF7E5A,#F2542E)}
 .sec-head h2{font-size:30px}
@@ -520,6 +538,7 @@ footer .copy{border-top:1px solid #2a2833;margin-top:36px;padding-top:20px;font-
     <span class="demo-tab" data-d="lab">🧪 互动 Lab</span>
     <span class="demo-tab" data-d="sheet">📋 速查表</span>
     <span class="demo-tab" data-d="wiki">📖 Wiki 知识库</span>
+    <span class="demo-tab" data-d="quest">🤖 AI 带练</span>
   </div>
   <div class="demo-panel on" data-d="prompt"><div class="appwin">
     <div class="appbar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">Prompt 实验室 · Clear Task</span><span class="prog">第 3 / 8 关</span></div>
@@ -539,12 +558,23 @@ print(m)  <span class="c"># 各月销售额一目了然</span></pre></div>
     </div>
   </div></div>
   <div class="demo-panel" data-d="lab"><div class="appwin">
-    <div class="appbar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">前端实验室 · CSS Hover 动效</span><span class="prog">步骤 4 / 6</span></div>
-    <div class="flab">
+    <div class="appbar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">互动实验室</span><span class="prog">7 类 · 100+ 关</span></div>
+    <div class="lab-fam"><span class="lf on" data-l="fe">前端</span><span class="lf" data-l="py">Python</span><span class="lf" data-l="aws">AWS</span><span class="lf-more">+ Prompt · Git · Azure · LLM</span><span class="lf-count">边做边即时校验</span></div>
+    <div class="lab-view on" data-l="fe"><div class="flab">
       <div class="ed"><div class="ln"><span>1</span><span><span class="k">.btn</span> {</span></div><div class="ln"><span>2</span><span>　background: <span class="v">#7B61E8</span>;</span></div><div class="ln"><span>3</span><span>　transition: <span class="v">.2s</span>;</span></div><div class="ln"><span>4</span><span>}</span></div><div class="ln"><span>5</span><span><span class="k">.btn:hover</span> {　<span class="c">/* 改这里 */</span></span></div><div class="ln"><span>6</span><span>　background: <span class="v">#F2542E</span>;</span></div><div class="ln"><span>7</span><span>　transform: <span class="v">translateY(-2px)</span>;</span></div><div class="ln"><span>8</span><span>}</span></div></div>
       <div class="pv"><div class="pvh">实时预览 · 悬停按钮试试 →</div><div class="stage"><button class="demo-btn">开始学习</button></div></div>
       <div class="flab-foot"><button class="runbtn">▶ 运行</button><span class="passpill">✓ 3 / 3 测试通过</span></div>
-    </div>
+    </div></div>
+    <div class="lab-view" data-l="py"><div class="flab">
+      <div class="ed"><div class="ln"><span>1</span><span>nums = [<span class="v">1, 2, 3, 4, 5</span>]</span></div><div class="ln"><span>2</span><span><span class="c"># 取偶数的平方</span></span></div><div class="ln"><span>3</span><span>r = [n*n <span class="k">for</span> n <span class="k">in</span> nums <span class="k">if</span> n%2==0]</span></div><div class="ln"><span>4</span><span>print(r)</span></div></div>
+      <div class="pv"><div class="pvh">运行输出 →</div><div class="pyout">&gt;&gt;&gt; <span class="p">[4, 16]</span><br><br><span class="ok">✓ 用例通过：输出符合预期</span></div></div>
+      <div class="flab-foot"><button class="runbtn">▶ 运行</button><span class="passpill">✓ 测试通过</span></div>
+    </div></div>
+    <div class="lab-view" data-l="aws"><div class="flab">
+      <div class="ed" style="padding:14px 16px;line-height:2"><div><span style="color:#7ED957">$</span> aws s3 mb s3://my-lab-bucket</div><div style="color:#7e879c">make_bucket: my-lab-bucket</div><div><span style="color:#7ED957">$</span> aws s3 cp index.html s3://my-lab-bucket/</div><div style="color:#7e879c">upload: ./index.html → s3://…/index.html</div></div>
+      <div class="pv"><div class="pvh">AWS 控制台 · S3 →</div><div class="pyout">my-lab-bucket　<span class="ok">● 已创建</span><br><br>区域：ap-southeast-2<br>公开访问：关闭<br>对象：index.html（1）</div></div>
+      <div class="flab-foot"><button class="runbtn">▶ 运行</button><span class="passpill">✓ 资源创建成功</span></div>
+    </div></div>
   </div></div>
   <div class="demo-panel" data-d="sheet"><div class="appwin">
     <div class="appbar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">速查表 · Git 命令</span><span class="prog">200+ 速查</span></div>
@@ -567,6 +597,17 @@ print(m)  <span class="c"># 各月销售额一目了然</span></pre></div>
 ctx = retriever.invoke(question)
 answer = llm.invoke(f"基于资料回答：{ctx}\n问题：{question}")</pre>
       <div class="callout">💡 实践提示：召回质量 &gt; 模型大小。先把切片和检索调好，再谈换更大的模型。</div>
+    </div>
+  </div></div>
+  <div class="demo-panel" data-d="quest"><div class="appwin">
+    <div class="appbar"><span class="dots"><i></i><i></i><i></i></span><span class="ttl">AI 小花老师 · 实战带练</span><span class="prog">在你电脑上做</span></div>
+    <div class="quest">
+      <span class="qstep">实战任务 · 在自己电脑上装好 Claude Code</span>
+      <div class="qrow"><span class="qav">花</span><div class="qb">先确认装了 Node。打开终端输入 <b>node -v</b>，把看到的版本号发我 👀</div></div>
+      <div class="quser">v20.11.0</div>
+      <div class="qrow"><span class="qav">花</span><div class="qb">✅ 版本够用！接着运行 <b>npm i -g @anthropic-ai/claude-code</b>，装好回我"好了"，我带你跑第一个命令。</div></div>
+      <div class="quser">好了</div>
+      <div class="qrow"><span class="qav">花</span><div class="qb">🎉 输入 <b>claude</b> 试试——这就是你的第一个 AI 编程助手。跟别的课不一样：是在<b>你自己电脑的真实环境</b>里做，我全程盯着、卡住就接住你。</div></div>
     </div>
   </div></div>
 </div></section>
@@ -701,6 +742,18 @@ answer = llm.invoke(f"基于资料回答：{ctx}\n问题：{question}")</pre>
     tabs.querySelectorAll('.demo-tab').forEach(function(x){x.classList.remove('on')});
     t.classList.add('on');
     sec.querySelectorAll('.demo-panel').forEach(function(pn){pn.classList.toggle('on',pn.dataset.d===t.dataset.d)});
+   });
+  });
+ });
+})();
+(function(){
+ document.querySelectorAll('.lab-fam').forEach(function(fam){
+  var win=fam.closest('.appwin');
+  fam.querySelectorAll('.lf').forEach(function(l){
+   l.addEventListener('click',function(){
+    fam.querySelectorAll('.lf').forEach(function(x){x.classList.remove('on')});
+    l.classList.add('on');
+    win.querySelectorAll('.lab-view').forEach(function(v){v.classList.toggle('on',v.dataset.l===l.dataset.l)});
    });
   });
  });
