@@ -63,6 +63,7 @@
 #### A4 区块装饰 —— 背景别留白板
 - 每个 section 背景加 **faint 水印插画**（career-impact，opacity ~.08）+ 标题旁 **doodle 星花**（`assets/decorations/sparkle-*`）+ 浅底交替。
 - `assets/decorations/` 还有：手绘箭头 / 波浪 / 爆发 / 刷下划线；`assets/mascot/emojis/` 6 个表情可当 badge。
+- `assets/illustrations/tax-refund/` 里有**通用且正好本配色**的素材可复用丰富页面：**hero-decor.png**（成长 banner：渐变 blob + 火花 + 手绘曲线 + 上升柱状，做 section 背景装饰）、**card-blob.png**（奶油卡底）、**course-person.png**（笔记本 + 灯泡学习者，放会员条/CTA/feature）。⚠️ 同目录 **result-hero.png / hero-person.png 是退税+钱币+袋鼠主题，JR 页面不要用**（且踩「不承诺金钱」红线）。
 
 #### A5 内容厚度 —— 别"标题直接接卡"（也利 SEO）
 - 每节：**标题 + 一段具体描述正文**（带关键词、不写"在当今快速发展"模板腔）+ 卡片。

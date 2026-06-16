@@ -340,6 +340,11 @@ h1,h2,h3,h4{font-family:var(--cn);font-weight:900;line-height:1.18;margin:0;lett
 .study .livecard{background:#FFF4EC;border:1px solid #F7E4D4;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px}
 .study .lt-time{font-family:var(--jr-font-mono,monospace);font-size:13px;color:#C0492E;font-weight:700}
 .study .submit{border:2px dashed #d8d0c2;border-radius:12px;padding:22px;text-align:center;color:var(--muted);font-size:13px}
+/* ── tax-refund 通用插画复用 ── */
+.hd-banner{position:absolute;top:-6px;right:-28px;width:440px;max-width:52%;opacity:.55;z-index:1;pointer-events:none}
+.member{position:relative;overflow:hidden}
+.member-art{width:104px;height:auto;flex:none;align-self:flex-end;margin-bottom:-30px;filter:drop-shadow(0 8px 14px rgba(28,27,34,.14))}
+@media(max-width:780px){.member-art{display:none}.hd-banner{opacity:.35}}
 .sec-num{font-family:var(--sans);font-weight:800;font-size:13px;color:#fff;background:var(--red);width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none;box-shadow:0 6px 14px rgba(28,27,34,.16)}
 .sec-num.n1,.sec-num.n2,.sec-num.n3,.sec-num.n4,.sec-num.n5,.sec-num.n6{background:linear-gradient(135deg,#FF7E5A,#F2542E)}
 .sec-head h2{font-size:30px}
@@ -787,7 +792,7 @@ answer = llm.invoke(f"基于资料回答：{ctx}\n问题：{question}")</pre>
   </div>
 </div></section>
 
-<section class="sec bg-lav"><div class="wrap">
+<section class="sec bg-lav"><img class="hd-banner" src="assets/illustrations/tax-refund/hero-decor.png" alt=""/><div class="wrap">
   <div class="sec-head"><span class="sec-num n2">↗</span><div><h2>为什么现在开始学 AI</h2><p>趋势、机会与平台数据</p></div></div>
   <p class="sec-intro">会用 AI 工具的人和不会的人，在写代码、做内容、做分析上的效率差距越来越大。AI 不再是"加分项"，而是各行业的基础能力——越早系统地学、动手做出作品，越早把它变成自己的竞争力。</p>
   <div class="stats-grid">
@@ -814,6 +819,7 @@ answer = llm.invoke(f"基于资料回答：{ctx}\n问题：{question}")</pre>
     <div class="mt"><b>$8 一杯咖啡，解锁全部权益</b><p>全部学习方向 · Lab 实验室 · 考证匠免费学 · 会员专属内容</p></div>
     <div class="tiers"><div class="tier"><small>BASIC</small><b>$8</b></div><div class="tier"><small>PLUS</small><b>$19.90</b></div><div class="tier"><small>PREMIUM</small><b>$88</b></div></div>
     <a class="mbtn" href="/membership">成为会员 →</a>
+    <img class="member-art" src="assets/illustrations/tax-refund/course-person.png" alt=""/>
   </div>
 </div></section>
 
