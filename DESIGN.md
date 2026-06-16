@@ -11,7 +11,7 @@
 > - `README.md` — 仓库使用说明
 > - `_source_design.md` — 原始设计研究稿（存档）
 >
-> Last updated: 2026-06-14 · **v5.0 Brand Board — Neo-Brutalism 回归**（和 curriculum 讲课 deck 统一成一套语言）
+> Last updated: 2026-06-16 · **v5.1 — 新增 Register A 精致软风完整规范（§0.0A）**；v5.0 = Neo-Brutalism（register B）
 >
 > 🚨 **数值唯一真相 = `tokens/tokens.css`**。本文是文字规范，任何 hex / 字号 / 圆角 / 阴影以 tokens.css 为准；两处冲突一律改本文对齐 tokens.css，不反向。
 
@@ -27,12 +27,68 @@
 
 | Register | 用在哪 | 风格 | 参考 SoT |
 |----------|--------|------|---------|
-| **A · 精致软风**（默认对外） | 官网首页 / landing / 营销页 / 面向用户的产品 UI | 暖底 + 圆角 + 柔阴影 + 饱和渐变图标 + AI 氛围（渐变眉标/神经网络/火花/工具箱/光晕）；官方 tagline 字标图 + official 牛小匠精修图 | mockup：`homepage-soft.html`（首页范本） |
+| **A · 精致软风**（默认对外） | 官网首页 / landing / 营销页 / 面向用户的产品 UI | 奶油底 + 圆角 + 柔多层阴影 + 一主色珊瑚 + **标志渐变** + 真插画卡 + 背景装饰 + 内容厚度 + 动效（**完整配方见 §0.0A，别只做"暖底圆角"会很平**） | 范本 `homepage-soft.html` |
 | **B · Neo-Brutalism**（表达/教学） | 讲课 deck / 海报 / zine / campaign 冲击物料 | 3px 黑边 + 直角 + 偏移硬阴影（下面 §0.1 起全是这套） | Brand Board `index.html` + curriculum 讲课 deck |
 
 > 判断：**对外要转化、要体面 → A 软风**；要个性、要冲击、教学/营销表达 → B neo。
 > 决策背景：neo 用在首页"一眼显糙、不够 AI"，软风 + AI 氛围更体面更像 AI 产品（用户验收 2026-06-15）。token 色板/字体两 register 可共用，差别在边框/圆角/阴影/质感。
-> ⬇️ 下面 §0.1～§16 描述的是 **register B（neo-brutalism）**。做 register A（首页/landing）时以 `homepage-soft.html` 为范本。
+> ⬇️ 下面 §0.1～§16 描述的是 **register B（neo-brutalism）**。做 register A（首页/landing）看下面 §0.0A 完整规范 + 范本 `homepage-soft.html`。
+
+### 0.0A Register A · 精致软风 完整规范（对外页面照这个做，别做平了）
+
+> **范本（唯一真相）= `jr-academy-brand/homepage-soft.html`**，本节是它的文字化配方。
+> **为什么要这节**：只写"暖底+圆角+柔阴影"会做出**又平又普通**的页面。"不平、不丑、不普通"靠的是下面 8 条一起上，缺一条就回到"模板感"。
+
+**核心心法**：精致 = 克制的颜色 + **真实的深度** + **真插画** + **背景装饰** + **内容厚度** + **动效**。不是排版整齐就行。
+
+#### A1 调色 —— 一个主色 + 一条标志渐变 + 小剂量干净点缀
+- 底：奶油白 `#FFFCF6` / 纯白卡；深色区块 `#10162f`
+- 主色：**干净珊瑚 `#FB6A4A`**（编号/强调）；主 CTA 渐变 `#FF7A4D → #F2542E`
+- **标志性 AI 渐变 `#FF7A4D → #FF4F8F → #9B6BFF`**（珊瑚→品红→紫）——用在 hero 光晕 / 主 CTA / 结尾大区 / 重点，是品牌记忆点
+- 小剂量干净点缀（**只在小图标/标签/bullet**，不铺整卡）：violet `#7B61E8` / blue `#3E8EE0` / green `#34B37E` / amber `#F5B43C` / pink `#F0568C`
+- 区块底色**很浅地交替**：peach `#FFF3EB` / lav `#F4F0FC` / sky `#EDF4FA` / mint / warm
+- 🚫 三个死法：**高饱和彩虹**（土）、**深沉脏色**（暗）、**大片纯色**（平）。记住：一主色 + 一渐变 + 小点缀。
+
+#### A2 深度 —— "不平"的命根
+- 柔和**多层**阴影：`0 2px 6px rgba(28,27,34,.05), 0 16px 38px rgba(28,27,34,.09)`（不是 neo 硬阴影，也不是无阴影）
+- 圆角 16–26px（卡 20 / 大区 24 / pill 999）
+- 背景**渐变光晕 / mesh**（hero 右侧大块鲜亮渐变）制造空间
+- hover **lift**（`translateY(-4~6px)` + 阴影加深）
+- 扁平无阴影无渐变 = 必平。
+
+#### A3 卡片必须有"图/内容"，禁止纯色块
+- 卡片用**真实插画**（`assets/mascot/working/*`、`assets/illustrations/career-impact/*`）或**高保真界面预览**，不要"纯色块 + 一个图标"了事 —— 那就是"空 = 丑"的根源（用户原话）。
+- 课程/方向卡：浅色 art 区放插画 + 下方信息；颜色落在小图标，不是整卡满色。
+
+#### A4 区块装饰 —— 背景别留白板
+- 每个 section 背景加 **faint 水印插画**（career-impact，opacity ~.08）+ 标题旁 **doodle 星花**（`assets/decorations/sparkle-*`）+ 浅底交替。
+- `assets/decorations/` 还有：手绘箭头 / 波浪 / 爆发 / 刷下划线；`assets/mascot/emojis/` 6 个表情可当 badge。
+
+#### A5 内容厚度 —— 别"标题直接接卡"（也利 SEO）
+- 每节：**标题 + 一段具体描述正文**（带关键词、不写"在当今快速发展"模板腔）+ 卡片。
+- 加 **数据 chart**、**FAQ 折叠**、**互动工具**（目标选择器 / tab 切换）。
+- 「抢先看」**高保真产品界面**（app 窗口 + 真实 UI：Prompt 实验室 / 前端 Lab 代码+实时预览 / 学习中心左中右三栏按 lesson 课型切 / 路线图 / 速查表 / Wiki / AI 带练）—— 让访客不报名就看懂"是什么、怎么学"。⚠️ 高保真 = 套真实窗口外壳 + 真实布局，**不是简易 demo**。
+
+#### A6 动效（克制、支持 reduced-motion）
+- 滚动入场 fade-up（IntersectionObserver）、柱状图生长、hover lift、hero 火花漂浮。
+- JS 加 `.reveal` class（JS 失败则内容照常显示，不白屏）。
+
+#### A7 AI 氛围 —— 一眼是"AI 学习"
+- AI 渐变眉标（紫底 + ✦）、神经网络节点 svg、漂浮火花、AI 工具箱浮卡（ChatGPT/Claude/MJ）、牛小匠紫光环。
+
+#### A8 字体（软风）
+- 中文标题 **思源黑体 / Noto Sans SC 700–900**；英文/数字 **Inter**；数据/代码 **mono**。
+- ⚠️ Bricolage Grotesque 是 register B（neo）专用，软风不用。
+
+#### A9 提交前自检（避免"平/丑/普通"）
+1. 卡片是不是纯色块没图？→ 加插画 / 高保真预览
+2. 背景是不是大片纯色？→ 加水印 / 交替浅底 / doodle
+3. 是不是标题直接接卡、没正文？→ 加描述段 / chart / FAQ
+4. 颜色是不是彩虹 or 脏暗？→ 收成 一主色 + 一渐变 + 小点缀
+5. 是不是全静态？→ 加 reveal / hover lift
+6. 有没有标志渐变和 AI 氛围？→ 没有就还差记忆点
+
+---
 
 ### 0.1 当前品牌风格（register B · v5 = Neo-Brutalism）
 
@@ -1197,6 +1253,7 @@ index.html  ←  视觉手册
 _v5.0 · 2026-06-14 · JR Academy 总品牌_
 
 _Changelog_
+- **v5.1 (2026-06-16)**: 新增 **§0.0A Register A 精致软风完整规范** —— 把首页 `homepage-soft.html` 一路调出来的"防平/防丑/防普通"配方文字化（A1 调色一主色+标志渐变 / A2 多层柔阴影深度 / A3 卡片必须有真插画禁纯色块 / A4 背景水印装饰 / A5 内容厚度+高保真预览 / A6 动效 / A7 AI 氛围 / A8 软风字体 / A9 自检）。原因：旧 DESIGN.md 主体全是 register B（neo），照它做对外页面会"又平又丑"。两 register 边界仍见 §0.0。
 - **v5.0 (2026-06-14)**: 🚨 **Neo-Brutalism 回归**，推翻 v4.x「轻边框 + 8px 圆角 + 柔阴影 + 暖白」。和 `curriculum/` 讲课 deck（`theme.ts`）统一成同一套语言：3px 黑边 + 直角 + 偏移硬阴影 `6px 6px 0 #000` + hover 位移；色板对齐 deck（red #ff5757 / dark #10162f / warmBg #fff1e7 / yellow #FFDE59 / green #7ED957 / blue #38B6FF / purple #CB6CE6）；字体换 Bricolage Grotesque(标题) + DM Sans(正文) + Space Mono(数据) + 思源黑体(中文)。改动落 `tokens/tokens.css`（数值真相）+ 本文 §0/§5/§11 + `index.html` board（19 panel 全 reskin）。判断依据：neo-brutalism 本身没问题（讲课 deck 验证有效），之前的「丑」是内容/执行问题。
 - **v4.5 (2026-06-11)**: 新增 §16 Zine 年轻化表达层 + `styles/zine.css`（11 个标准件：大字报/马克笔/贴纸胶囊/die-cut 白边贴纸/镭射全息贴纸/胶带/跑马灯/幽灵数字/纸感底/mac 窗/入场动效）+ board panel 19 视觉示例；来源 jr-ebooks 电子书实战，token 不变，仅限 marketing 表达层
 - **v4.4 (2026-06-02)**: `index.html` 扩展为 18 模块标准设计系统，新增 Motion / Spacing / Elevation / States / Implementation Rules；动效示例包含 entrance、hover lift、feedback pop、loading progress，并支持 `prefers-reduced-motion`
